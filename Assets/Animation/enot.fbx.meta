@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 9332359bd1b6bcc46abcb600feaaeca3
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ____________.001
+    100002: Bedro
+    100004: Bedro.001
+    100006: //RootNode
+    100008: Gomilka
+    100010: Gomilka.001
+    100012: Head
+    100014: Leg
+    100016: Leg.001
+    100018: lokot 1
+    100020: lokot 1.001
+    100022: plecho11
+    100024: plecho11.001
+    100026: RKist
+    100028: RKist.001
+    400000: ____________.001
+    400002: Bedro
+    400004: Bedro.001
+    400006: //RootNode
+    400008: Gomilka
+    400010: Gomilka.001
+    400012: Head
+    400014: Leg
+    400016: Leg.001
+    400018: lokot 1
+    400020: lokot 1.001
+    400022: plecho11
+    400024: plecho11.001
+    400026: RKist
+    400028: RKist.001
+    2300000: ____________.001
+    2300002: Bedro
+    2300004: Bedro.001
+    2300006: Gomilka
+    2300008: Gomilka.001
+    2300010: Head
+    2300012: Leg
+    2300014: Leg.001
+    2300016: lokot 1
+    2300018: lokot 1.001
+    2300020: plecho11
+    2300022: plecho11.001
+    2300024: RKist
+    2300026: RKist.001
+    3300000: ____________.001
+    3300002: Bedro
+    3300004: Bedro.001
+    3300006: Gomilka
+    3300008: Gomilka.001
+    3300010: Head
+    3300012: Leg
+    3300014: Leg.001
+    3300016: lokot 1
+    3300018: lokot 1.001
+    3300020: plecho11
+    3300022: plecho11.001
+    3300024: RKist
+    3300026: RKist.001
+    4300000: ____________.001
+    4300002: RKist
+    4300004: plecho11
+    4300006: lokot 1
+    4300008: Leg
+    4300010: Head
+    4300012: Gomilka
+    4300014: Bedro
+    4300016: Bedro.001
+    4300018: Gomilka.001
+    4300020: Leg.001
+    4300022: lokot 1.001
+    4300024: plecho11.001
+    4300026: RKist.001
+    7400000: "\u0421\u043D\u0438\u043C\u043E\u043A.001|Bedro.001Action"
+    7400002: "\u0421\u043D\u0438\u043C\u043E\u043A.001|BedroAction"
+    7400004: "\u0421\u043D\u0438\u043C\u043E\u043A.001|Gomilka.001Action"
+    7400006: "\u0421\u043D\u0438\u043C\u043E\u043A.001|GomilkaAction"
+    7400008: "\u0421\u043D\u0438\u043C\u043E\u043A.001|HeadAction"
+    7400010: "\u0421\u043D\u0438\u043C\u043E\u043A.001|Leg.001Action"
+    7400012: "\u0421\u043D\u0438\u043C\u043E\u043A.001|LegAction"
+    7400014: "\u0421\u043D\u0438\u043C\u043E\u043A.001|lokot 1.001Action"
+    7400016: "\u0421\u043D\u0438\u043C\u043E\u043A.001|lokot 1Action"
+    7400018: "\u0421\u043D\u0438\u043C\u043E\u043A.001|plecho11.001Action"
+    7400020: "\u0421\u043D\u0438\u043C\u043E\u043A.001|plecho11Action"
+    7400022: "\u0421\u043D\u0438\u043C\u043E\u043A.001|RKist.001Action"
+    7400024: "\u0421\u043D\u0438\u043C\u043E\u043A.001|RKistAction"
+    7400026: "\u0421\u043D\u0438\u043C\u043E\u043A.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400028: RKist|Bedro.001Action
+    7400030: RKist|BedroAction
+    7400032: RKist|Gomilka.001Action
+    7400034: RKist|GomilkaAction
+    7400036: RKist|HeadAction
+    7400038: RKist|Leg.001Action
+    7400040: RKist|LegAction
+    7400042: RKist|lokot 1.001Action
+    7400044: RKist|lokot 1Action
+    7400046: RKist|plecho11.001Action
+    7400048: RKist|plecho11Action
+    7400050: RKist|RKist.001Action
+    7400052: RKist|RKistAction
+    7400054: "RKist|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400056: plecho11|Bedro.001Action
+    7400058: plecho11|BedroAction
+    7400060: plecho11|Gomilka.001Action
+    7400062: plecho11|GomilkaAction
+    7400064: plecho11|HeadAction
+    7400066: plecho11|Leg.001Action
+    7400068: plecho11|LegAction
+    7400070: plecho11|lokot 1.001Action
+    7400072: plecho11|lokot 1Action
+    7400074: plecho11|plecho11.001Action
+    7400076: plecho11|plecho11Action
+    7400078: plecho11|RKist.001Action
+    7400080: plecho11|RKistAction
+    7400082: "plecho11|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400084: lokot 1|Bedro.001Action
+    7400086: lokot 1|BedroAction
+    7400088: lokot 1|Gomilka.001Action
+    7400090: lokot 1|GomilkaAction
+    7400092: lokot 1|HeadAction
+    7400094: lokot 1|Leg.001Action
+    7400096: lokot 1|LegAction
+    7400098: lokot 1|lokot 1.001Action
+    7400100: lokot 1|lokot 1Action
+    7400102: lokot 1|plecho11.001Action
+    7400104: lokot 1|plecho11Action
+    7400106: lokot 1|RKist.001Action
+    7400108: lokot 1|RKistAction
+    7400110: "lokot 1|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400112: Leg|Bedro.001Action
+    7400114: Leg|BedroAction
+    7400116: Leg|Gomilka.001Action
+    7400118: Leg|GomilkaAction
+    7400120: Leg|HeadAction
+    7400122: Leg|Leg.001Action
+    7400124: Leg|LegAction
+    7400126: Leg|lokot 1.001Action
+    7400128: Leg|lokot 1Action
+    7400130: Leg|plecho11.001Action
+    7400132: Leg|plecho11Action
+    7400134: Leg|RKist.001Action
+    7400136: Leg|RKistAction
+    7400138: "Leg|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400140: Head|Bedro.001Action
+    7400142: Head|BedroAction
+    7400144: Head|Gomilka.001Action
+    7400146: Head|GomilkaAction
+    7400148: Head|HeadAction
+    7400150: Head|Leg.001Action
+    7400152: Head|LegAction
+    7400154: Head|lokot 1.001Action
+    7400156: Head|lokot 1Action
+    7400158: Head|plecho11.001Action
+    7400160: Head|plecho11Action
+    7400162: Head|RKist.001Action
+    7400164: Head|RKistAction
+    7400166: "Head|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400168: Gomilka|Bedro.001Action
+    7400170: Gomilka|BedroAction
+    7400172: Gomilka|Gomilka.001Action
+    7400174: Gomilka|GomilkaAction
+    7400176: Gomilka|HeadAction
+    7400178: Gomilka|Leg.001Action
+    7400180: Gomilka|LegAction
+    7400182: Gomilka|lokot 1.001Action
+    7400184: Gomilka|lokot 1Action
+    7400186: Gomilka|plecho11.001Action
+    7400188: Gomilka|plecho11Action
+    7400190: Gomilka|RKist.001Action
+    7400192: Gomilka|RKistAction
+    7400194: "Gomilka|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400196: Bedro|Bedro.001Action
+    7400198: Bedro|BedroAction
+    7400200: Bedro|Gomilka.001Action
+    7400202: Bedro|GomilkaAction
+    7400204: Bedro|HeadAction
+    7400206: Bedro|Leg.001Action
+    7400208: Bedro|LegAction
+    7400210: Bedro|lokot 1.001Action
+    7400212: Bedro|lokot 1Action
+    7400214: Bedro|plecho11.001Action
+    7400216: Bedro|plecho11Action
+    7400218: Bedro|RKist.001Action
+    7400220: Bedro|RKistAction
+    7400222: "Bedro|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400224: Bedro.001|Bedro.001Action
+    7400226: Bedro.001|BedroAction
+    7400228: Bedro.001|Gomilka.001Action
+    7400230: Bedro.001|GomilkaAction
+    7400232: Bedro.001|HeadAction
+    7400234: Bedro.001|Leg.001Action
+    7400236: Bedro.001|LegAction
+    7400238: Bedro.001|lokot 1.001Action
+    7400240: Bedro.001|lokot 1Action
+    7400242: Bedro.001|plecho11.001Action
+    7400244: Bedro.001|plecho11Action
+    7400246: Bedro.001|RKist.001Action
+    7400248: Bedro.001|RKistAction
+    7400250: "Bedro.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400252: Gomilka.001|Bedro.001Action
+    7400254: Gomilka.001|BedroAction
+    7400256: Gomilka.001|Gomilka.001Action
+    7400258: Gomilka.001|GomilkaAction
+    7400260: Gomilka.001|HeadAction
+    7400262: Gomilka.001|Leg.001Action
+    7400264: Gomilka.001|LegAction
+    7400266: Gomilka.001|lokot 1.001Action
+    7400268: Gomilka.001|lokot 1Action
+    7400270: Gomilka.001|plecho11.001Action
+    7400272: Gomilka.001|plecho11Action
+    7400274: Gomilka.001|RKist.001Action
+    7400276: Gomilka.001|RKistAction
+    7400278: "Gomilka.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400280: Leg.001|Bedro.001Action
+    7400282: Leg.001|BedroAction
+    7400284: Leg.001|Gomilka.001Action
+    7400286: Leg.001|GomilkaAction
+    7400288: Leg.001|HeadAction
+    7400290: Leg.001|Leg.001Action
+    7400292: Leg.001|LegAction
+    7400294: Leg.001|lokot 1.001Action
+    7400296: Leg.001|lokot 1Action
+    7400298: Leg.001|plecho11.001Action
+    7400300: Leg.001|plecho11Action
+    7400302: Leg.001|RKist.001Action
+    7400304: Leg.001|RKistAction
+    7400306: "Leg.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400308: lokot 1.001|Bedro.001Action
+    7400310: lokot 1.001|BedroAction
+    7400312: lokot 1.001|Gomilka.001Action
+    7400314: lokot 1.001|GomilkaAction
+    7400316: lokot 1.001|HeadAction
+    7400318: lokot 1.001|Leg.001Action
+    7400320: lokot 1.001|LegAction
+    7400322: lokot 1.001|lokot 1.001Action
+    7400324: lokot 1.001|lokot 1Action
+    7400326: lokot 1.001|plecho11.001Action
+    7400328: lokot 1.001|plecho11Action
+    7400330: lokot 1.001|RKist.001Action
+    7400332: lokot 1.001|RKistAction
+    7400334: "lokot 1.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400336: plecho11.001|Bedro.001Action
+    7400338: plecho11.001|BedroAction
+    7400340: plecho11.001|Gomilka.001Action
+    7400342: plecho11.001|GomilkaAction
+    7400344: plecho11.001|HeadAction
+    7400346: plecho11.001|Leg.001Action
+    7400348: plecho11.001|LegAction
+    7400350: plecho11.001|lokot 1.001Action
+    7400352: plecho11.001|lokot 1Action
+    7400354: plecho11.001|plecho11.001Action
+    7400356: plecho11.001|plecho11Action
+    7400358: plecho11.001|RKist.001Action
+    7400360: plecho11.001|RKistAction
+    7400362: "plecho11.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    7400364: RKist.001|Bedro.001Action
+    7400366: RKist.001|BedroAction
+    7400368: RKist.001|Gomilka.001Action
+    7400370: RKist.001|GomilkaAction
+    7400372: RKist.001|HeadAction
+    7400374: RKist.001|Leg.001Action
+    7400376: RKist.001|LegAction
+    7400378: RKist.001|lokot 1.001Action
+    7400380: RKist.001|lokot 1Action
+    7400382: RKist.001|plecho11.001Action
+    7400384: RKist.001|plecho11Action
+    7400386: RKist.001|RKist.001Action
+    7400388: RKist.001|RKistAction
+    7400390: "RKist.001|\u0421\u043D\u0438\u043C\u043E\u043A.001Action"
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

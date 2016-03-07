@@ -12,7 +12,10 @@ public class SuperPower : MonoBehaviour {
 	public ChooseSPScript choose;
 	public GameObject fantasy;
 
-	public bool isSuperSpeedActive = false;
+    private float _flyingRate = 1.5f;
+    private float _flyingCooldown = 0;
+
+    public bool isSuperSpeedActive = false;
 	public int FlyingForse = 4;
 	public Rigidbody2D myRigitbody;
 	private bool isGrounded;
@@ -31,16 +34,21 @@ public class SuperPower : MonoBehaviour {
 		flyingEnable = ChooseSPScript.choooseFlyingEnable;
 		superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
 
-		//fantasy = GameObject.Find ("Fantasy");
-	//	choose = GameObject.Find ("Fantasy").GetComponent<ChooseSPScript>();
+        if (_flyingCooldown > 0)
+        {
+            _flyingCooldown -= Time.deltaTime;
+        }
 
-/*		cookieRangEnable = choose.cookieRangEnable;
-		rayEnable = choose.rayEnable;
-		superPowerEnable = choose.superPowerEnable;
-*/
+        //fantasy = GameObject.Find ("Fantasy");
+        //	choose = GameObject.Find ("Fantasy").GetComponent<ChooseSPScript>();
+
+        /*		cookieRangEnable = choose.cookieRangEnable;
+                rayEnable = choose.rayEnable;
+                superPowerEnable = choose.superPowerEnable;
+        */
 
 
-		if (superSpeedEnable == true) {
+        if (superSpeedEnable == true) {
 			superSpeedImage.enabled = true;
 		} else {
 			superSpeedImage.enabled = false;
@@ -93,16 +101,26 @@ public class SuperPower : MonoBehaviour {
 	}
 
 	public void Flying (bool isTrueFly) {
-		flyingEnable = true;
-		if (isTrueFly) {
-			myRigitbody.velocity = new Vector3(0f,FlyingForse*1f,0f);
-			//movement = new Vector3 (0, speed.y * 1, 0);
-			//rigidbody2D.velocity = movement;
-		//} else {
-		//	movement = new Vector3 (0, speed.y * -1, 0);
-	//		rigidbody2D.velocity = movement;
-		}
+		
+       
+		if (isTrueFly && _flyingCooldown <= 0) {
+
+            flyingEnable = true;
+            Invoke("Soda",0.5f);
+            _flyingCooldown = _flyingRate;
+            //movement = new Vector3 (0, speed.y * 1, 0);
+            //rigidbody2D.velocity = movement;
+            //} else {
+            //	movement = new Vector3 (0, speed.y * -1, 0);
+            //		rigidbody2D.velocity = movement;
+        }
 	}
+
+    void Soda()
+    {
+        myRigitbody.velocity = new Vector3(3f, FlyingForse * 1f, 0f);
+
+    }
 
 	public void SuperJump () {
 		isGrounded = GameObject.FindWithTag ("Player").GetComponent<Player> ().isGrounded;

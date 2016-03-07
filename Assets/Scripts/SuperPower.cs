@@ -90,15 +90,24 @@ public class SuperPower : MonoBehaviour {
 
 
 	public void SuperSpeed (bool isTrueSpeed) {
-		Player speed = GetComponent<Collider2D>().gameObject.GetComponent<Player> ();
-		if (isTrueSpeed) {
-			speed.movementSpeed = 100;
-			isSuperSpeedActive = true;
-		} else {
-			speed.movementSpeed = 0;
-			isSuperSpeedActive = false;
+		Player player = gameObject.GetComponent<Player> ();
+        player.movementSpeed = 100;
+        HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
+        health.enabled = false;
+            isSuperSpeedActive = true;
+        Invoke("StopSpeed",1f);
+
+
 		}
-	}
+    void StopSpeed()
+    {
+        Player player = gameObject.GetComponent<Player>();
+        player.movementSpeed = 0;
+        HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
+        health.enabled = true;
+        isSuperSpeedActive = false;
+
+    }
 
 	public void Flying (bool isTrueFly) {
 		

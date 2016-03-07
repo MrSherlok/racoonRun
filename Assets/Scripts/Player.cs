@@ -29,18 +29,18 @@ public class Player : MonoBehaviour {
 	}
 
 	private void HendleMovement() {
-//		Движение через адфорс
-		myRigitbody.AddForce(new Vector2(movementSpeed,0));
+        //		Движение через адфорс
+        //myRigitbody.AddForce(new Vector2(movementSpeed,0));
 
-//		движение через велосити
-//		myRigitbody.velocity = new Vector2(movementSpeed,myRigitbody.velocity.y);
+        //		движение через велосити
+        myRigitbody.velocity = new Vector2(movementSpeed, myRigitbody.velocity.y);
 
-//		не помню
-/*		if (isGrounded || airControl) {
-			myRigitbody.velocity = new Vector2(movementSpeed, myRigitbody.velocity.y); 
-			}
-*/
-	}
+        //		не помню
+        /*		if (isGrounded || airControl) {
+                    myRigitbody.velocity = new Vector2(movementSpeed, myRigitbody.velocity.y); 
+                    }
+        */
+    }
 
 
 

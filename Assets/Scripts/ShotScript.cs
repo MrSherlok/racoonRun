@@ -16,7 +16,10 @@ public class ShotScript : MonoBehaviour {
 	void Update () {
 		removeTime += Time.deltaTime;
 		if (removeTime >= lifeTime) {
-			Destroy (gameObject);
+            if (gameObject.tag != "Enemy")
+            {
+                Destroy(gameObject);
+            }
 		}
 	}
 }

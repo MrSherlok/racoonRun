@@ -26,19 +26,21 @@ public class HealthScript : MonoBehaviour {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 		if (shot != null) {
 			if (shot.isEnemyShot != isEnemy) {
-
 				hp  -= shot.damage;
 				Destroy(shot.gameObject);
-				if (hp <=0) {
-					if (gameObject.tag == "enemys"){
-						Destroy (gameObject);
-					} else {
-						theEndImage.enabled = true;
-						chooseLvl.enabled = true;
-						end.text = "You are dead";
-						Time.timeScale = 0;
+                if (hp <= 0)
+                {
+                    if (gameObject.tag == "enemys")
+                    {
+                        Destroy(gameObject);
+                    }
+                    else {
+                        theEndImage.enabled = true;
+                        chooseLvl.enabled = true;
+                        end.text = "You are dead";
+                        Time.timeScale = 0;
 
-					}
+                    }
 				}
 			}
 		}

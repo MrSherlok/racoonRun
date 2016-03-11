@@ -12,7 +12,7 @@ public class SuperPower : MonoBehaviour {
 	public ChooseSPScript choose;
 	public GameObject fantasy;
 
-    private float _flyingRate = 1.5f;
+    private float _flyingRate = 0.5f;
     private float _flyingCooldown = 0;
 
     public bool isSuperSpeedActive = false;

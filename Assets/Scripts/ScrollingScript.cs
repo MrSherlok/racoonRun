@@ -32,8 +32,13 @@ using System.Linq;
 using UnityEngine;
 
 public class ScrollingScript : MonoBehaviour
-{
+{	
+	//просто таймер
+	public float isStartlane = 5.0f;
+	//ГО 3-2-1-старт картинок
+	public GameObject startingLane;
 	public Vector2 speed = new Vector2(10, 10);
+	public Vector2 realspeed = new Vector2(10, 10);
 	public Vector2 direction = new Vector2(-1, 0);
 	/// Movement should be applied to camera
 	public bool isLinkedToCamera = false;
@@ -42,6 +47,7 @@ public class ScrollingScript : MonoBehaviour
 	/// 2 - List of children with a renderer.
 	private List<Transform> backgroundPart;
 	// 3 - Get all the children
+
 	void Start()
 	{
 		// For infinite background only
@@ -68,11 +74,26 @@ public class ScrollingScript : MonoBehaviour
 			backgroundPart = backgroundPart.OrderBy(
 				t => t.position.x
 				).ToList();
+
+
 		}
+	}
+	void StarterWait(){
+		isStartlane -= Time.deltaTime;
+		if (isStartlane > 0) {
+			speed = new Vector2 (1, 1);
+		} else {
+			speed = realspeed;
+			Destroy(startingLane);
+		}
+
+
 	}
 	
 	void Update()
-	{
+	{	
+		StarterWait ();
+
 		// Movement
 		Vector3 movement = new Vector3(
 			speed.x * direction.x,

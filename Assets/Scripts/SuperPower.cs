@@ -21,6 +21,8 @@ public class SuperPower : MonoBehaviour {
 	private bool isGrounded;
 	public float jumpForce = 10f;
 
+	public GameObject effects;
+
 	public Image superSpeedImage;
 	public Image flyingImage;
 	public Image superJumpImage;
@@ -28,7 +30,10 @@ public class SuperPower : MonoBehaviour {
 //	public Image superSpeedImage;
 //	public Image superSpeedImage;
 
+	public void Awake(){
 
+		effects.SetActive (false);
+	}
 	public void FixedUpdate () {
 		superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
 		flyingEnable = ChooseSPScript.choooseFlyingEnable;
@@ -115,7 +120,8 @@ public class SuperPower : MonoBehaviour {
 		if (isTrueFly && _flyingCooldown <= 0) {
 
             flyingEnable = true;
-            Invoke("Soda",0.5f);
+			Invoke("Soda",0.5f);
+
             _flyingCooldown = _flyingRate;
             //movement = new Vector3 (0, speed.y * 1, 0);
             //rigidbody2D.velocity = movement;
@@ -125,11 +131,18 @@ public class SuperPower : MonoBehaviour {
         }
 	}
 
-    void Soda()
+	void Soda()
     {
         myRigitbody.velocity = new Vector3(3f, FlyingForse * 1f, 0f);
 
+		effects.SetActive (true);
+		Invoke ("Deeffector",3.0f);
+
+
     }
+	void Deeffector(){
+		effects.SetActive (false);
+	}
 
 	public void SuperJump () {
 		isGrounded = GameObject.FindWithTag ("Player").GetComponent<Player> ().isGrounded;

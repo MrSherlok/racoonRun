@@ -4,7 +4,7 @@ public class Spawn : MonoBehaviour {
 	private bool hasSpawn = false;
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 		if (hasSpawn == false) {
 			if (GetComponent<Renderer>().IsVisibleFrom (Camera.main)) {
 				Spawne ();

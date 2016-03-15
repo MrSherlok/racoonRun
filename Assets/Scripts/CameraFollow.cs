@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update() {
+	void FixedUpdate() {
 		transform.position = new Vector3 (0, lift, distanse) + target.position;
 		transform.LookAt (target);
 	}

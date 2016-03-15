@@ -16,7 +16,7 @@ public class ChengeCenturyScript : MonoBehaviour {
 	
 	public bool isCentury19Active = false;
 
-	void Update () {
+	void FixedUpdate() {
 
 
 		//TakeTapScript takeTap = GetComponent<TakeTapScript> ();

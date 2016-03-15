@@ -9,7 +9,7 @@ public class ScrollingScript : MonoBehaviour
 	/// Movement should be applied to camera
 	public bool isLinkedToCamera = false;
 	
-	void Update()
+	void FixedUpdate()
 	{
 		// Movement
 		Vector3 movement = new Vector3(
@@ -34,11 +34,11 @@ using UnityEngine;
 public class ScrollingScript : MonoBehaviour
 {	
 	//просто таймер
-	public float isStartlane = 5.0f;
+	private float isStartlane = 1.5f;
 	//ГО 3-2-1-старт картинок
-	public GameObject startingLane;
+	private GameObject startingLane;
 	public Vector2 speed = new Vector2(10, 10);
-	public Vector2 realspeed = new Vector2(10, 10);
+    private Vector2 realspeed;
 	public Vector2 direction = new Vector2(-1, 0);
 	/// Movement should be applied to camera
 	public bool isLinkedToCamera = false;
@@ -50,6 +50,8 @@ public class ScrollingScript : MonoBehaviour
 
 	void Start()
 	{
+        realspeed = speed;
+        startingLane = GameObject.Find("StartNumbers");
 		// For infinite background only
 		if (isLooping)
 		{
@@ -79,9 +81,9 @@ public class ScrollingScript : MonoBehaviour
 		}
 	}
 	void StarterWait(){
-		isStartlane -= Time.deltaTime;
+        isStartlane -= Time.deltaTime;
 		if (isStartlane > 0) {
-			speed = new Vector2 (1, 1);
+			speed = new Vector2 (3f,3f);
 		} else {
 			speed = realspeed;
 			Destroy(startingLane);
@@ -90,7 +92,7 @@ public class ScrollingScript : MonoBehaviour
 
 	}
 	
-	void Update()
+	void FixedUpdate()
 	{	
 		StarterWait ();
 

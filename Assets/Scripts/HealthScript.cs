@@ -27,6 +27,11 @@ public class HealthScript : MonoBehaviour {
 		if (shot != null) {
 			if (shot.isEnemyShot != isEnemy) {
 				hp  -= shot.damage;
+                if(shot.tag == "shoot")
+                {
+                    Destroy(shot.transform.parent.gameObject);
+                }
+                else
 				Destroy(shot.gameObject);
                 if (hp <= 0)
                 {

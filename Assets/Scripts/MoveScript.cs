@@ -6,7 +6,7 @@ public class MoveScript : MonoBehaviour {
 	public Vector2 direction = new Vector2(-1, 0);
 
 
-	void Update () {
+	void FixedUpdate() {
 		Vector3 movement = new Vector3 (speed.x*direction.x, speed.y*direction.y, 0);
 		movement *= Time.deltaTime;
 		transform.Translate (movement);

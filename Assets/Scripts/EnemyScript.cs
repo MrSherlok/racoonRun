@@ -33,7 +33,7 @@ public class EnemyScript : MonoBehaviour
 		}
 	}
 	
-	void Update()
+	void FixedUpdate()
 	{
 		isSuperSpeedActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperSpeedActive;
 		if (isSuperSpeedActive) {

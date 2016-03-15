@@ -7,7 +7,8 @@ public TrailRenderer trail;
 //public ParticleSystem particleSystem;
 // Use this for initialization
 void Start () {
-	trail.sortingLayerName = "Effects";
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        trail.sortingLayerName = "Effects";
 	trail.sortingOrder = 0;
 	//particleSystem.sortingLayerName = "Effects";
 	//particleSystem.renderer.sortingLayerName = "Effects";

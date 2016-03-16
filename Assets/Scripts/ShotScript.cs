@@ -19,7 +19,6 @@ public class ShotScript : MonoBehaviour {
                 if (isEnemyShot == false)
                 {
                     Destroy(transform.parent.gameObject);
-
                 }
                 else
                     Destroy(gameObject);

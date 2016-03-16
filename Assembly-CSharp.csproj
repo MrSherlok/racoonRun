@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChooseSPScript.cs" />
      <Compile Include="Assets\Scripts\CollisionTrigger.cs" />
+     <Compile Include="Assets\Scripts\CookieRangScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\GameButtons.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />

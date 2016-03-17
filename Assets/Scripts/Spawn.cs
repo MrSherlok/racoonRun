@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour {
 		} else {
 			if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
 			{
-				Destroy(gameObject);
+				Destroy(gameObject,3);
 			}
 		}
 	}

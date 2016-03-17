@@ -31,11 +31,15 @@ public class SuperPower : MonoBehaviour {
     //	public Image superSpeedImage;
 
     public int hpSS;
+    private Player player;
 
-	public void Awake(){
+
+
+    public void Awake(){
 
 		effects.SetActive (false);
-	}
+        player = gameObject.GetComponent<Player>();
+    }
 	public void FixedUpdate () {
 		superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
 		flyingEnable = ChooseSPScript.choooseFlyingEnable;
@@ -94,26 +98,42 @@ public class SuperPower : MonoBehaviour {
 	}
 
 
+    public void SuperPunch()
+    {
+        isSuperSpeedActive = true;
+        player.movementSpeed = 100;
+
+        Invoke("StopPunch", 1f);
+    }
+
+    void StopPunch()
+    {
+        isSuperSpeedActive = false;
+        player.movementSpeed = 0;
+    }
+         
+
+
 
 
 	public void SuperSpeed (bool isTrueSpeed) {
-		Player player = gameObject.GetComponent<Player> ();
+		
         player.movementSpeed = 100;
         HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
         hpSS = health.hp;
         health.hp = 1000;
-            isSuperSpeedActive = true;
+            
         Invoke("StopSpeed",1.5f);
 
 
 		}
     void StopSpeed()
     {
-        Player player = gameObject.GetComponent<Player>();
+      
         player.movementSpeed = 0;
         HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
         health.hp = hpSS;
-        isSuperSpeedActive = false;
+        
 
     }
 

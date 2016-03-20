@@ -3,19 +3,17 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SuperPower : MonoBehaviour {
-	bool superSpeedEnable = false;
-	bool flyingEnable;
-	bool superJumpEnable;
-	public bool cookieRangEnable;
-	public bool rayEnable;
-	public bool superPowerEnable;
-	public ChooseSPScript choose;
-	public GameObject fantasy;
+	bool _superSpeedEnable;
+	bool _flyingEnable;
+	bool _superJumpEnable;
+	bool _cookieRangEnable;
+	bool _bananaGunEnable;
+	bool _superPunchEnable;
 
     private float _flyingRate = 0.5f;
     private float _flyingCooldown = 0;
 
-    public bool isSuperSpeedActive = false;
+    public bool isSuperPunchActive = false;
 	public int FlyingForse = 4;
 	public Rigidbody2D myRigitbody;
 	private bool isGrounded;
@@ -26,11 +24,12 @@ public class SuperPower : MonoBehaviour {
 	public Image superSpeedImage;
 	public Image flyingImage;
 	public Image superJumpImage;
-    //	public Image superSpeedImage;
-    //	public Image superSpeedImage;
-    //	public Image superSpeedImage;
+    public Image cookieRangImage;
+    public Image bananaGunImage;
+    public Image superPunchImage;
+    public Image jumpImage;
 
-    public int hpSS;
+    private int hpSS;
     private Player player;
 
 
@@ -40,67 +39,70 @@ public class SuperPower : MonoBehaviour {
 		effects.SetActive (false);
         player = gameObject.GetComponent<Player>();
     }
+
 	public void FixedUpdate () {
-		superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
-		flyingEnable = ChooseSPScript.choooseFlyingEnable;
-		superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
+        _superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
+		_flyingEnable = ChooseSPScript.choooseFlyingEnable;
+		_superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
+        _cookieRangEnable = ChooseSPScript.chooseCookieRangEnable;
+        _bananaGunEnable = ChooseSPScript.chooseBananaGunEnable;
+        _superPunchEnable = ChooseSPScript.chooseSuperPunchEnable;
 
         if (_flyingCooldown > 0)
         {
             _flyingCooldown -= Time.deltaTime;
         }
 
-        //fantasy = GameObject.Find ("Fantasy");
-        //	choose = GameObject.Find ("Fantasy").GetComponent<ChooseSPScript>();
+        if (_superSpeedEnable == false && _flyingEnable == false && _superJumpEnable == false && _cookieRangEnable == false && _bananaGunEnable == false && _superPunchEnable == false)
+        {
+            jumpImage.enabled = true;
+        }
+        else {
+            jumpImage.enabled = false;
+        }
 
-        /*		cookieRangEnable = choose.cookieRangEnable;
-                rayEnable = choose.rayEnable;
-                superPowerEnable = choose.superPowerEnable;
-        */
-
-
-        if (superSpeedEnable == true) {
+        if (_superSpeedEnable == true) {
 			superSpeedImage.enabled = true;
 		} else {
 			superSpeedImage.enabled = false;
 		}
 
-		if (flyingEnable == true) {
+		if (_flyingEnable == true) {
 			flyingImage.enabled = true;
 		} else {
 			flyingImage.enabled = false;
 		}
 
-		if (superJumpEnable == true) {
+		if (_superJumpEnable == true) {
 			superJumpImage.enabled = true;
 		} else {
 			superJumpImage.enabled = false;
 		}
 		
-	/*	if (superSpeedEnable) {
-			superSpeedImage.enabled = true;
+		if (_cookieRangEnable) {
+            cookieRangImage.enabled = true;
 		} else {
-			superSpeedImage.enabled = false;
+            cookieRangImage.enabled = false;
 		}
 
-		if (superSpeedEnable) {
-			superSpeedImage.enabled = true;
+		if (_bananaGunEnable) {
+            bananaGunImage.enabled = true;
 		} else {
-			superSpeedImage.enabled = false;
+            bananaGunImage.enabled = false;
 		}
 		
-		if (superSpeedEnable) {
-			superSpeedImage.enabled = true;
+		if (_superPunchEnable) {
+            superPunchImage.enabled = true;
 		} else {
-			superSpeedImage.enabled = false;
-		}*/
+            superPunchImage.enabled = false;
+		}
 
 	}
 
 
     public void SuperPunch()
     {
-        isSuperSpeedActive = true;
+        isSuperPunchActive = true;
         player.movementSpeed = 100;
 
         Invoke("StopPunch", 1f);
@@ -108,7 +110,7 @@ public class SuperPower : MonoBehaviour {
 
     void StopPunch()
     {
-        isSuperSpeedActive = false;
+        isSuperPunchActive = false;
         player.movementSpeed = 0;
     }
          
@@ -142,7 +144,7 @@ public class SuperPower : MonoBehaviour {
        
 		if (isTrueFly && _flyingCooldown <= 0) {
 
-            flyingEnable = true;
+            _flyingEnable = true;
 			Invoke("Soda",0.5f);
 
             _flyingCooldown = _flyingRate;

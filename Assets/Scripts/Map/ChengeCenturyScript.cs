@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChengeCenturyScript : MonoBehaviour {
+    public static int lvl = 0;
+
+
 //	public Camera mainCam;
 //	public Camera century19Cam;
 //	public Image century19Image;
@@ -48,7 +52,7 @@ public class ChengeCenturyScript : MonoBehaviour {
 //	}
 
 	public void Century19Lvl1 () {
-		Application.LoadLevel (2);
+        SceneManager.LoadScene("chooseSP");
 	}
 
 	//public void BackToChooseCentury () {

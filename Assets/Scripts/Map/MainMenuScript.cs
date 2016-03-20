@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
 public void LoadMap () {
-		Application.LoadLevel (1);
+		SceneManager.LoadScene("chooseLVL");
 	}
 }

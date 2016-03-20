@@ -1,27 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameButtons : MonoBehaviour {
 
-
 public void Reload () {
-		Application.LoadLevel (Application.loadedLevel);
+        SceneManager.LoadScene(Application.loadedLevel);
+        Time.timeScale = 1;
 	}
 
 public void BackToChoose () {
-		Application.LoadLevel (2);
+        SceneManager.LoadScene("chooseSP");
 		Time.timeScale = 1;
 		ChooseSPScript.chooseSuperSpeedEnable = false;
 		ChooseSPScript.choooseFlyingEnable = false;
 		ChooseSPScript.chooseSuperJumpEnable = false;
-	}
+        ChooseSPScript.chooseCookieRangEnable = false;
+        ChooseSPScript.chooseBananaGunEnable = false;
+        ChooseSPScript.chooseSuperPunchEnable = false;
+    }
 
 	public void BackToMainMenu () {
-		Application.LoadLevel (0);
+        SceneManager.LoadScene("MainMenu");
 	}
 
 
 	public void BackToChooseLvl () {
-		Application.LoadLevel (1);
+        SceneManager.LoadScene("chooseLVL");
 	}
 }

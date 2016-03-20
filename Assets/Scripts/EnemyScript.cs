@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
 	private MoveScript moveScript;
 	private WeaponScript[] weapons;
 
-	public bool isSuperSpeedActive; //= GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().superSpeedEnable;
+	public bool isSuperPunchActive; //= GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().superSpeedEnable;
 	void Awake()
 	{
 		// Retrieve the weapon only once
@@ -35,8 +35,8 @@ public class EnemyScript : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		isSuperSpeedActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperSpeedActive;
-		if (isSuperSpeedActive) {
+        isSuperPunchActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperPunchActive;
+		if (isSuperPunchActive) {
 			GetComponent<Collider2D>().isTrigger = false;
 		} else {
 			GetComponent<Collider2D>().isTrigger = true;

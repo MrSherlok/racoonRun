@@ -1,64 +1,145 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChooseSPScript : MonoBehaviour {
 
 	public static bool chooseSuperSpeedEnable = false;
 	public static bool choooseFlyingEnable = false;
 	public static bool chooseSuperJumpEnable = false;
-	public bool chooseCookieRangEnable = false;
-	public  bool chooseRayEnable = false;
-	public bool chooseSuperPowerEnable = false;
+	public static bool chooseCookieRangEnable = false;
+	public static bool chooseBananaGunEnable = false;
+	public static bool chooseSuperPunchEnable = false;
 
 	public Image chooseSuperSpeedImage;
 	public Image chooseFlyingImage;
 	public Image chooseSuperJumpImage;
+    public Image chooseCookieRangImage;
+    public Image chooseBananaGunImage;
+    public Image chooseSuperPunchImage;
 
-	public Sprite[] chooseSuperSpeedSprites = new Sprite[2];
-	public Sprite[] chooseFlyingSprites = new Sprite[2];
-	public Sprite[] chooseSuperJumpSprites = new Sprite[2];
+    private int _lvl = 0; 
 
-	public void SuperSpeedEnable () {
+    //   public Sprite[] chooseSuperSpeedSprites = new Sprite[2];
+    //public Sprite[] chooseFlyingSprites = new Sprite[2];
+    //public Sprite[] chooseSuperJumpSprites = new Sprite[2];
+    //   public Sprite[] chooseCookieRangSprites = new Sprite[2];
+    //   public Sprite[] chooseBananaGunSprites = new Sprite[2];
+    //   public Sprite[] chooseSuperPowerSprites = new Sprite[2];
+
+        public void Start()
+    {
+        _lvl = ChengeCenturyScript.lvl;
+    }
+
+    public void FixedUpdate()
+    {
+        if (chooseSuperSpeedEnable)
+        {
+            chooseSuperSpeedImage.color = Color.red;
+        }
+        else {
+            chooseSuperSpeedImage.color = Color.white;
+        }
+
+        if (choooseFlyingEnable)
+        {
+            chooseFlyingImage.color = Color.red;
+        }
+        else {
+            chooseFlyingImage.color = Color.white;
+        }
+
+        if (chooseSuperJumpEnable)
+        {
+            chooseSuperJumpImage.color = Color.red;
+        }
+        else {
+            chooseSuperJumpImage.color = Color.white;
+        }
+
+        if (chooseCookieRangEnable)
+        {
+            chooseCookieRangImage.color = Color.red;
+        }
+        else {
+            chooseCookieRangImage.color = Color.white;
+        }
+
+        if (chooseBananaGunEnable)
+        {
+            chooseBananaGunImage.color = Color.red;
+        }
+        else {
+            chooseBananaGunImage.color = Color.white;
+        }
+
+        if (chooseSuperPunchEnable)
+        {
+            chooseSuperPunchImage.color = Color.red;
+        }
+        else {
+            chooseSuperPunchImage.color = Color.white;
+        }
+    }
+
+    public void SuperSpeedEnable () {
 		chooseSuperSpeedEnable = !chooseSuperSpeedEnable;
-		if (chooseSuperSpeedEnable) {
-			chooseSuperSpeedImage.sprite = chooseSuperSpeedSprites[1];
-		} else {
-			chooseSuperSpeedImage.sprite = chooseSuperSpeedSprites[0];
-		}
-	}
+        if (chooseSuperSpeedEnable) {
+            choooseFlyingEnable = false;
+            chooseSuperJumpEnable = false;
+        }
+    }
 
 	public void FlyingEnable () {
 		choooseFlyingEnable = !choooseFlyingEnable;
-		if (choooseFlyingEnable) {
-			chooseFlyingImage.sprite = chooseFlyingSprites[1];
-		} else {
-			chooseFlyingImage.sprite = chooseFlyingSprites[0];
-		}
-	}
+        if (choooseFlyingEnable)
+        {
+            chooseSuperSpeedEnable = false;
+            chooseSuperJumpEnable = false;
+        }
+    }
 
 	public void SuperJumpEnable () {
 		chooseSuperJumpEnable = !chooseSuperJumpEnable;
-		if (chooseSuperJumpEnable) {
-			chooseSuperJumpImage.sprite = chooseSuperJumpSprites[1];
-		} else {
-			chooseSuperJumpImage.sprite = chooseSuperJumpSprites[0];
-		}
-	}
+        if (chooseSuperJumpEnable)
+        {
+            choooseFlyingEnable = false;
+            chooseSuperSpeedEnable = false;
+        }
+    }
 
-/*	public void CookieRangEnable () {
-		cookieRangEnable = !cookieRangEnable;
-	}
+	public void CookieRangEnable () {
+        chooseCookieRangEnable = !chooseCookieRangEnable;
+        if (chooseCookieRangEnable)
+        {
+            chooseBananaGunEnable = false;
+            chooseSuperPunchEnable = false;
+        }
+    }
 	
-	public void RayEnable () {
-		rayEnable = !rayEnable;
-	}
+	public void BananaGunEnable() {
+        chooseBananaGunEnable = !chooseBananaGunEnable;
+        if (chooseBananaGunEnable)
+        {
+            chooseCookieRangEnable = false;
+            chooseSuperPunchEnable = false;
+        }
+    }
 	
 	public void SuperPowerEnable () {
-		superPowerEnable = !superPowerEnable;
-	}*/
+        chooseSuperPunchEnable = !chooseSuperPunchEnable;
+        if (chooseSuperPunchEnable)
+        {
+            chooseBananaGunEnable = false;
+            chooseCookieRangEnable = false;
+        }
+    }
 
 	public void NextLvL () {
-		Application.LoadLevel (3);
+		SceneManager.LoadScene(3);
 	}
+
+  
 }

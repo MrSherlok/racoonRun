@@ -40,7 +40,7 @@ public class EnemyScript : MonoBehaviour
 			GetComponent<Collider2D>().isTrigger = false;
 		} else {
 			GetComponent<Collider2D>().isTrigger = true;
-		}
+		}  
 		// 2 - Check if the enemy has spawned.
 		if (hasSpawn == false)
 		{

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = IsGrounded();
-        //animator.SetBool("IsGrounded", isGrounded);
+		animator.SetBool("IsGrounded", true);
         HendleMovement();
 
         //	ResetValues ();  //  обнулять переменные

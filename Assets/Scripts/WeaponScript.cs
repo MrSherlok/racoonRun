@@ -8,6 +8,7 @@ public class WeaponScript : MonoBehaviour
 	public Transform shotPrefab;
 	public float shootingRate = 0.25f;
 	public float shootCooldown;
+	public Animator animator;
 	
     void Start ()
     {
@@ -37,7 +38,9 @@ public class WeaponScript : MonoBehaviour
 	public void Attack(bool isEnemy)
 	{
 		if (CanAttack)
-		{
+		{	
+			if(gameObject.tag == "Player")
+			animator.SetTrigger ("Fire");
 			shootCooldown = shootingRate;
 			// Create a new shot
 			var shotTransform = Instantiate(shotPrefab) as Transform;

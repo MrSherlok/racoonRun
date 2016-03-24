@@ -16,7 +16,7 @@ public class ShotScript : MonoBehaviour {
 		removeTime += Time.deltaTime;
 		if (removeTime >= lifeTime) {
 
-                if (isEnemyShot == false)
+                if (isEnemyShot == false && gameObject.tag == "cookieRang")
                 {
                     Destroy(transform.parent.gameObject);
                 }

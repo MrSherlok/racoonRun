@@ -2,10 +2,29 @@
 
 public class WeaponScript : MonoBehaviour
 {
+    public GameObject weaponBananaGun;
+    public Transform cookieRangPrefab;
+    public Transform bananaGunPrefab;
 	public Transform shotPrefab;
 	public float shootingRate = 0.25f;
 	public float shootCooldown;
 	
+    void Start ()
+    {
+        if (gameObject.tag == "Player")
+        {
+            if (ChooseSPScript.chooseBananaGunEnable == true)
+            {
+                shotPrefab = bananaGunPrefab;
+                weaponBananaGun.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                weaponBananaGun.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            if (ChooseSPScript.chooseCookieRangEnable == true) shotPrefab = cookieRangPrefab;
+        }
+    }
 
 	void FixedUpdate()
 	{

@@ -32,7 +32,7 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 
         //    map.position += new Vector3(0, eventData.delta.y, 0);
         //}
-
+        
         map.position += new Vector3(eventData.delta.x, eventData.delta.y, 0);
 
     }

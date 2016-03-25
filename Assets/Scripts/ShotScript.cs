@@ -12,16 +12,17 @@ public class ShotScript : MonoBehaviour {
 	//}
 	
 	// Update is called once per frame
-	void FixedUpdate() {
+	void FixedUpdate()
+    {
 		removeTime += Time.deltaTime;
-		if (removeTime >= lifeTime) {
-
-                if (isEnemyShot == false && gameObject.tag == "cookieRang")
-                {
-                    Destroy(transform.parent.gameObject);
-                }
-                else
-                    Destroy(gameObject);
+        if (removeTime >= lifeTime)
+        {
+            if (isEnemyShot == false && gameObject.tag == "cookieRang")
+            {
+                Destroy(transform.parent.gameObject);
             }
-		}
+            else
+                Destroy(gameObject);
+        }
+    }
 }

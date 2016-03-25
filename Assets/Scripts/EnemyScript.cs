@@ -35,12 +35,12 @@ public class EnemyScript : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-        isSuperPunchActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperPunchActive;
-		if (isSuperPunchActive) {
-			GetComponent<Collider2D>().isTrigger = false;
-		} else {
-			GetComponent<Collider2D>().isTrigger = true;
-		}  
+  //      isSuperPunchActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperPunchActive;
+		//if (isSuperPunchActive) {
+		//	GetComponent<Collider2D>().isTrigger = false;
+		//} else {
+		//	GetComponent<Collider2D>().isTrigger = true;
+		//}  
 		// 2 - Check if the enemy has spawned.
 		if (hasSpawn == false)
 		{

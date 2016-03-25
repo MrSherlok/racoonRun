@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: e9236f5e4b52c914e8a349a56dc6aefd
+timeCreated: 1458860915
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: medved__1
+    21300002: medved__3
+    21300004: medved__5
+    21300006: medved__7
+    21300008: medved__8
+    21300010: medved__11
+    21300012: medved__12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: medved__1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 294
+        width: 388
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 133, y: -196}
+        - {x: 140, y: -164}
+        - {x: 161, y: -138}
+        - {x: 161, y: -99}
+        - {x: 134, y: -73}
+        - {x: 131, y: -50}
+        - {x: 121, y: 14}
+        - {x: 108, y: 49}
+        - {x: 104, y: 97}
+        - {x: 99, y: 144}
+        - {x: 36, y: 259}
+        - {x: 9, y: 287}
+        - {x: -26, y: 310}
+        - {x: -101, y: 310}
+        - {x: -101, y: 309}
+        - {x: -108, y: 251}
+        - {x: -161, y: 232}
+        - {x: -164, y: 223}
+        - {x: -164, y: 196}
+        - {x: -142, y: 173}
+        - {x: -97, y: 178}
+        - {x: -87, y: 168}
+        - {x: -106, y: 104}
+        - {x: -108, y: 62}
+        - {x: -118, y: 12}
+        - {x: -130, y: -26}
+        - {x: -133, y: -67}
+        - {x: -113, y: -214}
+        - {x: -117, y: -240}
+        - {x: -113, y: -280}
+        - {x: -98, y: -291}
+        - {x: -57, y: -308}
+        - {x: -35, y: -308}
+        - {x: -20, y: -287}
+        - {x: -23, y: -263}
+        - {x: -25, y: -204}
+        - {x: -12, y: -161}
+        - {x: 19, y: -214}
+        - {x: 21, y: -251}
+        - {x: -12, y: -291}
+        - {x: -6, y: -310}
+        - {x: 50, y: -310}
+        - {x: 59, y: -308}
+        - {x: 101, y: -290}
+        - {x: 114, y: -272}
+      - - {x: 186, y: -11}
+        - {x: 186, y: -17}
+        - {x: 190, y: -21}
+        - {x: 194, y: -21}
+        - {x: 194, y: -7}
+        - {x: 190, y: -7}
+      - - {x: 156, y: 29}
+        - {x: 156, y: 26}
+        - {x: 159, y: 22}
+        - {x: 167, y: 21}
+        - {x: 178, y: 21}
+        - {x: 181, y: 24}
+        - {x: 180, y: 27}
+        - {x: 166, y: 29}
+      - - {x: -119, y: 75}
+        - {x: -117, y: 73}
+        - {x: -114, y: 74}
+        - {x: -112, y: 80}
+        - {x: -115, y: 82}
+        - {x: -119, y: 78}
+      - - {x: 170, y: 89}
+        - {x: 156, y: 83}
+        - {x: 156, y: 78}
+        - {x: 181, y: 78}
+        - {x: 194, y: 80}
+        - {x: 194, y: 89}
+    - name: medved__3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 842
+        width: 59
+        height: 29
+      alignment: 9
+      pivot: {x: 0.82418823, y: 0.55995965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: medved__5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 671
+        width: 82
+        height: 130
+      alignment: 9
+      pivot: {x: 0.6272314, y: 0.83439004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.432976, y: 21.529297}
+        - {x: -24.432976, y: 16.529297}
+        - {x: -51.432976, y: -45.470703}
+        - {x: -51.432976, y: -94.4707}
+        - {x: -43.432976, y: -108.4707}
+        - {x: 10.567024, y: -108.4707}
+        - {x: 30.567024, y: -51.470703}
+        - {x: 30.567024, y: 21.529297}
+      - - {x: 15.567024, y: -87.4707}
+        - {x: 13.567024, y: -88.4707}
+        - {x: 13.567024, y: -94.4707}
+        - {x: 16.567024, y: -95.4707}
+        - {x: 20.567024, y: -95.4707}
+        - {x: 21.567024, y: -92.4707}
+        - {x: 21.567024, y: -90.4707}
+        - {x: 20.567024, y: -87.4707}
+    - name: medved__7
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 664
+        width: 97
+        height: 138
+      alignment: 9
+      pivot: {x: 0.6075559, y: 0.77720445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.932922, y: 30.745789}
+        - {x: -58.932922, y: -30.254211}
+        - {x: -58.932922, y: -91.25421}
+        - {x: -50.932922, y: -106.25421}
+        - {x: -45.932922, y: -107.25421}
+        - {x: 1.0670776, y: -107.25421}
+        - {x: 32.067078, y: -60.25421}
+        - {x: 32.067078, y: 10.745789}
+        - {x: 19.067078, y: 30.745789}
+      - - {x: 35.067078, y: -69.25421}
+        - {x: 37.067078, y: -71.25421}
+        - {x: 38.067078, y: -71.25421}
+        - {x: 38.067078, y: -64.25421}
+        - {x: 35.067078, y: -65.25421}
+    - name: medved__8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 518
+        width: 82
+        height: 119
+      alignment: 9
+      pivot: {x: 0.73325765, y: 0.8945241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.872871, y: 12.551636}
+        - {x: -19.127129, y: 12.551636}
+        - {x: -34.12713, y: 7.5516357}
+        - {x: -60.12713, y: -66.448364}
+        - {x: -60.12713, y: -92.448364}
+        - {x: -54.12713, y: -106.448364}
+        - {x: -16.127129, y: -106.448364}
+        - {x: 21.872871, y: -32.448364}
+        - {x: 21.872871, y: 7.5516357}
+    - name: medved__11
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 489
+        width: 133
+        height: 138
+      alignment: 9
+      pivot: {x: 0.87914306, y: 0.85280573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.926025, y: 20.312805}
+        - {x: -116.926025, y: -65.687195}
+        - {x: -116.926025, y: -101.687195}
+        - {x: -110.926025, y: -98.687195}
+        - {x: -111.926025, y: -99.687195}
+        - {x: -112.926025, y: -112.687195}
+        - {x: -110.926025, y: -117.687195}
+        - {x: -79.926025, y: -117.687195}
+        - {x: -35.926025, y: -98.687195}
+        - {x: 16.073975, y: -37.687195}
+        - {x: 16.073975, y: 5.312805}
+        - {x: 10.073975, y: 20.312805}
+    - name: medved__12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 411
+        width: 60
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5579613, y: 0.66229045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.477676, y: 25.328217}
+        - {x: -33.477676, y: 5.3282166}
+        - {x: -33.477676, y: -49.671783}
+        - {x: 5.5223236, y: -49.671783}
+        - {x: 14.522324, y: -47.671783}
+        - {x: 26.522324, y: -31.671783}
+        - {x: 26.522324, y: 13.328217}
+        - {x: 20.522324, y: 25.328217}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

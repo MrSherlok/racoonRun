@@ -29,14 +29,18 @@ public class SuperPower : MonoBehaviour {
     public Image superPunchImage;
     public Image jumpImage;
 
+
+    public GameObject superPunchIm;
+    private Animator animator;
+
     private int hpSS;
     private Player player;
 
 
 
     public void Awake(){
-
-		effects.SetActive (false);
+        animator = GameObject.Find("Player1").GetComponent<Animator>();
+        effects.SetActive (false);
         player = gameObject.GetComponent<Player>();
     }
 
@@ -51,14 +55,6 @@ public class SuperPower : MonoBehaviour {
         if (_flyingCooldown > 0)
         {
             _flyingCooldown -= Time.deltaTime;
-        }
-
-        if (_superSpeedEnable == false && _flyingEnable == false && _superJumpEnable == false && _cookieRangEnable == false && _bananaGunEnable == false && _superPunchEnable == false)
-        {
-            jumpImage.enabled = true;
-        }
-        else {
-            jumpImage.enabled = false;
         }
 
         if (_superSpeedEnable == true) {
@@ -93,32 +89,40 @@ public class SuperPower : MonoBehaviour {
 		
 		if (_superPunchEnable) {
             superPunchImage.enabled = true;
+            superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
+            
 		} else {
             superPunchImage.enabled = false;
-		}
+            superPunchIm.GetComponent<SpriteRenderer>().enabled = false;
+            
+        }
 
 	}
 
 
     public void SuperPunch()
     {
+        superPunchIm.GetComponent<Collider2D>().enabled = true;
         isSuperPunchActive = true;
-        player.movementSpeed = 100;
-
-        Invoke("StopPunch", 1f);
+        animator.SetBool("superPunch", true);
+        animator.SetBool("Run", false);
+        Invoke("StopPunch", 0.25f);
     }
 
     void StopPunch()
     {
+        superPunchIm.GetComponent<Collider2D>().enabled = false;
         isSuperPunchActive = false;
-        player.movementSpeed = 0;
+        animator.SetBool("superPunch", false);
+        animator.SetBool("Run", true);
+
     }
-         
 
 
 
 
-	public void SuperSpeed (bool isTrueSpeed) {
+
+    public void SuperSpeed (bool isTrueSpeed) {
 		
         player.movementSpeed = 100;
         HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
@@ -170,8 +174,8 @@ public class SuperPower : MonoBehaviour {
 	}
 
 	public void SuperJump () {
-		isGrounded = GameObject.FindWithTag ("Player").GetComponent<Player> ().isGrounded;
-		if (isGrounded) {
+		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
+        if (isGrounded) {
 			myRigitbody.velocity += jumpForce * 1.7f * Vector2.up;
 		}  
 	}

@@ -12,18 +12,19 @@ public class Player : MonoBehaviour
     private Transform[] groundPoints;
     [SerializeField]
     private float groundRadius;
-    [SerializeField]
-    private LayerMask whatIsGround;
+    public LayerMask whatIsGround;
     public bool isGrounded = true;
     [SerializeField]
     private bool airControl;
     public float jumpForce;
-    public Animator animator;
+
+    private Animator animator;
     private float isgroundtimer;
 
 
     void Start()
     {
+        animator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
         Time.timeScale = 1f;
     }
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = IsGrounded();
-		animator.SetBool("IsGrounded", true);
+		//animator.SetBool("IsGrounded", true);
         HendleMovement();
 
         //	ResetValues ();  //  обнулять переменные
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
+            
             //		прыжок велосити
             myRigitbody.velocity += jumpForce * Vector2.up;
             //		прыжок адфорс

@@ -10,16 +10,24 @@ public class Player : MonoBehaviour
     public float movementSpeed;
     [SerializeField]
     private Transform[] groundPoints;
-    [SerializeField]
-    private float groundRadius;
-    public LayerMask whatIsGround;
-    public bool isGrounded = true;
-    [SerializeField]
+//    [SerializeField]
+   // private float groundRadius;
+  //  public LayerMask whatIsGround;
+  //  public bool isGrounded = true;
+//    [SerializeField]
     private bool airControl;
     public float jumpForce;
 
     private Animator animator;
     private float isgroundtimer;
+
+	//start
+	public float groundCheckRadius;
+	public Transform groundCheck;
+	public LayerMask whatIsGrounded;
+	private bool IsGrounded;
+
+	//end
 
 
     void Start()
@@ -31,8 +39,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        isGrounded = IsGrounded();
-		//animator.SetBool("IsGrounded", true);
+
+		IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
+		animator.SetBool("IsGrounded", IsGrounded);
         HendleMovement();
 
         //	ResetValues ();  //  обнулять переменные
@@ -58,7 +67,7 @@ public class Player : MonoBehaviour
 
     public void JumpInput()
     {
-        if (isGrounded)
+		if (IsGrounded == true)
         {
             
             //		прыжок велосити
@@ -73,7 +82,7 @@ public class Player : MonoBehaviour
 
         }  */
 
-    public bool IsGrounded()
+/*    public bool IsGrounded()
     {
         if (myRigitbody.velocity.y <= 0)
         {
@@ -95,6 +104,6 @@ public class Player : MonoBehaviour
 
         return false;
 
-    }
+    }*/
 
 }

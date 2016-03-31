@@ -25,6 +25,8 @@ public class HealthScript : MonoBehaviour
 
     }
 
+
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         ShotScript shot = collider.gameObject.GetComponent<ShotScript>();
@@ -33,6 +35,7 @@ public class HealthScript : MonoBehaviour
             if (shot.isEnemyShot != isEnemy)
             {
                 hp -= shot.damage;
+				if(gameObject.tag == "Player") GameObject.Find("hpTxt").GetComponent<Text>().text = "hp= "+hp;
                 if (shot.tag == "cookieRang")
                 {
                     Destroy(shot.transform.parent.gameObject);

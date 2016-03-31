@@ -174,7 +174,7 @@ public class SuperPower : MonoBehaviour {
 	}
 
 	public void SuperJump () {
-		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
+//		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
         if (isGrounded) {
 			myRigitbody.velocity += jumpForce * 1.7f * Vector2.up;
 		}  

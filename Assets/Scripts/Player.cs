@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 	public float groundCheckRadius;
 	public Transform groundCheck;
 	public LayerMask whatIsGrounded;
-	private bool IsGrounded;
+	public bool IsGrounded;
 
 	//end
 
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 
 		IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
 		animator.SetBool("IsGrounded", IsGrounded);
+		//animator.CrossFade ("Run",2);
         HendleMovement();
 
         //	ResetValues ();  //  обнулять переменные

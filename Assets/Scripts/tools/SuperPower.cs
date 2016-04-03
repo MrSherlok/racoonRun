@@ -10,14 +10,16 @@ public class SuperPower : MonoBehaviour {
 	bool _bananaGunEnable;
 	bool _superPunchEnable;
 
+	public bool IsGrounded = false;
+
     private float _flyingRate = 0.5f;
     private float _flyingCooldown = 0;
 
     public bool isSuperPunchActive = false;
 	public int FlyingForse = 4;
 	public Rigidbody2D myRigitbody;
-	private bool isGrounded;
-	public float jumpForce = 10f;
+	//private bool isGrounded;
+	public float jumpForce = 5f;
 
 	public GameObject effects;
 
@@ -45,6 +47,7 @@ public class SuperPower : MonoBehaviour {
     }
 
 	public void FixedUpdate () {
+		IsGrounded = GetComponent<Player>().IsGrounded;
         _superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
 		_flyingEnable = ChooseSPScript.choooseFlyingEnable;
 		_superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
@@ -175,8 +178,9 @@ public class SuperPower : MonoBehaviour {
 
 	public void SuperJump () {
 //		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
-        if (isGrounded) {
+
+        if (IsGrounded) 	 
 			myRigitbody.velocity += jumpForce * 1.7f * Vector2.up;
-		}  
+		  
 	}
 }

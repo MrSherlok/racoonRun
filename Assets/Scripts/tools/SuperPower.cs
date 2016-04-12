@@ -3,33 +3,36 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SuperPower : MonoBehaviour {
-	bool _superSpeedEnable;
+	bool _superSpeedEnable;             //блок проверки выбраных спелов
 	bool _flyingEnable;
 	bool _superJumpEnable;
 	bool _cookieRangEnable;
 	bool _bananaGunEnable;
 	bool _superPunchEnable;
 
-	public bool IsGrounded = false;
+    public Image superSpeedImage;           //блок картинок
+    public Image flyingImage;
+    public Image superJumpImage;
+    public Image cookieRangImage;
+    public Image bananaGunImage;
+    public Image superPunchImage;
+    public Image jumpImage;
 
-    private float _flyingRate = 0.5f;
+    public bool IsGrounded = false;         
+
+    private float _flyingRate = 0.5f;           
     private float _flyingCooldown = 0;
 
-    public bool isSuperPunchActive = false;
-	public int FlyingForse = 4;
+    public bool isSuperPunchActive = false;         //переменные провирки активен ли спел в данный момент
+    public bool superJumpEnabled = false;
+
+    public int FlyingForse = 4;
 	public Rigidbody2D myRigitbody;
 	//private bool isGrounded;
 	public float jumpForce = 5f;
 
 	public GameObject effects;
 
-	public Image superSpeedImage;
-	public Image flyingImage;
-	public Image superJumpImage;
-    public Image cookieRangImage;
-    public Image bananaGunImage;
-    public Image superPunchImage;
-    public Image jumpImage;
 
 
     public GameObject superPunchIm;
@@ -176,11 +179,21 @@ public class SuperPower : MonoBehaviour {
 		effects.SetActive (false);
 	}
 
-	public void SuperJump () {
-//		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
+    public void SuperJump()
+    {
+        //		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
 
-        if (IsGrounded) 	 
-			myRigitbody.velocity += jumpForce * 1.7f * Vector2.up;
-		  
-	}
+        if (IsGrounded)
+        {
+            myRigitbody.velocity += jumpForce * 1.7f * Vector2.up;
+            superJumpEnabled = true;
+            Invoke("StopSuperJump", 0.5f);
+        }
+    }
+
+    void StopSuperJump()
+    {
+        superJumpEnabled = false;
+
+    }
 }

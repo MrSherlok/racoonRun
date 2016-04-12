@@ -29,35 +29,40 @@ public class Player : MonoBehaviour
 
 	//IsGrounded  end
 	//IsClouded start
-	public float icloudCheckRadius;//радиус соприкосновения глова-хмара
+	public float icloudCheckRadius;//адиус соприкосновения глова-хмара
 	public Transform icloudCheck; // сама точка на голове (headpoint)
 	public LayerMask whatIsCloud; // леер для определения соприкосновений с тучками
 	public bool icloudHeadTouch; // возвращает true когда голова в контакте с тучей
 	public bool icloudfootTouch;// возвращает true когда персонаж стоит на туче
 
-	//IsClouded end
+    //IsClouded end
+
+    bool isSuperJumpActive;       //переменная на проверку активен ли супер прыжок
 
 
     void Start()
     {
         animator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
-        Time.timeScale = 0.3f;
+        Time.timeScale = 1f;        
     }
 
     void FixedUpdate()
     {
+        isSuperJumpActive = GetComponent<SuperPower>().superJumpEnabled;
 
-		IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
+        IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
 		icloudHeadTouch = Physics2D.OverlapCircle(icloudCheck.position, icloudCheckRadius, whatIsCloud);
 		icloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, icloudCheckRadius, whatIsCloud);
 		animator.SetBool("IsGrounded", IsGrounded);
 		//animator.CrossFade ("Run",2);
         HendleMovement();
-		if (icloudHeadTouch) { //Если голова касается тучки
+        
+
+        if (icloudHeadTouch && isSuperJumpActive) { //Если голова касается тучки
 			animator.SetTrigger ("Cloudjump");
 		}
-		if (icloudfootTouch) //Если голова касается тучки
+		if (icloudfootTouch && isSuperJumpActive) //Если голова касается тучки
 		{
 			animator.SetTrigger ("Cloudjump2");
 		}

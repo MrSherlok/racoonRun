@@ -12,17 +12,17 @@ public class ScrollingScript : MonoBehaviour
     private Vector2 realspeed;
 	public Vector2 direction = new Vector2(-1, 0);
 	/// Movement should be applied to camera
-	public bool isLinkedToCamera = false;
+//	public bool isLinkedToCamera = false;
 	/// 1 - Background is infinite
-	public bool isLooping = false;
+//	public bool isLooping = false;
 	/// 2 - List of children with a renderer.
 	private List<Transform> backgroundPart;
 	// 3 - Get all the children
 
-	void Start()
+/*	void Start()
 	{
         realspeed = speed;
-        startingLane = GameObject.Find("StartNumbers");
+      //  startingLane = GameObject.Find("StartNumbers");
 		// For infinite background only
 		if (isLooping)
 		{
@@ -51,14 +51,16 @@ public class ScrollingScript : MonoBehaviour
 
 		}
 	}
+*/
+
 	//void StarterWait(){
  //       isStartlane -= Time.deltaTime;
 	//	if (isStartlane > 0) {
 	//		speed = new Vector2 (3f,3f);
 	//	} else {
-	//		speed = realspeed;
+	//		spee
 	//		Destroy(startingLane);
-	//	}
+	//	}d = realspeed;
 	//}
 	
 	void FixedUpdate()
@@ -74,12 +76,13 @@ public class ScrollingScript : MonoBehaviour
 		movement *= Time.deltaTime;
 		transform.Translate(movement);
 		// Move the camera
-		if (isLinkedToCamera)
+	/*	if (isLinkedToCamera)
 		{
 			Camera.main.transform.Translate(movement);
 		}
+		*/
 		// 4 - Loop
-		if (isLooping)
+	/*	if (isLooping)
 		{
 			// Get the first object.
 			// The list is ordered from left (x position) to right.
@@ -115,5 +118,6 @@ public class ScrollingScript : MonoBehaviour
 				}
 			}
 		}
+		*/
 	}
 }

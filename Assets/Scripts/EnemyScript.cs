@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
 		weapons = GetComponentsInChildren<WeaponScript>();
 		
 		// Retrieve scripts to disable when not spawn
-		moveScript = GetComponent<MoveScript>();
+		//moveScript = GetComponent<MoveScript>();
 	}
 	
 	// 1 - Disable everything
@@ -25,7 +25,7 @@ public class EnemyScript : MonoBehaviour
 		// -- collider
 		GetComponent<Collider2D>().enabled = false;
 		// -- Moving
-		moveScript.enabled = false;
+//		moveScript.enabled = false;
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
@@ -61,10 +61,10 @@ public class EnemyScript : MonoBehaviour
 			}
 			
 			// 4 - Out of the camera ? Destroy the game object.
-			if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
+		/*	if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
 			{
 				Destroy(gameObject);
-			}
+			}  */
 		}
 	}
 	
@@ -77,7 +77,7 @@ public class EnemyScript : MonoBehaviour
 		// -- Collider
 		GetComponent<Collider2D>().enabled = true;
 		// -- Moving
-		moveScript.enabled = true;
+//		moveScript.enabled = true;
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{

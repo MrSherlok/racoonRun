@@ -135,7 +135,7 @@ public class SuperPower : MonoBehaviour {
         hpSS = health.hp;
         health.hp = 1000;
             
-        Invoke("StopSpeed",1.5f);
+        Invoke("StopSpeed",0.5f);
 
 
 		}
@@ -153,17 +153,18 @@ public class SuperPower : MonoBehaviour {
 		
        
 		if (isTrueFly && _flyingCooldown <= 0) {
+			myRigitbody.gravityScale = 5f;
+			_flyingEnable = true;
+			Invoke ("Soda", 0.5f);
 
-            _flyingEnable = true;
-			Invoke("Soda",0.5f);
-
-            _flyingCooldown = _flyingRate;
-            //movement = new Vector3 (0, speed.y * 1, 0);
-            //rigidbody2D.velocity = movement;
-            //} else {
-            //	movement = new Vector3 (0, speed.y * -1, 0);
-            //		rigidbody2D.velocity = movement;
-        }
+			_flyingCooldown = _flyingRate;
+			//movement = new Vector3 (0, speed.y * 1, 0);
+			//rigidbody2D.velocity = movement;
+			//} else {
+			//	movement = new Vector3 (0, speed.y * -1, 0);
+			//		rigidbody2D.velocity = movement;
+		} else
+			myRigitbody.gravityScale = 10f;
 	}
 
 	void Soda()

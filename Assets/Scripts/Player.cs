@@ -4,8 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 
-    //BlockForNew
-
     private Rigidbody2D myRigitbody;
     public float movementSpeed;
     [SerializeField]
@@ -101,7 +99,7 @@ public class Player : MonoBehaviour
             //		прыжок велосити
             myRigitbody.velocity += jumpForce * Vector2.up;
             //		прыжок адфорс
-            //		myRigitbody.AddForce(new Vector2(movementSpeed,jumpForce));
+            //		myRigitbody.AddForce(Vector2.up * jumpForce);
         }
     }
 

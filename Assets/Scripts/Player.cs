@@ -42,7 +42,11 @@ public class Player : MonoBehaviour
     {
         animator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
+<<<<<<< HEAD
+        Time.timeScale = 1f;
+=======
         Time.timeScale = 1f;        
+>>>>>>> origin/feature/workstation
     }
 
     void FixedUpdate()

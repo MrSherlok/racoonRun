@@ -30,5 +30,6 @@ public class CameraFollow : MonoBehaviour {
 	void FixedUpdate() {
 		transform.position = new Vector3 (0, lift, distanse) + target.position;
 		transform.LookAt (target);
+		transform.rotation = Quaternion.identity;
 	}
 }

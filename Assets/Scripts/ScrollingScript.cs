@@ -5,18 +5,18 @@ using UnityEngine;
 public class ScrollingScript : MonoBehaviour
 {	
 	//просто таймер
-	private float isStartlane = 1.5f;
+//	private float isStartlane = 1.5f;
 	//ГО 3-2-1-старт картинок
-	private GameObject startingLane;
+//	private GameObject startingLane;
 	public Vector2 speed = new Vector2(10, 10);
-    private Vector2 realspeed;
+//    private Vector2 realspeed;
 	public Vector2 direction = new Vector2(-1, 0);
 	/// Movement should be applied to camera
 //	public bool isLinkedToCamera = false;
 	/// 1 - Background is infinite
 //	public bool isLooping = false;
 	/// 2 - List of children with a renderer.
-	private List<Transform> backgroundPart;
+//	private List<Transform> backgroundPart;
 	// 3 - Get all the children
 
 /*	void Start()

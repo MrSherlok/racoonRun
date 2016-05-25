@@ -42,11 +42,8 @@ public class Player : MonoBehaviour
     {
         animator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
         Time.timeScale = 1f;
-=======
-        Time.timeScale = 1f;        
->>>>>>> origin/feature/workstation
+
     }
 
     void FixedUpdate()
@@ -58,7 +55,7 @@ public class Player : MonoBehaviour
 		icloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, icloudCheckRadius, whatIsCloud);
 		animator.SetBool("IsGrounded", IsGrounded);
 		//animator.CrossFade ("Run",2);
-        HendleMovement();
+//        HendleMovement();
         
 
         if (icloudHeadTouch && isSuperJumpActive) { //Если голова касается тучки
@@ -74,7 +71,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void HendleMovement()
+/*    private void HendleMovement()
     {
         //		Движение через адфорс
         myRigitbody.AddForce(new Vector2(movementSpeed,0));
@@ -86,9 +83,9 @@ public class Player : MonoBehaviour
         /*		if (isGrounded || airControl) {
                     myRigitbody.velocity = new Vector2(movementSpeed, myRigitbody.velocity.y); 
                     }
-        */
+        
     }
-
+*/
 
 
     public void JumpInput()

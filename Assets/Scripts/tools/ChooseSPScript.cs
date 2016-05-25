@@ -138,7 +138,7 @@ public class ChooseSPScript : MonoBehaviour {
     }
 
 	public void NextLvL () {
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene("1Mike");
 	}
 
   

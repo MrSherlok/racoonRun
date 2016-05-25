@@ -14,7 +14,7 @@ public class CollisionTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		playerCollider = GameObject.Find ("Player").GetComponent<BoxCollider2D> ();
+		playerCollider = GameObject.Find("Player").GetComponent<BoxCollider2D> ();
 		Physics2D.IgnoreCollision (platformCollider, platformTrigger, true);
 	}
 

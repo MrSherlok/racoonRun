@@ -59,24 +59,18 @@ public class SuperPower : MonoBehaviour {
 		playerSpeed = gameObject.GetComponent<ScrollingScript>();
     }
 
-	public void FixedUpdate () {
-		IsGrounded = GetComponent<Player>().IsGrounded;
-        _superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
+	void Start() {
+		_superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
 		_flyingEnable = ChooseSPScript.choooseFlyingEnable;
 		_superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
-        _cookieRangEnable = ChooseSPScript.chooseCookieRangEnable;
-        _bananaGunEnable = ChooseSPScript.chooseBananaGunEnable;
-        _superPunchEnable = ChooseSPScript.chooseSuperPunchEnable;
+		_cookieRangEnable = ChooseSPScript.chooseCookieRangEnable;
+		_bananaGunEnable = ChooseSPScript.chooseBananaGunEnable;
+		_superPunchEnable = ChooseSPScript.chooseSuperPunchEnable;
 
-        if (_flyingCooldown > 0)
-        {
-            _flyingCooldown -= Time.deltaTime;
-        }
-
-        if (_superSpeedEnable == true) {
+		if (_superSpeedEnable == true) {
 			superSpeedImage.enabled = true;
 		} else {
-			superSpeedImage.enabled = true;   //change
+			superSpeedImage.enabled = false;   
 		}
 
 		if (_flyingEnable == true) {
@@ -90,27 +84,39 @@ public class SuperPower : MonoBehaviour {
 		} else {
 			superJumpImage.enabled = false;   
 		}
-		
+
 		if (_cookieRangEnable) {
-            cookieRangImage.enabled = true;
+			cookieRangImage.enabled = true;
 		} else {
-            cookieRangImage.enabled = false;
+			cookieRangImage.enabled = false;
 		}
 
 		if (_bananaGunEnable) {
-            bananaGunImage.enabled = true;
+			bananaGunImage.enabled = true;
 		} else {
-            bananaGunImage.enabled = false;
+			bananaGunImage.enabled = false;
 		}
-		
+
 		if (_superPunchEnable) {
-            superPunchImage.enabled = true;
-            superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
-            
+			superPunchImage.enabled = true;
+			superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
+
 		} else {
-            superPunchImage.enabled = false;
-            superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
+			superPunchImage.enabled = false;
+			superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
+		}
+
+	}
+
+	public void FixedUpdate () {
+		IsGrounded = GetComponent<Player>().IsGrounded;
+       
+        if (_flyingCooldown > 0)
+        {
+            _flyingCooldown -= Time.deltaTime;
         }
+
+        
 
 		if (isFlying && timeToFly >= 0) {
 			timeToFly -= Time.deltaTime;

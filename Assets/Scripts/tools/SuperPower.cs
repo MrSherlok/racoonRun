@@ -47,14 +47,16 @@ public class SuperPower : MonoBehaviour {
 	/// For Super Speed invulnerability
 /// </summary>
 //    private int hpSS;
-    private Player player;
+	private ScrollingScript playerSpeed;
+	bool isRunning = false;
+	public float timeToRun = 2f;
 
 
 
     public void Awake(){
         animator = GameObject.Find("Player1").GetComponent<Animator>();
 //        effects.SetActive (false);
-        player = gameObject.GetComponent<Player>();
+		playerSpeed = gameObject.GetComponent<ScrollingScript>();
     }
 
 	public void FixedUpdate () {
@@ -74,13 +76,13 @@ public class SuperPower : MonoBehaviour {
         if (_superSpeedEnable == true) {
 			superSpeedImage.enabled = true;
 		} else {
-			superSpeedImage.enabled = false;
+			superSpeedImage.enabled = true;   //change
 		}
 
 		if (_flyingEnable == true) {
 			flyingImage.enabled = true;
 		} else {
-			flyingImage.enabled = true;     //change
+			flyingImage.enabled = false;     
 		}
 
 		if (_superJumpEnable == true) {
@@ -110,9 +112,23 @@ public class SuperPower : MonoBehaviour {
             superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
         }
 
-		if (isFlying) {
+		if (isFlying && timeToFly >= 0) {
 			timeToFly -= Time.deltaTime;
-			myRigitbody.velocity += FlyingForse*Vector2.up;
+			myRigitbody.gravityScale = 3f;
+			myRigitbody.velocity += FlyingForse * Vector2.up;
+		} else {
+			myRigitbody.gravityScale = 5f;
+		}
+
+		if (isRunning && timeToRun >=0) {
+			gameObject.GetComponent<HealthScript> ().isEnemy = true;
+			timeToRun -= Time.deltaTime;
+			mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
+			playerSpeed.speed = new Vector2(100f,0f);
+		} else {
+			mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
+			playerSpeed.speed = new Vector2(0f,0f);
+			gameObject.GetComponent<HealthScript> ().isEnemy = false;
 		}
 	}
 
@@ -121,8 +137,8 @@ public class SuperPower : MonoBehaviour {
     {
         superPunchIm.GetComponent<Collider2D>().enabled = true;
         isSuperPunchActive = true;
-        animator.SetBool("superPunch", true);
-        animator.SetBool("Run", false);
+      //  animator.SetBool("superPunch", true);
+      //  animator.SetBool("Run", false);
         Invoke("StopPunch", 0.25f);
     }
 
@@ -130,8 +146,8 @@ public class SuperPower : MonoBehaviour {
     {
         superPunchIm.GetComponent<Collider2D>().enabled = false;
         isSuperPunchActive = false;
-        animator.SetBool("superPunch", false);
-        animator.SetBool("Run", true);
+      //  animator.SetBool("superPunch", false);
+       // animator.SetBool("Run", true);
 
     }
 
@@ -140,17 +156,23 @@ public class SuperPower : MonoBehaviour {
 
 
     public void SuperSpeed (bool isTrueSpeed) {
-		
-        player.movementSpeed = 100;
+
+		if (isTrueSpeed) {
+			isRunning = true;
+		} else {
+			isRunning = false;
+		}
+
+        
 //        HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
 //        hpSS = health.hp;
 //        health.hp = 1000;
             
-        Invoke("StopSpeed",0.5f);
+//        Invoke("StopSpeed",0.5f);
 
 
 		}
-    void StopSpeed()
+/*    void StopSpeed()
     {
       
         player.movementSpeed = 0;
@@ -159,7 +181,7 @@ public class SuperPower : MonoBehaviour {
         
 
     }
-
+*/
 /*	public void Flying (bool isTrueFly) {
 		
        
@@ -180,12 +202,9 @@ public class SuperPower : MonoBehaviour {
     {
 
 
-		if (isTrueFly && timeToFly >=0) {
+		if (isTrueFly ) {
 			isFlying = true;
-			myRigitbody.gravityScale = 3f;
-
 		} else {
-			myRigitbody.gravityScale = 5f;
 			isFlying = false;
 		}
 

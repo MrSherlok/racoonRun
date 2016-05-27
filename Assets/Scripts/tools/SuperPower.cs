@@ -210,8 +210,10 @@ public class SuperPower : MonoBehaviour {
 
 		if (isTrueFly ) {
 			isFlying = true;
+			CameraFollowScript.TremorAnimOn ();
 		} else {
 			isFlying = false;
+		CameraFollowScript.TremorAnimOff ();
 		}
 
 

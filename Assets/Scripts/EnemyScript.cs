@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
 		
 		// Disable everything
 		// -- collider
-		GetComponent<Collider2D>().enabled = false;
+//		GetComponent<Collider2D>().enabled = false;
 		// -- Moving
 //		moveScript.enabled = false;
 		// -- Shooting
@@ -75,7 +75,7 @@ public class EnemyScript : MonoBehaviour
 		
 		// Enable everything
 		// -- Collider
-		GetComponent<Collider2D>().enabled = true;
+	//	GetComponent<Collider2D>().enabled = true;
 		// -- Moving
 //		moveScript.enabled = true;
 		// -- Shooting

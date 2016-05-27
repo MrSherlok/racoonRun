@@ -18,39 +18,33 @@ public class SuperPower : MonoBehaviour {
     public Image superPunchImage;
     public Image jumpImage;
 
-    public bool IsGrounded = false;  
+     
 	public Camera mainCamera;
 
     private float _flyingRate = 0.5f;           
-    private float _flyingCooldown = 0;
-
-    public bool isSuperPunchActive = false;         //переменные провирки активен ли спел в данный момент
-    public bool superJumpEnabled = false;
-
-    public int FlyingForse = 4;
+	private float _flyingCooldown = 0; 
+	public int FlyingForse = 4;
 	public float timeToFly = 2f;
 	bool isFlying = false;
 
-	public Rigidbody2D myRigitbody;
-	//private bool isGrounded;
+	bool isSuperPunchActive = false; 
+	public GameObject superPunchIm;   
+
+
+    public bool superJumpEnabled = false;
 	public float jumpForce = 5f;
+	public bool IsGrounded = false; 
+	//private bool isGrounded;
 
-	public GameObject effects;
-
-
-
-    public GameObject superPunchIm;
+	public Rigidbody2D myRigitbody;
+	public GameObject effects;  
     private Animator animator;
 
 
-/// <summary>
-	/// For Super Speed invulnerability
-/// </summary>
 //    private int hpSS;
 	private ScrollingScript playerSpeed;
 	bool isRunning = false;
 	public float timeToRun = 2f;
-
 
 
     public void Awake(){
@@ -105,7 +99,6 @@ public class SuperPower : MonoBehaviour {
 			superPunchImage.enabled = false;
 			superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
 		}
-
 	}
 
 	public void FixedUpdate () {

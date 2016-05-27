@@ -3,12 +3,19 @@
 public class WeaponScript : MonoBehaviour
 {
     public GameObject weaponBananaGun;
-    public Transform cookieRangPrefab;
-    public Transform bananaGunPrefab;
-	public Transform shotPrefab;
+	public GameObject shotPrefab;
 	public float shootingRate = 0.25f;
 	public float shootCooldown;
 	public Animator animator;
+
+	public GameObject cookieRangPrefab;
+	public GameObject bananaGunPrefab;
+
+	GameObject[] cookieRangs = new GameObject[6];
+	GameObject[] bananas= new GameObject[6];
+
+	bool wasShot = false;
+	int i =0;
 	
     void Start ()
     {
@@ -16,14 +23,26 @@ public class WeaponScript : MonoBehaviour
         {
             if (ChooseSPScript.chooseBananaGunEnable == true)
             {
-                shotPrefab = bananaGunPrefab;
+				bananas[0] = Instantiate (bananaGunPrefab);
+				bananas[1] = Instantiate (bananaGunPrefab);
+				bananas[2] = Instantiate (bananaGunPrefab);
+				bananas[3] = Instantiate (bananaGunPrefab);
+				bananas[4] = Instantiate (bananaGunPrefab);
+				bananas[5] = Instantiate (bananaGunPrefab);
                 weaponBananaGun.GetComponent<SpriteRenderer>().enabled = true;
             }
             else
             {
                 weaponBananaGun.GetComponent<SpriteRenderer>().enabled = false;
             }
-            if (ChooseSPScript.chooseCookieRangEnable == true) shotPrefab = cookieRangPrefab;
+			if (ChooseSPScript.chooseCookieRangEnable == true) {
+				cookieRangs[0] = Instantiate (cookieRangPrefab);
+				cookieRangs[1] = Instantiate (cookieRangPrefab);
+				cookieRangs[2] = Instantiate (cookieRangPrefab);
+				cookieRangs[3] = Instantiate (cookieRangPrefab);
+				cookieRangs[4] = Instantiate (cookieRangPrefab);
+				cookieRangs[5] = Instantiate (cookieRangPrefab);
+			}
         }
     }
 
@@ -33,20 +52,38 @@ public class WeaponScript : MonoBehaviour
 		{
 			shootCooldown -= Time.deltaTime;
 		}
+		if (wasShot) {
+			i++;
+			if(i == 6) i = 0;
+			wasShot = false;
+		}
+		if (gameObject.tag == "Player")
+		{
+			if (ChooseSPScript.chooseBananaGunEnable == true)
+			{
+				shotPrefab = bananas [i];
+			}
+			if (ChooseSPScript.chooseCookieRangEnable == true) {
+				shotPrefab = cookieRangs [i];
+			}
+		}
 	}
 
 	public void Attack(bool isEnemy)
 	{
 		if (CanAttack)
 		{	
-			if(gameObject.tag == "Player")
-			animator.SetTrigger ("Fire");
+			if (gameObject.tag == "Player") {
+				animator.SetTrigger ("Fire");
+				wasShot = true;
+			}
 			shootCooldown = shootingRate;
 			// Create a new shot
-			var shotTransform = Instantiate(shotPrefab) as Transform;
-
-			shotTransform.position = transform.position;
-			
+			shotPrefab.transform.position = transform.position;
+			if (gameObject.tag == "Player") {
+				if (ChooseSPScript.chooseCookieRangEnable == true) shotPrefab.GetComponentInChildren<ShotScript> ().enabled = true;
+				else shotPrefab.GetComponent<ShotScript> ().enabled = true;
+			}
 			// The is enemy property
 	//		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 	//		if (shot != null)
@@ -54,11 +91,11 @@ public class WeaponScript : MonoBehaviour
 	//			shot.isEnemyShot = isEnemy;
 	//		}
 			// Make the weapon shot always towards it
-			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
-			if (move != null)
-			{
-				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
-			}
+//			MoveScript move = shotPrefab.GetComponent<MoveScript>();
+//			if (move != null)
+//			{
+//				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+//			}
 		}
 	}
 	

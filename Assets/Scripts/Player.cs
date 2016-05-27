@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D myRigitbody;
     public float movementSpeed;
-    [SerializeField]
+  //  [SerializeField]
  //   private Transform[] groundPoints;
 //    [SerializeField]
    // private float groundRadius;

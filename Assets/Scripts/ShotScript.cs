@@ -10,19 +10,38 @@ public class ShotScript : MonoBehaviour {
 	//void Start () {
 	//	Destroy (gameObject, 20);
 	//}
-	
-	// Update is called once per frame
+
+
+	void OnEnable() {
+		removeTime = 0f;
+		if (gameObject.tag == "cookieRang") {
+			gameObject.GetComponent<Renderer> ().enabled = true;
+			gameObject.GetComponentInParent<Animator> ().enabled = true;
+		}
+		if (gameObject.tag == "bananaGun") {
+			gameObject.GetComponent<Renderer> ().enabled = true;
+			gameObject.GetComponent<MoveScript> ().enabled = true;
+		}
+	}
+
 	void FixedUpdate()
     {
-		removeTime += Time.deltaTime;
-        if (removeTime >= lifeTime)
-        {
-            if (isEnemyShot == false && gameObject.tag == "cookieRang")
-            {
-                Destroy(transform.parent.gameObject);
-            }
-            else
-                Destroy(gameObject);
-        }
+		if (gameObject.tag != "superPunch" || gameObject.tag != "enemys") {
+			removeTime += Time.deltaTime;
+			if (removeTime >= lifeTime) {
+				if (isEnemyShot == false && gameObject.tag == "cookieRang") {
+				
+					gameObject.GetComponent<Renderer> ().enabled = false;
+					gameObject.GetComponent<ShotScript> ().enabled = false;
+					gameObject.GetComponentInParent<Animator> ().enabled = false;
+				}
+
+				if (isEnemyShot == false && gameObject.tag == "bananaGun") {
+					gameObject.GetComponent<MoveScript> ().enabled = false;
+					gameObject.GetComponent<Renderer> ().enabled = false;
+					gameObject.GetComponent<ShotScript> ().enabled = false;
+				}
+			}
+		}
     }
 }

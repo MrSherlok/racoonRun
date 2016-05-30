@@ -9,7 +9,7 @@ public class fpsScript : MonoBehaviour {
 	public Text txtFPS;
 	public Text minFPSt;
 
-	void Update () {
+	void FixedUpdate () {
 		fpsCounter = (int)(1.0 / Time.deltaTime);
 		if (fpsCounter <= minFPS) {
 			minFPS = fpsCounter;

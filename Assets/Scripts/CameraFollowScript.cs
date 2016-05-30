@@ -19,7 +19,7 @@ public class CameraFollowScript : MonoBehaviour {
 	//Animator
 	[SerializeField]
 	private bool DoDamage;
-	static public Animator camAnimator;
+	public static Animator camAnimator;
 	float posX;
 	float posY;
 	float camPosY;
@@ -52,7 +52,7 @@ public class CameraFollowScript : MonoBehaviour {
 			gameObject.transform.position = Vector3.Lerp (gameObject.transform.position,vectorMid,camLevelChangeSmooth);
 		}
 		if (player.transform.position.y > -11.0f && player.transform.position.y < -1.0f){
-			gameObject.transform.position = new Vector3(transform.position.x,camPosY + -19,transform.position.z);
+			gameObject.transform.position = new Vector3(transform.position.x,camPosY + -19f,transform.position.z);
 			
 			//Debug.Log ("Under Level");	
 			gameObject.transform.position = Vector3.Lerp (gameObject.transform.position,vectorUnder,camLevelChangeSmooth);
@@ -64,10 +64,5 @@ public class CameraFollowScript : MonoBehaviour {
 	public static void ClaimCoinAnim(){
 		camAnimator.SetTrigger ("CoinCash");
 	}
-	public static void TremorAnimOn(){
-		camAnimator.SetBool ("Tremor",true);
-	}
-	public static void TremorAnimOff(){
-		camAnimator.SetBool ("Tremor",false);
-	}
+
 }

@@ -30,8 +30,9 @@ public class SuperPower : MonoBehaviour {
 	bool isSuperPunchActive = false; 
 	public GameObject superPunchIm;   
 
+	public GameObject jetpackFX;
 
-    public bool superJumpEnabled = false;
+	public static bool superJumpEnabled = false;
 	public float jumpForce = 5f;
 	public bool IsGrounded = false; 
 	//private bool isGrounded;
@@ -45,6 +46,7 @@ public class SuperPower : MonoBehaviour {
 	private ScrollingScript playerSpeed;
 	bool isRunning = false;
 	public float timeToRun = 2f;
+	bool cloudTuch = false;
 
 
     public void Awake(){
@@ -102,7 +104,12 @@ public class SuperPower : MonoBehaviour {
 	}
 
 	public void FixedUpdate () {
-		IsGrounded = GetComponent<Player>().IsGrounded;
+		if (Player.icloudfootTouch || Player.icloudHeadTouch) {
+			cloudTuch = true;
+		} else {
+			cloudTuch = false;
+		}
+		IsGrounded = Player.IsGrounded;
        
         if (_flyingCooldown > 0)
         {
@@ -110,24 +117,32 @@ public class SuperPower : MonoBehaviour {
         }
 
         
-
-		if (isFlying && timeToFly >= 0) {
-			timeToFly -= Time.deltaTime;
-			myRigitbody.gravityScale = 3f;
-			myRigitbody.velocity += FlyingForse * Vector2.up;
-		} else {
-			myRigitbody.gravityScale = 5f;
+		if (_flyingEnable) {
+			if (isFlying && timeToFly >= 0) {
+				TremorAnimOn ();
+				jetpackFX.SetActive (true);
+				timeToFly -= Time.deltaTime;
+				myRigitbody.gravityScale = 3f;
+				myRigitbody.velocity += FlyingForse * Vector2.up;
+			} else {
+				myRigitbody.gravityScale = 6f;
+				TremorAnimOff ();
+				jetpackFX.SetActive (false);
+			}
 		}
 
-		if (isRunning && timeToRun >=0) {
-			gameObject.GetComponent<HealthScript> ().isEnemy = true;
-			timeToRun -= Time.deltaTime;
-			mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
-			playerSpeed.speed = new Vector2(100f,0f);
-		} else {
-			mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
-			playerSpeed.speed = new Vector2(0f,0f);
-			gameObject.GetComponent<HealthScript> ().isEnemy = false;
+
+		if (_superSpeedEnable) {
+			if (isRunning && timeToRun >= 0) {
+				gameObject.GetComponent<HealthScript> ().isEnemy = true;
+				timeToRun -= Time.deltaTime;
+				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
+				playerSpeed.speed = new Vector2 (100f, 0f);
+			} else {
+				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
+				playerSpeed.speed = new Vector2 (0f, 0f);
+				gameObject.GetComponent<HealthScript> ().isEnemy = false;
+			}
 		}
 	}
 
@@ -136,8 +151,8 @@ public class SuperPower : MonoBehaviour {
     {
         superPunchIm.GetComponent<Collider2D>().enabled = true;
         isSuperPunchActive = true;
-      //  animator.SetBool("superPunch", true);
-      //  animator.SetBool("Run", false);
+        animator.SetBool("superPunch", true);
+        animator.SetBool("Run", false);
         Invoke("StopPunch", 0.25f);
     }
 
@@ -145,9 +160,8 @@ public class SuperPower : MonoBehaviour {
     {
         superPunchIm.GetComponent<Collider2D>().enabled = false;
         isSuperPunchActive = false;
-      //  animator.SetBool("superPunch", false);
-       // animator.SetBool("Run", true);
-
+        animator.SetBool("superPunch", false);
+        animator.SetBool("Run", true);
     }
 
 
@@ -199,14 +213,11 @@ public class SuperPower : MonoBehaviour {
 */
 	public void Soda( bool isTrueFly)
     {
-
-
-		if (isTrueFly ) {
-			isFlying = true;
-			CameraFollowScript.TremorAnimOn ();
+	
+		if (isTrueFly) {		
+			isFlying = true;			
 		} else {
 			isFlying = false;
-		CameraFollowScript.TremorAnimOff ();
 		}
 
 
@@ -215,27 +226,38 @@ public class SuperPower : MonoBehaviour {
 
 
     }
-	void Deeffector(){
+/*	void Deeffector(){
 		//effects.SetActive (false);
 		myRigitbody.gravityScale = 5f;
 	}
-
-    public void SuperJump()
+*/
+public void SuperJump()
     {
         //		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
 
-        if (IsGrounded)
+	if (IsGrounded || cloudTuch)
         {
-			myRigitbody.gravityScale = 5f;
+			myRigitbody.gravityScale = 4f;
             myRigitbody.velocity += jumpForce * Vector2.up;
             superJumpEnabled = true;
-            Invoke("StopSuperJump", 1.8f);
+            Invoke("StopSuperJump", 0.1f);
         }
     }
 
     void StopSuperJump()
     {
+	myRigitbody.gravityScale = 6f;
         superJumpEnabled = false;
-		myRigitbody.gravityScale = 7f;
+
     }
+
+
+void TremorAnimOn(){
+	CameraFollowScript.camAnimator.SetBool ("Tremor",true);
+		Debug.Log ("asf");
+}
+void TremorAnimOff(){
+	CameraFollowScript.camAnimator.SetBool ("Tremor",false);
+}
+
 }

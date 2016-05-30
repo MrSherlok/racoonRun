@@ -3,29 +3,21 @@
 public class EnemyScript : MonoBehaviour
 {
 	private bool hasSpawn;
-	private MoveScript moveScript;
 	private WeaponScript[] weapons;
 
-	public bool isSuperPunchActive; //= GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().superSpeedEnable;
+	bool isSuperPunchActive; //= GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().superSpeedEnable;
 	void Awake()
 	{
 		// Retrieve the weapon only once
 		weapons = GetComponentsInChildren<WeaponScript>();
-		
-		// Retrieve scripts to disable when not spawn
-		//moveScript = GetComponent<MoveScript>();
+
 	}
 	
-	// 1 - Disable everything
+
 	void Start()
 	{
 		hasSpawn = false;
-		
-		// Disable everything
-		// -- collider
-//		GetComponent<Collider2D>().enabled = false;
-		// -- Moving
-//		moveScript.enabled = false;
+
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{
@@ -35,12 +27,6 @@ public class EnemyScript : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-  //      isSuperPunchActive = GameObject.FindWithTag ("Player").GetComponent<SuperPower> ().isSuperPunchActive;
-		//if (isSuperPunchActive) {
-		//	GetComponent<Collider2D>().isTrigger = false;
-		//} else {
-		//	GetComponent<Collider2D>().isTrigger = true;
-		//}  
 		// 2 - Check if the enemy has spawned.
 		if (hasSpawn == false)
 		{
@@ -61,23 +47,18 @@ public class EnemyScript : MonoBehaviour
 			}
 			
 			// 4 - Out of the camera ? Destroy the game object.
-		/*	if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
+			if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
 			{
-				Destroy(gameObject);
-			}  */
+				Destroy(transform.parent.gameObject,5f);
+			}  
 		}
 	}
 	
-	// 3 - Activate itself.
+
 	private void Spawn()
 	{
 		hasSpawn = true;
-		
-		// Enable everything
-		// -- Collider
-	//	GetComponent<Collider2D>().enabled = true;
-		// -- Moving
-//		moveScript.enabled = true;
+
 		// -- Shooting
 		foreach (WeaponScript weapon in weapons)
 		{

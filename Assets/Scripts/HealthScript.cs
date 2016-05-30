@@ -29,13 +29,13 @@ public class HealthScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        ShotScript shot = collider.gameObject.GetComponent<ShotScript>();
+        EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
         if (shot != null)
         {
-            if (shot.isEnemyShot != isEnemy)
-            {
+            /*if (shot.isEnemyShot != isEnemy)
+            {*/
                 hp -= shot.damage;
-				if(gameObject.tag == "Player") GameObject.Find("hpTxt").GetComponent<Text>().text = "hp= "+hp;
+				/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = "hp= "+hp;
                /* if (shot.tag == "cookieRang")
                 {
                     Destroy(shot.transform.parent.gameObject);
@@ -45,17 +45,17 @@ public class HealthScript : MonoBehaviour
                 } */
                 if (hp <= 0)
                 {
-                    if (gameObject.tag == "enemys")
+                 /*   if (gameObject.tag == "enemys")
                     {
                         Destroy(gameObject);
                     }
-                    else {
+                    else {*/
                         theEndImage.enabled = true;
                         chooseLvl.enabled = true;
                       //  end.text = "You are dead";
                         Time.timeScale = 0;
-                    }
-                }
+                    /*}*/
+               /* }*/
             }
         }
     }

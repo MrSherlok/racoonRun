@@ -14,8 +14,8 @@ public class CoinCollectScript : MonoBehaviour {
 			
 			gameObject.transform.Translate (Vector3.up* Time.deltaTime * speedUp);
 			gameObject.GetComponentInChildren<Renderer> ().material.SetFloat ("_Cutoff", cutoff); 
-			cutoff += Time.deltaTime/2;
-			if (cutoff >= 1) {
+			cutoff += Time.deltaTime*1.3f;
+			if (cutoff >= 1.2f) {
 				Destroy (gameObject);
 			}
 		}

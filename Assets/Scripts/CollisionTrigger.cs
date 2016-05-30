@@ -18,6 +18,12 @@ public class CollisionTrigger : MonoBehaviour {
 		Physics2D.IgnoreCollision (platformCollider, platformTrigger, true);
 	}
 
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.name == "Player") {
+			Physics2D.IgnoreCollision(platformCollider,playerCollider,false);
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.name == "Player") {
@@ -25,9 +31,5 @@ public class CollisionTrigger : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.name == "Player") {
-			Physics2D.IgnoreCollision(platformCollider,playerCollider,false);
-		}
-	}
+
 }

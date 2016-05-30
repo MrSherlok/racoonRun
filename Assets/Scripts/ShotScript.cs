@@ -17,26 +17,29 @@ public class ShotScript : MonoBehaviour {
 		if (gameObject.tag == "cookieRang") {
 			gameObject.GetComponent<Renderer> ().enabled = true;
 			gameObject.GetComponentInParent<Animator> ().enabled = true;
+			gameObject.GetComponent<Collider2D> ().enabled = true;
 		}
 		if (gameObject.tag == "bananaGun") {
 			gameObject.GetComponent<Renderer> ().enabled = true;
 			gameObject.GetComponent<MoveScript> ().enabled = true;
+			gameObject.GetComponent<Collider2D> ().enabled = true;
 		}
 	}
 
 	void FixedUpdate()
     {
-		if (gameObject.tag != "superPunch" || gameObject.tag != "enemys") {
+		if (gameObject.tag != "superPunch"/* || gameObject.tag != "enemys"*/) {
 			removeTime += Time.deltaTime;
 			if (removeTime >= lifeTime) {
-				if (isEnemyShot == false && gameObject.tag == "cookieRang") {
-				
+				if (/*isEnemyShot == false &&*/ gameObject.tag == "cookieRang") {
+					gameObject.GetComponent<Collider2D> ().enabled = false;
 					gameObject.GetComponent<Renderer> ().enabled = false;
 					gameObject.GetComponent<ShotScript> ().enabled = false;
 					gameObject.GetComponentInParent<Animator> ().enabled = false;
 				}
 
-				if (isEnemyShot == false && gameObject.tag == "bananaGun") {
+				if (/*isEnemyShot == false && */gameObject.tag == "bananaGun") {
+					gameObject.GetComponent<Collider2D> ().enabled = false;
 					gameObject.GetComponent<MoveScript> ().enabled = false;
 					gameObject.GetComponent<Renderer> ().enabled = false;
 					gameObject.GetComponent<ShotScript> ().enabled = false;

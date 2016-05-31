@@ -35,7 +35,7 @@ public class HealthScript : MonoBehaviour
             /*if (shot.isEnemyShot != isEnemy)
             {*/
                 hp -= shot.damage;
-				/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = "hp= "+hp;
+			/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = "♥"+hp;
                /* if (shot.tag == "cookieRang")
                 {
                     Destroy(shot.transform.parent.gameObject);

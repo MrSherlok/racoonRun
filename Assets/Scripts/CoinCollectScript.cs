@@ -27,7 +27,7 @@ public class CoinCollectScript : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			gameObject.GetComponent<AudioSource>().Play ();
 			Debug.Log ("Yra");
-			CameraFollowScript.ClaimCoinAnim();
+			//CameraFollowScript.ClaimCoinAnim();
 			cutoff = 0f;
 			startCutOff = true;
 		}

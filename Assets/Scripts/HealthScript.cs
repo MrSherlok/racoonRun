@@ -43,13 +43,13 @@ public class HealthScript : MonoBehaviour
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
         if (shot != null)
         {
-            if (shot.isEnemyShot != isEnemy)
+			if (shot.isEnemyShot != isEnemy && SuperPower.IsRunning == false)
             {
                 hp -= shot.damage;
 			    curHp = hp/maxhp;
 			hpBar.fillAmount -= 0.0001f;
 				
-			/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
+			/*if(gameObject.tag == "Player")*/ //GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
 
 				//ChangeLastHp();
 			//TYT
@@ -69,7 +69,7 @@ public class HealthScript : MonoBehaviour
                     else {*/
 				hpBar.enabled = false;
 				hpBarHolder.enabled = false;
-				GameObject.Find("hpTxt").GetComponent<Text>().text = "O";
+				//GameObject.Find("hpTxt").GetComponent<Text>().text = "O";
                         theEndImage.enabled = true;
                         chooseLvl.enabled = true;
                       //  end.text = "You are dead";

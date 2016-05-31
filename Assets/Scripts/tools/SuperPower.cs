@@ -45,6 +45,7 @@ public class SuperPower : MonoBehaviour {
 //    private int hpSS;
 	private ScrollingScript playerSpeed;
 	bool isRunning = false;
+	public static bool IsRunning = false;
 	public float timeToRun = 2f;
 	bool cloudTuch = false;
 
@@ -135,10 +136,12 @@ public class SuperPower : MonoBehaviour {
 		if (_superSpeedEnable) {
 			if (isRunning && timeToRun >= 0) {
 //				gameObject.GetComponent<HealthScript> ().isEnemy = true;
+				IsRunning = true;
 				timeToRun -= Time.deltaTime;
 				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
 				playerSpeed.speed = new Vector2 (100f, 0f);
 			} else {
+				IsRunning = false;
 				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
 				playerSpeed.speed = new Vector2 (0f, 0f);
 //				gameObject.GetComponent<HealthScript> ().isEnemy = false;

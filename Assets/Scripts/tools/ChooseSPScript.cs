@@ -128,7 +128,7 @@ public class ChooseSPScript : MonoBehaviour {
         }
     }
 	
-	public void SuperPowerEnable () {
+	public void SuperPunchEnable () {
         chooseSuperPunchEnable = !chooseSuperPunchEnable;
         if (chooseSuperPunchEnable)
         {

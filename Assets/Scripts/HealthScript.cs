@@ -32,8 +32,8 @@ public class HealthScript : MonoBehaviour
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
         if (shot != null)
         {
-            /*if (shot.isEnemyShot != isEnemy)
-            {*/
+            if (shot.isEnemyShot != isEnemy)
+            {
                 hp -= shot.damage;
 				/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = "hp= "+hp;
                /* if (shot.tag == "cookieRang")
@@ -55,7 +55,7 @@ public class HealthScript : MonoBehaviour
                       //  end.text = "You are dead";
                         Time.timeScale = 0;
                     /*}*/
-               /* }*/
+                }
             }
         }
     }

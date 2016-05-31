@@ -104,7 +104,7 @@ public class SuperPower : MonoBehaviour {
 	}
 
 	public void FixedUpdate () {
-		if (Player.icloudfootTouch || Player.icloudHeadTouch) {
+		if (Player.isCloudfootTouch || Player.isCloudHeadTouch) {
 			cloudTuch = true;
 		} else {
 			cloudTuch = false;

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 //    private bool airControl;
     public float jumpForce;
 
-    private Animator playerAnimator;
+	public static Animator playerAnimator;
     private float isgroundtimer;
 
 	//IsGrounded start
@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
 
 	//IsGrounded  end
 	//IsClouded start
-	public float icloudCheckRadius;//адиус соприкосновения глова-хмара
-	public Transform icloudCheck; // сама точка на голове (headpoint)
+	public float isCloudCheckRadius;//адиус соприкосновения глова-хмара
+	public Transform isCloudCheck; // сама точка на голове (headpoint)
 	public LayerMask whatIsCloud; // леер для определения соприкосновений с тучками
-	public static bool icloudHeadTouch; // возвращает true когда голова в контакте с тучей
-	public static bool icloudfootTouch;// возвращает true когда персонаж стоит на туче
+	public static bool isCloudHeadTouch; // возвращает true когда голова в контакте с тучей
+	public static bool isCloudfootTouch;// возвращает true когда персонаж стоит на туче
 
     //IsClouded end
 
@@ -48,11 +48,11 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-		isSuperJumpActive = SuperPower.superJumpEnabled;
+//		isSuperJumpActive = SuperPower.superJumpEnabled;
 
         IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
-		icloudHeadTouch = Physics2D.OverlapCircle(icloudCheck.position, icloudCheckRadius, whatIsCloud);
-		icloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, icloudCheckRadius, whatIsCloud);
+		isCloudHeadTouch = Physics2D.OverlapCircle(isCloudCheck.position, isCloudCheckRadius, whatIsCloud);
+		isCloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, isCloudCheckRadius, whatIsCloud);
 		playerAnimator.SetBool("IsGrounded", IsGrounded);
 		//animator.CrossFade ("Run",2);
 //        HendleMovement();
@@ -61,19 +61,19 @@ public class Player : MonoBehaviour
 
     }
 
-	void OnTriggerEnter2D (Collider2D other) {
+/*	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "BlackCloud") {
-			if (icloudHeadTouch && isSuperJumpActive) { //Если голова касается тучки
+			if (isCloudHeadTouch && isSuperJumpActive) { //Если голова касается тучки
 				playerAnimator.SetTrigger ("Cloudjump");
 			}
 
-			if (icloudfootTouch && isSuperJumpActive) //Если голова касается тучки
+			if (isCloudfootTouch && isSuperJumpActive) //Если голова касается тучки
 			{
 				playerAnimator.SetTrigger ("Cloudjump2");
 			}
 		}
 	}
-
+*/
 /*    private void HendleMovement()
     {
         //		Движение через адфорс

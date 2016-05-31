@@ -134,14 +134,14 @@ public class SuperPower : MonoBehaviour {
 
 		if (_superSpeedEnable) {
 			if (isRunning && timeToRun >= 0) {
-				gameObject.GetComponent<HealthScript> ().isEnemy = true;
+//				gameObject.GetComponent<HealthScript> ().isEnemy = true;
 				timeToRun -= Time.deltaTime;
 				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
 				playerSpeed.speed = new Vector2 (100f, 0f);
 			} else {
 				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
 				playerSpeed.speed = new Vector2 (0f, 0f);
-				gameObject.GetComponent<HealthScript> ().isEnemy = false;
+//				gameObject.GetComponent<HealthScript> ().isEnemy = false;
 			}
 		}
 	}

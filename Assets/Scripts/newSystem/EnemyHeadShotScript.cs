@@ -6,8 +6,8 @@ public class EnemyHeadShotScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "Player") {
-			Destroy (transform.parent.gameObject);
+		if (other.gameObject.name == "GroundPoint") {
+			Destroy (gameObject);
 		}
 	}
 }

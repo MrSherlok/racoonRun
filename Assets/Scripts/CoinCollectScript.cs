@@ -4,7 +4,7 @@ using System.Collections;
 public class CoinCollectScript : MonoBehaviour {
 	public float cutoff;
 	bool startCutOff = false;
-	float n = 0.1f;
+//	float n = 0.1f;
 	public float speedUp = 5;
 
 

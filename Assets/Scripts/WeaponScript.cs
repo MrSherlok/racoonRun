@@ -3,7 +3,7 @@
 public class WeaponScript : MonoBehaviour
 {
     public GameObject weaponBananaGun;
-	public GameObject shotPrefab;
+	GameObject shotPrefab;
 	public float shootingRate = 0.25f;
 	public float shootCooldown;
 	public Animator animator;
@@ -71,31 +71,34 @@ public class WeaponScript : MonoBehaviour
 
 	public void Attack(bool isEnemy)
 	{
-		if (CanAttack)
-		{	
-			if (gameObject.tag == "Player") {
-				animator.SetTrigger ("Fire");
-				wasShot = true;
-			}
-			shootCooldown = shootingRate;
-			// Create a new shot
-			shotPrefab.transform.position = transform.position;
-			if (gameObject.tag == "Player") {
-				if (ChooseSPScript.chooseCookieRangEnable == true) shotPrefab.GetComponentInChildren<ShotScript> ().enabled = true;
-				else shotPrefab.GetComponent<ShotScript> ().enabled = true;
-			}
-			// The is enemy property
-	//		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
-	//		if (shot != null)
-	//		{
-	//			shot.isEnemyShot = isEnemy;
-	//		}
-			// Make the weapon shot always towards it
+		if (PauseScript.isPause) {
+			if (CanAttack) {	
+				if (gameObject.tag == "Player") {
+					animator.SetTrigger ("Fire");
+					wasShot = true;
+				}
+				shootCooldown = shootingRate;
+				// Create a new shot
+				shotPrefab.transform.position = transform.position;
+				if (gameObject.tag == "Player") {
+					if (ChooseSPScript.chooseCookieRangEnable == true)
+						shotPrefab.GetComponentInChildren<ShotScript> ().enabled = true;
+					else
+						shotPrefab.GetComponent<ShotScript> ().enabled = true;
+				}
+				// The is enemy property
+				//		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
+				//		if (shot != null)
+				//		{
+				//			shot.isEnemyShot = isEnemy;
+				//		}
+				// Make the weapon shot always towards it
 //			MoveScript move = shotPrefab.GetComponent<MoveScript>();
 //			if (move != null)
 //			{
 //				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
 //			}
+			}
 		}
 	}
 	

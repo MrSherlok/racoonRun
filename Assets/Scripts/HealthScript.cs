@@ -15,12 +15,12 @@ public class HealthScript : MonoBehaviour
 	public Image hpBarHolder;
 	public float maxhp = 12;
 	public float curHp;
-	float lastHp;
+//	float lastHp;
 	public float lerpTime;
 
     void Start()
     {
-		lastHp = maxhp;
+//		lastHp = maxhp;
 		GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
 
 		
@@ -49,7 +49,7 @@ public class HealthScript : MonoBehaviour
 			    curHp = hp/maxhp;
 			hpBar.fillAmount -= 0.0001f;
 				
-			/*if(gameObject.tag == "Player")*/ //GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
+			/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
 
 				//ChangeLastHp();
 			//TYT

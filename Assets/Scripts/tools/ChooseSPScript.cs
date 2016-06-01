@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChooseSPScript : MonoBehaviour {
 
+	public static int ActiveDamSpel = -1;
+	public static int ActiveDefSpel = -1;
+
 	public static bool chooseSuperSpeedEnable = false;
 	public static bool choooseFlyingEnable = false;
 	public static bool chooseSuperJumpEnable = false;
@@ -19,7 +22,7 @@ public class ChooseSPScript : MonoBehaviour {
     public Image chooseBananaGunImage;
     public Image chooseSuperPunchImage;
 
-    private int _lvl = 0; 
+//    private int _lvl = 0; 
 
     //   public Sprite[] chooseSuperSpeedSprites = new Sprite[2];
     //public Sprite[] chooseFlyingSprites = new Sprite[2];
@@ -28,11 +31,11 @@ public class ChooseSPScript : MonoBehaviour {
     //   public Sprite[] chooseBananaGunSprites = new Sprite[2];
     //   public Sprite[] chooseSuperPowerSprites = new Sprite[2];
 
-        public void Start()
+/*        public void Start()
     {
         _lvl = ChengeCenturyScript.lvl;
     }
-
+*/
     public void FixedUpdate()
     {
         if (chooseSuperSpeedEnable)
@@ -89,7 +92,8 @@ public class ChooseSPScript : MonoBehaviour {
         if (chooseSuperSpeedEnable) {
             choooseFlyingEnable = false;
             chooseSuperJumpEnable = false;
-        }
+			ActiveDefSpel = 2;
+		} else ActiveDefSpel = -1;
     }
 
 	public void FlyingEnable () {
@@ -98,7 +102,8 @@ public class ChooseSPScript : MonoBehaviour {
         {
             chooseSuperSpeedEnable = false;
             chooseSuperJumpEnable = false;
-        }
+			ActiveDefSpel = 1;
+		} else ActiveDefSpel = -1;
     }
 
 	public void SuperJumpEnable () {
@@ -107,7 +112,8 @@ public class ChooseSPScript : MonoBehaviour {
         {
             choooseFlyingEnable = false;
             chooseSuperSpeedEnable = false;
-        }
+			ActiveDefSpel = 0;
+		} else ActiveDefSpel = -1;
     }
 
 	public void CookieRangEnable () {
@@ -116,7 +122,8 @@ public class ChooseSPScript : MonoBehaviour {
         {
             chooseBananaGunEnable = false;
             chooseSuperPunchEnable = false;
-        }
+			ActiveDamSpel = 2;
+		} else ActiveDamSpel = -1;
     }
 	
 	public void BananaGunEnable() {
@@ -125,7 +132,8 @@ public class ChooseSPScript : MonoBehaviour {
         {
             chooseCookieRangEnable = false;
             chooseSuperPunchEnable = false;
-        }
+			ActiveDamSpel = 0;
+		} else ActiveDamSpel = -1;
     }
 	
 	public void SuperPunchEnable () {
@@ -134,7 +142,8 @@ public class ChooseSPScript : MonoBehaviour {
         {
             chooseBananaGunEnable = false;
             chooseCookieRangEnable = false;
-        }
+			ActiveDamSpel = 1;
+		} else ActiveDamSpel = -1;
     }
 
 	public void NextLvL () {

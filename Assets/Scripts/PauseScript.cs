@@ -3,20 +3,21 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PauseScript : MonoBehaviour {
-	private bool isPause = false;
+	public static bool isPause;
 	private Image chooseLvl;
 	public void Start () {
+		isPause = true;
 		chooseLvl = GameObject.Find("Back").GetComponent<Image>();
 	}
 
 	public void Pause () {
 		isPause = !isPause;
 		if (isPause) {
-			Time.timeScale = 0; 
-			chooseLvl.enabled = true;
-			} else {
-			Time.timeScale = 1; 
+			Time.timeScale = 1f; 
 			chooseLvl.enabled = false;
+			} else {
+			Time.timeScale = 0f; 
+			chooseLvl.enabled = true;
 
 		}
 

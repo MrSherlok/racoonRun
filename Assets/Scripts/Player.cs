@@ -92,16 +92,17 @@ public class Player : MonoBehaviour
 
 
     public void JumpInput()
-    {
-		if (IsGrounded == true)
-        {
+		{
+			if (PauseScript.isPause) {
+			if (IsGrounded == true) {
             
-            //		прыжок велосити
-            myRigitbody.velocity += jumpForce * Vector2.up;
-            //		прыжок адфорс
-            //		myRigitbody.AddForce(Vector2.up * jumpForce);
-        }
-    }
+				//		прыжок велосити
+				myRigitbody.velocity += jumpForce * Vector2.up;
+				//		прыжок адфорс
+				//		myRigitbody.AddForce(Vector2.up * jumpForce);
+			}
+		}
+	}
 
     /*	private void ResetValues()    // обнуление переменных
         {

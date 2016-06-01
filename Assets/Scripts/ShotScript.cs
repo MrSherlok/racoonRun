@@ -21,7 +21,7 @@ public class ShotScript : MonoBehaviour {
 		}
 		if (gameObject.tag == "bananaGun") {
 			gameObject.GetComponent<Renderer> ().enabled = true;
-			gameObject.GetComponent<MoveScript> ().enabled = true;
+			gameObject.GetComponent<ScrollingScript> ().enabled = true;
 			gameObject.GetComponent<Collider2D> ().enabled = true;
 		}
 	}
@@ -40,7 +40,7 @@ public class ShotScript : MonoBehaviour {
 
 				if (/*isEnemyShot == false && */gameObject.tag == "bananaGun") {
 					gameObject.GetComponent<Collider2D> ().enabled = false;
-					gameObject.GetComponent<MoveScript> ().enabled = false;
+					gameObject.GetComponent<ScrollingScript> ().enabled = false;
 					gameObject.GetComponent<Renderer> ().enabled = false;
 					gameObject.GetComponent<ShotScript> ().enabled = false;
 				}

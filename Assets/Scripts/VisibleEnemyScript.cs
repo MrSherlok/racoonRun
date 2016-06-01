@@ -3,7 +3,7 @@ using System.Collections;
 
 public class VisibleEnemyScript : MonoBehaviour {
 
-	public GameObject enemy;
+/*	public GameObject enemy;
 	public Vector3 pos;
 	private float createCooldown = 0f;
 	
@@ -25,5 +25,5 @@ public class VisibleEnemyScript : MonoBehaviour {
 		get {
 			return createCooldown <= 0f;
 		}
-	}
+	}*/
 }

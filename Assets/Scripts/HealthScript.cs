@@ -80,7 +80,7 @@ public class HealthScript : MonoBehaviour
             }
         }
     }
-	void Update(){
+	void FixedUpdate(){
 		HpCorrector();
 	}
 	void HpCorrector(){

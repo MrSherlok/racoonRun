@@ -133,6 +133,7 @@ public class SuperPower : MonoBehaviour {
         
 		if (_actDef == 1) {
 			if (isFlying && timeToFly >= 0) {
+				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				TremorAnimOn ();
 				jetpackFX.SetActive (true);
 				timeToFly -= Time.deltaTime;
@@ -142,6 +143,7 @@ public class SuperPower : MonoBehaviour {
 				myRigitbody.gravityScale = 6f;
 				TremorAnimOff ();
 				jetpackFX.SetActive (false);
+				Invoke("SmoothYBack", 0.8f);
 			}
 		}
 
@@ -253,12 +255,14 @@ public class SuperPower : MonoBehaviour {
 public void SuperJump()
 	{
 		//		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
-	if (PauseScript.isPause) {
+		if (PauseScript.isPause) {
 			if (IsGrounded || cloudTuch) {
 				myRigitbody.gravityScale = 4f;
 				myRigitbody.velocity += jumpForce * Vector2.up;
 				superJumpEnabled = true;
+				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				Invoke ("StopSuperJump", 0.1f);
+				Invoke ("SmoothYBack", 0.5f);
 			}
 		}
 	}
@@ -269,6 +273,10 @@ public void SuperJump()
         superJumpEnabled = false;
 
     }
+
+void SmoothYBack () {
+	mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.05f;
+	}
 
 
 void TremorAnimOn(){

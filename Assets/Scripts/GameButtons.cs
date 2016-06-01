@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 public class GameButtons : MonoBehaviour {
 
 public void Reload () {
-        SceneManager.LoadScene(Application.loadedLevel);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
 	}
 
 public void BackToChoose () {
         SceneManager.LoadScene("chooseSP");
 		Time.timeScale = 1;
+		ChooseSPScript.ActiveDamSpel = -1;
+		ChooseSPScript.ActiveDefSpel = -1;
 		ChooseSPScript.chooseSuperSpeedEnable = false;
 		ChooseSPScript.choooseFlyingEnable = false;
 		ChooseSPScript.chooseSuperJumpEnable = false;

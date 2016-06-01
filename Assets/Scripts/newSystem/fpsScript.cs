@@ -6,8 +6,8 @@ public class fpsScript : MonoBehaviour {
 
 	float fpsCounter = 0f;
 //	float minFPS = 60f;
-	public Text txtFPS;
-	public Text minFPSt;
+	public TextMesh txtFPS;
+//	public  minFPSt;
 
 	void Update () {
 		fpsCounter = (int)(1.0 / Time.deltaTime);

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraFollowScript : MonoBehaviour {
-	private Vector2 velocity;
+/*	private Vector2 velocity;
 
 	public float smoothTimeX;
 	public float smoothTimeY;
@@ -19,7 +19,7 @@ public class CameraFollowScript : MonoBehaviour {
 	//Animator
 	[SerializeField]
 	private bool DoDamage;
-	public static Animator camAnimator;
+//	public static Animator camAnimator;
 //	float posX = 0f;
 	float posY = 0f;
 	float camPosY = 0f;
@@ -31,7 +31,7 @@ public class CameraFollowScript : MonoBehaviour {
 		//vectorMid = new Vector3(transform.position.x,camPosY + 3,transform.position.z);
 		//vectorUnder = new Vector3(transform.position.x,camPosY + -19,transform.position.z); 
 		player =  GameObject.Find("CameraPoint");
-		camAnimator = GameObject.Find("CameraPoint").GetComponent<Animator>();
+//		camAnimator = GameObject.Find("CameraPoint").GetComponent<Animator>();
 		camPosY = gameObject.transform.position.y;
 	}
 	
@@ -66,5 +66,5 @@ public class CameraFollowScript : MonoBehaviour {
 	public static void ClaimCoinAnim(){
 		camAnimator.SetTrigger ("CoinCash");
 	}
-
+*/
 }

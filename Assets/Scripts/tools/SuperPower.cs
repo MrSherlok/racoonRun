@@ -135,7 +135,7 @@ public class SuperPower : MonoBehaviour {
 		if (_actDef == 1) {
 			if (isFlying && timeToFly >= 0) {
 				IsFlying = true;
-				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
+				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				TremorAnimOn ();
 				jetpackFX.SetActive (true);
 				timeToFly -= Time.deltaTime;
@@ -156,11 +156,11 @@ public class SuperPower : MonoBehaviour {
 //				gameObject.GetComponent<HealthScript> ().isEnemy = true;
 				IsRunning = true;
 				timeToRun -= Time.deltaTime;
-				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
+				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
 				playerSpeed.speed = new Vector2 (100f, 0f);
 			} else {
 				IsRunning = false;
-				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
+				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
 				playerSpeed.speed = new Vector2 (0f, 0f);
 //				gameObject.GetComponent<HealthScript> ().isEnemy = false;
 			}
@@ -263,7 +263,7 @@ public void SuperJump()
 				myRigitbody.gravityScale = 4f;
 				myRigitbody.velocity += jumpForce * Vector2.up;
 				superJumpEnabled = true;
-				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
+				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				Invoke ("StopSuperJump", 0.1f);
 				Invoke ("SmoothYBack", 0.5f);
 			}
@@ -278,16 +278,16 @@ public void SuperJump()
     }
 
 void SmoothYBack () {
-	mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.05f;
+	//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.05f;
 	}
 
 
 void TremorAnimOn(){
-	CameraFollowScript.camAnimator.SetBool ("Tremor",true);
-		Debug.Log ("asf");
+	CameraFollowScript2.camAnimator.SetBool ("Tremor",true);
+		//Debug.Log ("asf");
 }
 void TremorAnimOff(){
-	CameraFollowScript.camAnimator.SetBool ("Tremor",false);
+	CameraFollowScript2.camAnimator.SetBool ("Tremor",false);
 }
 
 }

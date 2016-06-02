@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\newSystem\EnemyHeadShotScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyHealthScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyShotScript.cs" />
+     <Compile Include="Assets\Scripts\newSystem\LoadSceneScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\fpsScript.cs" />
      <Compile Include="Assets\Scripts\tools\ChooseSPScript.cs" />
      <Compile Include="Assets\Scripts\tools\SuperPower.cs" />

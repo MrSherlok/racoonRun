@@ -29,9 +29,10 @@ public class SuperPower : MonoBehaviour {
 
 //    private float _flyingRate = 0.5f;           
 //	private float _flyingCooldown = 0; 
-	public int FlyingForse = 4;
+	int FlyingForse = 1;
 	public float timeToFly = 2f;
 	bool isFlying = false;
+	public static bool IsFlying = false;
 
 //	bool isSuperPunchActive = false; 
 	public GameObject superPunchIm;   
@@ -39,7 +40,7 @@ public class SuperPower : MonoBehaviour {
 	public GameObject jetpackFX;
 
 	public static bool superJumpEnabled = false;
-	public float jumpForce = 5f;
+	public float jumpForce = 45f;
 	public bool IsGrounded = false; 
 	//private bool isGrounded;
 
@@ -133,13 +134,15 @@ public class SuperPower : MonoBehaviour {
         
 		if (_actDef == 1) {
 			if (isFlying && timeToFly >= 0) {
+				IsFlying = true;
 				mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				TremorAnimOn ();
 				jetpackFX.SetActive (true);
 				timeToFly -= Time.deltaTime;
-				myRigitbody.gravityScale = 3f;
+				myRigitbody.gravityScale = 2f;
 				myRigitbody.velocity += FlyingForse * Vector2.up;
 			} else {
+				IsFlying = false;
 				myRigitbody.gravityScale = 6f;
 				TremorAnimOff ();
 				jetpackFX.SetActive (false);

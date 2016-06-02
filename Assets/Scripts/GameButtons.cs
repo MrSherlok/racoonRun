@@ -14,12 +14,12 @@ public void BackToChoose () {
 		Time.timeScale = 1;
 		ChooseSPScript.ActiveDamSpel = -1;
 		ChooseSPScript.ActiveDefSpel = -1;
-		ChooseSPScript.chooseSuperSpeedEnable = false;
+/*		ChooseSPScript.chooseSuperSpeedEnable = false;
 		ChooseSPScript.choooseFlyingEnable = false;
 		ChooseSPScript.chooseSuperJumpEnable = false;
         ChooseSPScript.chooseCookieRangEnable = false;
         ChooseSPScript.chooseBananaGunEnable = false;
-        ChooseSPScript.chooseSuperPunchEnable = false;
+        ChooseSPScript.chooseSuperPunchEnable = false; */
     }
 
 	public void BackToMainMenu () {

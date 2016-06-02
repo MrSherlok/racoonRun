@@ -21,7 +21,7 @@ public class WeaponScript : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            if (ChooseSPScript.chooseBananaGunEnable == true)
+			if (ChooseSPScript.ActiveDamSpel == 0)
             {
 				bananas[0] = Instantiate (bananaGunPrefab);
 				bananas[1] = Instantiate (bananaGunPrefab);
@@ -35,14 +35,14 @@ public class WeaponScript : MonoBehaviour
             {
                 weaponBananaGun.GetComponent<SpriteRenderer>().enabled = false;
             }
-			if (ChooseSPScript.chooseCookieRangEnable == true) {
+			if (ChooseSPScript.ActiveDamSpel == 2) {
 				cookieRangs[0] = Instantiate (cookieRangPrefab);
 				cookieRangs[1] = Instantiate (cookieRangPrefab);
 				cookieRangs[2] = Instantiate (cookieRangPrefab);
 				cookieRangs[3] = Instantiate (cookieRangPrefab);
 				cookieRangs[4] = Instantiate (cookieRangPrefab);
 				cookieRangs[5] = Instantiate (cookieRangPrefab);
-			}
+			} 
         }
     }
 
@@ -59,13 +59,13 @@ public class WeaponScript : MonoBehaviour
 		}
 		if (gameObject.tag == "Player")
 		{
-			if (ChooseSPScript.chooseBananaGunEnable == true)
+			if (ChooseSPScript.ActiveDamSpel == 0)
 			{
 				shotPrefab = bananas [i];
 			}
-			if (ChooseSPScript.chooseCookieRangEnable == true) {
+			if (ChooseSPScript.ActiveDamSpel == 2) {
 				shotPrefab = cookieRangs [i];
-			}
+			} 
 		}
 	}
 
@@ -81,11 +81,11 @@ public class WeaponScript : MonoBehaviour
 				// Create a new shot
 				shotPrefab.transform.position = transform.position;
 				if (gameObject.tag == "Player") {
-					if (ChooseSPScript.chooseCookieRangEnable == true)
+					if (ChooseSPScript.ActiveDamSpel == 2)
 						shotPrefab.GetComponentInChildren<ShotScript> ().enabled = true;
 					else
-						shotPrefab.GetComponent<ShotScript> ().enabled = true;
-				}
+						shotPrefab.GetComponent<ShotScript> ().enabled = true; 
+				} 
 				// The is enemy property
 				//		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 				//		if (shot != null)

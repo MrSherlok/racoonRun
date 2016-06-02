@@ -42,22 +42,23 @@ public class CameraFollowScript : MonoBehaviour {
 
 		transform.position = new Vector3(player.transform.position.x,posY,player.transform.position.z-10f);
 		//Проверяем точку(за которой следит камера) и двигаем камеру в зависимости от уровня точки
-		if (player.transform.position.y > 11.1f && player.transform.position.y < 23.0f){
-			gameObject.transform.position = Vector3.Lerp (transform.position, new Vector3(transform.position.x, transform.position.y+14.5f,transform.position.z),camLevelChangeSmooth);
-			//Debug.Log ("hi level");	
-		}
-		if (player.transform.position.y > -1.1f && player.transform.position.y < 11.0f){
+		if (SuperPower.IsFlying == false) {
+			if (player.transform.position.y > 11.1f && player.transform.position.y < 23.0f) {
+				gameObject.transform.position = Vector3.Lerp (transform.position, new Vector3 (transform.position.x, transform.position.y + 14.5f, transform.position.z), camLevelChangeSmooth);
+				//Debug.Log ("hi level");	
+			}
+			if (player.transform.position.y > -1.1f && player.transform.position.y < 11.0f) {
 
-			//Debug.Log ("Mid Level");	
-			gameObject.transform.position = Vector3.Lerp (transform.position, new Vector3(transform.position.x, transform.position.y+3f,transform.position.z),camLevelChangeSmooth);
-		}
-		if (player.transform.position.y > -11.0f && player.transform.position.y < -1.0f){
-		//	gameObject.transform.position = new Vector3(transform.position.x,camPosY + -19f,transform.position.z);
+				//Debug.Log ("Mid Level");	
+				gameObject.transform.position = Vector3.Lerp (transform.position, new Vector3 (transform.position.x, transform.position.y + 3f, transform.position.z), camLevelChangeSmooth);
+			}
+			if (player.transform.position.y > -11.0f && player.transform.position.y < -1.0f) {
+				//	gameObject.transform.position = new Vector3(transform.position.x,camPosY + -19f,transform.position.z);
 			
-			//Debug.Log ("Under Level");	
-			gameObject.transform.position = Vector3.Lerp (player.transform.position,new Vector3(transform.position.x,camPosY + -19,transform.position.z),camLevelChangeSmooth);
+				//Debug.Log ("Under Level");	
+				gameObject.transform.position = Vector3.Lerp (player.transform.position, new Vector3 (transform.position.x, camPosY + -19, transform.position.z), camLevelChangeSmooth);
+			}
 		}
-
 	}
 	public static void DamageAnim(){
 		camAnimator.SetTrigger ("DoDamage");

@@ -46,6 +46,7 @@ public class HealthScript : MonoBehaviour
 			if (shot.isEnemyShot != isEnemy && SuperPower.IsRunning == false)
             {
                 hp -= shot.damage;
+				GameObject.Find ("CameraPoint").GetComponent<AudioSource>().Play ();
 			    curHp = hp/maxhp;
 			hpBar.fillAmount -= 0.0001f;
 				

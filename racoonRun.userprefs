@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HealthScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/newSystem/BoxingGlowScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/tools/SuperPower.cs" Line="144" Column="23" />
-      <File FileName="Assets/Scripts/Player.cs" Line="54" Column="1" />
-      <File FileName="Assets/Scripts/tools/ChooseSPScript.cs" Line="131" Column="24" />
-      <File FileName="Assets/Scripts/GameButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/WeaponScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HealthScript.cs" Line="46" Column="68" />
-      <File FileName="Assets/Scripts/CoinCollectScript.cs" Line="30" Column="6" />
+      <File FileName="Assets/Scripts/tools/SuperPower.cs" Line="138" Column="7" />
+      <File FileName="Assets/Scripts/newSystem/LoadSceneScript.cs" Line="26" Column="38" />
+      <File FileName="Assets/Scripts/tools/ChooseSPScript.cs" Line="211" Column="39" />
+      <File FileName="Assets/Scripts/Player.cs" Line="45" Column="3" />
+      <File FileName="Assets/Scripts/newSystem/TapToStartScript.cs" Line="20" Column="6" />
+      <File FileName="Assets/Scripts/PauseScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/newSystem/BoxingGlowScript.cs" Line="8" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

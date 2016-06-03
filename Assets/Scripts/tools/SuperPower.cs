@@ -29,32 +29,35 @@ public class SuperPower : MonoBehaviour {
 
 //    private float _flyingRate = 0.5f;           
 //	private float _flyingCooldown = 0; 
-	int FlyingForse = 1;
+	public static float FlyingForse = 0.7f;
 	public float timeToFly = 2f;
-	bool isFlying = false;
+	private bool _isFlying = false;
 	public static bool IsFlying = false;
 
-//	bool isSuperPunchActive = false; 
+	public static bool IsSuperPunchActive = false; 
 	public GameObject superPunchIm;   
 
-	public GameObject jetpackFX;
+
 
 	public static bool superJumpEnabled = false;
-	public float jumpForce = 45f;
+	public static float ForceSuperJump = 30f;
 	public bool IsGrounded = false; 
+	bool cloudTuch = false;
 	//private bool isGrounded;
 
 	public Rigidbody2D myRigitbody;
 	public GameObject effects;  
     private Animator animator;
+	public GameObject jetpackFX;
 
 
 //    private int hpSS;
 	private ScrollingScript playerSpeed;
-	bool isRunning = false;
+	public static float SpeedSuper = 40f;
+	private bool _isRunning = false;
 	public static bool IsRunning = false;
 	public float timeToRun = 2f;
-	bool cloudTuch = false;
+
 
 
     public void Awake(){
@@ -71,6 +74,10 @@ public class SuperPower : MonoBehaviour {
 		_bananaGunEnable = ChooseSPScript.chooseBananaGunEnable;
 		_superPunchEnable = ChooseSPScript.chooseSuperPunchEnable;
 */
+		IsRunning = false;
+		IsSuperPunchActive = false;
+		IsFlying = false;
+
 		_actDam = ChooseSPScript.ActiveDamSpel;
 		_actDef = ChooseSPScript.ActiveDefSpel;
 
@@ -133,7 +140,7 @@ public class SuperPower : MonoBehaviour {
 */
         
 		if (_actDef == 1) {
-			if (isFlying && timeToFly >= 0) {
+			if (_isFlying && timeToFly >= 0) {
 				IsFlying = true;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				TremorAnimOn ();
@@ -152,12 +159,12 @@ public class SuperPower : MonoBehaviour {
 
 
 		if (_actDef == 2) {
-			if (isRunning && timeToRun >= 0) {
+			if (_isRunning && timeToRun >= 0) {
 //				gameObject.GetComponent<HealthScript> ().isEnemy = true;
 				IsRunning = true;
 				timeToRun -= Time.deltaTime;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
-				playerSpeed.speed = new Vector2 (100f, 0f);
+				playerSpeed.speed = new Vector2 (SpeedSuper, 0f);
 			} else {
 				IsRunning = false;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
@@ -172,7 +179,7 @@ public class SuperPower : MonoBehaviour {
 	{
 		if (PauseScript.isPause) {
 			superPunchIm.GetComponent<Collider2D> ().enabled = true;
-//			isSuperPunchActive = true;
+			IsSuperPunchActive = true;
 			animator.SetBool ("superPunch", true);
 			animator.SetBool ("Run", false);
 			Invoke ("StopPunch", 0.25f);
@@ -182,7 +189,7 @@ public class SuperPower : MonoBehaviour {
     void StopPunch()
     {
         superPunchIm.GetComponent<Collider2D>().enabled = false;
-//        isSuperPunchActive = false;
+        IsSuperPunchActive = false;
         animator.SetBool("superPunch", false);
         animator.SetBool("Run", true);
     }
@@ -194,9 +201,9 @@ public class SuperPower : MonoBehaviour {
     public void SuperSpeed (bool isTrueSpeed) {
 		if (PauseScript.isPause) {
 			if (isTrueSpeed) {
-				isRunning = true;
+				_isRunning = true;
 			} else {
-				isRunning = false;
+				_isRunning = false;
 			}
 		}
 
@@ -239,9 +246,9 @@ public class SuperPower : MonoBehaviour {
     {
 	if (PauseScript.isPause) {
 			if (isTrueFly) {		
-				isFlying = true;			
+				_isFlying = true;			
 			} else {
-				isFlying = false;
+				_isFlying = false;
 			}
 		}
 
@@ -261,7 +268,7 @@ public void SuperJump()
 		if (PauseScript.isPause) {
 			if (IsGrounded || cloudTuch) {
 				myRigitbody.gravityScale = 4f;
-				myRigitbody.velocity += jumpForce * Vector2.up;
+			myRigitbody.velocity += ForceSuperJump * Vector2.up;
 				superJumpEnabled = true;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				Invoke ("StopSuperJump", 0.1f);

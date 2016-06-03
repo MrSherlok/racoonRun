@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class CoinCollectScript : MonoBehaviour {
-	public float cutoff;
+	float cutoff = 0f;
 	bool startCutOff = false;
 //	float n = 0.1f;
-	public float speedUp = 5;
+	float speedUp = 7;
 
 
 	void FixedUpdate() {
@@ -16,6 +16,7 @@ public class CoinCollectScript : MonoBehaviour {
 			gameObject.GetComponentInChildren<Renderer> ().material.SetFloat ("_Cutoff", cutoff); 
 			cutoff += Time.deltaTime*1.3f;
 			if (cutoff >= 1.2f) {
+				
 				Destroy (gameObject);
 			}
 		}
@@ -30,6 +31,7 @@ public class CoinCollectScript : MonoBehaviour {
 			//CameraFollowScript.ClaimCoinAnim();
 			cutoff = 0f;
 			startCutOff = true;
+			GoldScript.Gold += 10;
 		}
 	}
 }

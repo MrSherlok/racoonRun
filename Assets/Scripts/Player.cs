@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     bool isSuperJumpActive;       //переменная на проверку активен ли супер прыжок
 
 
+
     void Start()
     {
 		playerAnimator = GameObject.Find("Player1").GetComponent<Animator>();
@@ -49,7 +50,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 //		isSuperJumpActive = SuperPower.superJumpEnabled;
-
         IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
 		isCloudHeadTouch = Physics2D.OverlapCircle(isCloudCheck.position, isCloudCheckRadius, whatIsCloud);
 		isCloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, isCloudCheckRadius, whatIsCloud);

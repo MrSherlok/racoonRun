@@ -30,4 +30,9 @@ public void BackToChoose () {
 	public void BackToChooseLvl () {
         SceneManager.LoadScene("chooseLVL");
 	}
+
+
+	public void LoadUpgrade() {
+		SceneManager.LoadScene("Upgrade");
+	}
 }

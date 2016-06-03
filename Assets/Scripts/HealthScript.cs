@@ -43,7 +43,7 @@ public class HealthScript : MonoBehaviour
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
         if (shot != null)
         {
-			if (shot.isEnemyShot != isEnemy && SuperPower.IsRunning == false)
+			if (shot.isEnemyShot != isEnemy && SuperPower.IsRunning == false && SuperPower.IsSuperPunchActive == false)
             {
                 hp -= shot.damage;
 			    curHp = hp/maxhp;

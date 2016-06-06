@@ -155,7 +155,6 @@ public class SuperPower : MonoBehaviour {
 				myRigitbody.gravityScale = 6f;
 				TremorAnimOff ();
 				jetpackFX.SetActive (false);
-				Invoke("SmoothYBack", 0.8f);
 			}
 		}
 

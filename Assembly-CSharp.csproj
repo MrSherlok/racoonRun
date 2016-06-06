@@ -53,7 +53,6 @@
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\GameButtons.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
-     <Compile Include="Assets\Scripts\LvLPartSpawnScript.cs" />
      <Compile Include="Assets\Scripts\Map\ChengeCenturyScript.cs" />
      <Compile Include="Assets\Scripts\Map\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
@@ -67,10 +66,10 @@
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
-     <Compile Include="Assets\Scripts\VisibleEnemyScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\BoxingGlowScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\CloudJumpScript.cs" />
+     <Compile Include="Assets\Scripts\newSystem\DellAll.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyHeadShotScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyHealthScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyShotScript.cs" />

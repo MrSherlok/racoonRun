@@ -48,7 +48,8 @@ public class HealthScript : MonoBehaviour
                 hp -= shot.damage;
 				GameObject.Find ("CameraPoint").GetComponent<AudioSource>().Play ();
 			    curHp = hp/maxhp;
-			hpBar.fillAmount -= 0.0001f;
+				hpBar.fillAmount -= 0.0001f;
+				Debug.Log (collider.gameObject.name);
 				
 			/*if(gameObject.tag == "Player")*/ GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
 

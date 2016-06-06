@@ -11,16 +11,16 @@ public class EnemyHealthScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.name == "GroundPoint") {
-			Destroy (gameObject,0.2f);
+			Debug.Log ("head");
+			Destroy (gameObject);
 		} else {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 			if (shot != null) {
 				/*if (shot.isEnemyShot != isEnemy) {*/
-				hp -= shot.damage;	
-
+				Debug.Log ("player");
+				hp -= shot.damage;
 				if (hp <= 0) {
-					Destroy (gameObject,0.2f);
-					/*}*/
+					Destroy (gameObject);
 				}
 			}
 		}

@@ -12,7 +12,9 @@ public class EnemyHealthScript : MonoBehaviour {
 	{
 		if (collider.gameObject.name == "GroundPoint") {
 			Debug.Log ("head");
-			Destroy (gameObject);
+			gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+			gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
+			Destroy (gameObject,1f);
 		} else {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 			if (shot != null) {
@@ -20,7 +22,9 @@ public class EnemyHealthScript : MonoBehaviour {
 				Debug.Log ("player");
 				hp -= shot.damage;
 				if (hp <= 0) {
-					Destroy (gameObject);
+					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
+					Destroy (gameObject,1f);
 				}
 			}
 		}

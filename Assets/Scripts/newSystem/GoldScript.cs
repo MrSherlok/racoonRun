@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GoldScript : MonoBehaviour {
 
-	public static int Gold = 100;
+	public static int Gold;
 
+	void Start () {
+		Gold = PlayerPrefs.GetInt ("Gold");
+	}
 }

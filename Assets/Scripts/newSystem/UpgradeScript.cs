@@ -21,6 +21,8 @@ public class UpgradeScript : MonoBehaviour {
 	public Text jump;
 	public Text gold;
 
+	bool wasChange = false;
+
 	void Start() {
 		SodaUpgrade[0] = 0.7f;
 		SodaUpgrade[1] = 0.9f;
@@ -50,6 +52,13 @@ public class UpgradeScript : MonoBehaviour {
 		jumpNeedGold [0] = 5;
 		jumpNeedGold [1] = 10;
 		jumpNeedGold [2] = 25;
+
+
+		_sodaLvl = PlayerPrefs.GetInt("SodaLvl");
+		_speedLvl = PlayerPrefs.GetInt ("SpeedLvl");
+		_jumpLvl = PlayerPrefs.GetInt ("JumpLvl");
+
+		wasChange = true;
 	}
 
 	public void SodaFUpgrade(){
@@ -57,7 +66,8 @@ public class UpgradeScript : MonoBehaviour {
 			if (GoldScript.Gold >= sodaNeedGold [_sodaLvl]) {
 				GoldScript.Gold -= sodaNeedGold [_sodaLvl];
 				_sodaLvl++;
-				SuperPower.FlyingForse = SodaUpgrade [_sodaLvl];
+				wasChange = true;
+				PlayerPrefs.SetInt ("SodaLvl", _sodaLvl);
 			}
 		}
 	}
@@ -67,7 +77,8 @@ public class UpgradeScript : MonoBehaviour {
 			if (GoldScript.Gold >= speedNeedGold [_speedLvl]) {
 				GoldScript.Gold -= speedNeedGold [_speedLvl];
 				_speedLvl++;
-				SuperPower.SpeedSuper = SuperSpeedUpgrade [_speedLvl];
+				wasChange = true;
+				PlayerPrefs.SetInt ("SpeedLvl", _speedLvl);
 			}
 		}
 	}
@@ -77,13 +88,21 @@ public class UpgradeScript : MonoBehaviour {
 			if (GoldScript.Gold >= jumpNeedGold [_jumpLvl]) {
 				GoldScript.Gold -= jumpNeedGold [_jumpLvl];
 				_jumpLvl++;
-				SuperPower.ForceSuperJump = SuperJumpUpgrade [_jumpLvl];
+				wasChange = true;
+				PlayerPrefs.SetInt ("JumpLvl", _jumpLvl);
 			}
 		}
 	}
 
 
 	void FixedUpdate() {
+		if (wasChange) {
+			SuperPower.FlyingForse = SodaUpgrade [_sodaLvl];
+			SuperPower.SpeedSuper = SuperSpeedUpgrade [_speedLvl];
+			SuperPower.ForceSuperJump = SuperJumpUpgrade [_jumpLvl];
+			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
+			wasChange = false;
+		}
 		soda.text = SuperPower.FlyingForse.ToString ();
 		speed.text = SuperPower.ForceSuperJump.ToString ();
 		jump.text = SuperPower.SpeedSuper.ToString ();

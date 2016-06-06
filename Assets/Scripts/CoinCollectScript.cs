@@ -6,6 +6,7 @@ public class CoinCollectScript : MonoBehaviour {
 	bool startCutOff = false;
 //	float n = 0.1f;
 	float speedUp = 7;
+	[SerializeField] private AudioClip _coinLoot;
 
 
 	void FixedUpdate() {
@@ -26,7 +27,9 @@ public class CoinCollectScript : MonoBehaviour {
 		
 	
 		if (col.gameObject.tag == "Player") {
-			gameObject.GetComponent<AudioSource>().Play ();
+
+			GameObject.Find("Player").GetComponent<AudioSource>().clip = _coinLoot;
+			GameObject.Find("Player").GetComponent<AudioSource>().Play ();
 //			Debug.Log ("Yra");
 			//CameraFollowScript.ClaimCoinAnim();
 			cutoff = 0f;

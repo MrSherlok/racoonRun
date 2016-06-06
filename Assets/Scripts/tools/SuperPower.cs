@@ -35,7 +35,8 @@ public class SuperPower : MonoBehaviour {
 	public static bool IsFlying = false;
 
 	public static bool IsSuperPunchActive = false; 
-	public GameObject superPunchIm;   
+	public GameObject superPunchIm;
+	public GameObject superPunchIm1;
 
 
 
@@ -132,6 +133,7 @@ public class SuperPower : MonoBehaviour {
 			cloudTuch = false;
 		}
 		IsGrounded = Player.IsGrounded;
+
        
  /*       if (_flyingCooldown > 0)
         {
@@ -160,16 +162,12 @@ public class SuperPower : MonoBehaviour {
 
 		if (_actDef == 2) {
 			if (_isRunning && timeToRun >= 0) {
-//				gameObject.GetComponent<HealthScript> ().isEnemy = true;
 				IsRunning = true;
 				timeToRun -= Time.deltaTime;
-				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 0.05f;
 				playerSpeed.speed = new Vector2 (SpeedSuper, 0f);
 			} else {
 				IsRunning = false;
-				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeX = 1;
 				playerSpeed.speed = new Vector2 (0f, 0f);
-//				gameObject.GetComponent<HealthScript> ().isEnemy = false;
 			}
 		}
 	}
@@ -178,6 +176,7 @@ public class SuperPower : MonoBehaviour {
     public void SuperPunch()
 	{
 		if (PauseScript.isPause) {
+			superPunchIm1.GetComponent<Renderer> ().enabled = true;
 			superPunchIm.GetComponent<Collider2D> ().enabled = true;
 			IsSuperPunchActive = true;
 			animator.SetBool ("superPunch", true);
@@ -188,6 +187,7 @@ public class SuperPower : MonoBehaviour {
 
     void StopPunch()
     {
+		superPunchIm1.GetComponent<Renderer> ().enabled = false;
         superPunchIm.GetComponent<Collider2D>().enabled = false;
         IsSuperPunchActive = false;
         animator.SetBool("superPunch", false);
@@ -206,26 +206,9 @@ public class SuperPower : MonoBehaviour {
 				_isRunning = false;
 			}
 		}
-
-        
-//        HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
-//        hpSS = health.hp;
-//        health.hp = 1000;
-            
-//        Invoke("StopSpeed",0.5f);
+	}
 
 
-		}
-/*    void StopSpeed()
-    {
-      
-        player.movementSpeed = 0;
-//        HealthScript health = GameObject.FindWithTag("Player").GetComponent<HealthScript>();
-//        health.hp = hpSS;
-        
-
-    }
-*/
 /*	public void Flying (bool isTrueFly) {
 		
        
@@ -251,42 +234,27 @@ public class SuperPower : MonoBehaviour {
 				_isFlying = false;
 			}
 		}
-
-		//effects.SetActive (true);
-	//	Invoke ("Deeffector",3.0f);
-
-
     }
-/*	void Deeffector(){
-		//effects.SetActive (false);
-		myRigitbody.gravityScale = 5f;
-	}
-*/
+
 public void SuperJump()
 	{
-		//		isGrounded = GameObject.Find("Player").GetComponent<Player> ().isGrounded;
 		if (PauseScript.isPause) {
 			if (IsGrounded || cloudTuch) {
 				myRigitbody.gravityScale = 4f;
-			myRigitbody.velocity += ForceSuperJump * Vector2.up;
+				myRigitbody.velocity += ForceSuperJump * Vector2.up;
 				superJumpEnabled = true;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				Invoke ("StopSuperJump", 0.1f);
-				Invoke ("SmoothYBack", 0.5f);
 			}
 		}
 	}
 
     void StopSuperJump()
     {
-	myRigitbody.gravityScale = 6f;
+		myRigitbody.gravityScale = 6f;
         superJumpEnabled = false;
 
     }
-
-void SmoothYBack () {
-	//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.05f;
-	}
 
 
 void TremorAnimOn(){

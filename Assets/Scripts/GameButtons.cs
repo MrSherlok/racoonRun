@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class GameButtons : MonoBehaviour {
 
-public void Reload () {
+	public void Reload ( int nextScene) {		
+		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f;
+		Time.timeScale = 1f;
 	}
 
 public void BackToChoose () {
@@ -20,6 +21,7 @@ public void BackToChoose () {
         ChooseSPScript.chooseCookieRangEnable = false;
         ChooseSPScript.chooseBananaGunEnable = false;
         ChooseSPScript.chooseSuperPunchEnable = false; */
+		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
     }
 
 	public void BackToMainMenu () {

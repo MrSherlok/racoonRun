@@ -37,4 +37,7 @@ public void BackToChoose () {
 	public void LoadUpgrade() {
 		SceneManager.LoadScene("Upgrade");
 	}
+	public void LoadSettings() {
+		SceneManager.LoadScene("Settings");
+	}
 }

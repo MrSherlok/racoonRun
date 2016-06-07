@@ -1,14 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChoseCameraType.cs">
     <Files>
-      <File FileName="Assets\Scripts\CoinCollectScript.cs" Line="28" Column="51" />
-      <File FileName="Assets\Scripts\tools\SuperPower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraFollowScript2.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\newSystem\EnemyShotScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\newSystem\EnemyHealthScript.cs" Line="20" Column="5" />
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HealthScript.cs" Line="46" Column="69" />
+      <File FileName="Assets\Scripts\SoundSettingsScrollbar.cs" Line="13" Column="4" />
+      <File FileName="Assets\Scripts\ChoseCameraType.cs" Line="10" Column="80" />
+      <File FileName="Assets\Scripts\ApplyButton.cs" Line="15" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -48,7 +48,8 @@
      <Compile Include="Assets\Scripts\AirPlatformScript.cs" />
      <Compile Include="Assets\Scripts\ApplyButton.cs" />
      <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
-     <Compile Include="Assets\Scripts\CameraFollowScript2.cs" />
+     <Compile Include="Assets\Scripts\CameraScripts\CameraFollow3.cs" />
+     <Compile Include="Assets\Scripts\CameraScripts\CameraFollowScript2.cs" />
      <Compile Include="Assets\Scripts\ChoseCameraType.cs" />
      <Compile Include="Assets\Scripts\CoinCollectScript.cs" />
      <Compile Include="Assets\Scripts\CollisionTrigger.cs" />

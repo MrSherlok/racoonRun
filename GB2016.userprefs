@@ -1,10 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChoseCameraType.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraScripts\CameraFollow3.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundSettingsScrollbar.cs" Line="13" Column="4" />
-      <File FileName="Assets\Scripts\ChoseCameraType.cs" Line="10" Column="80" />
-      <File FileName="Assets\Scripts\ApplyButton.cs" Line="15" Column="36" />
+      <File FileName="Assets\Scripts\CameraScripts\CameraFollow3.cs" Line="18" Column="89" />
+      <File FileName="Assets\Scripts\CameraScripts\CameraFollowScript2.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

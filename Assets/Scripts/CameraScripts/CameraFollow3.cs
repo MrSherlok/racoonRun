@@ -3,20 +3,28 @@ using System.Collections;
 
 public class CameraFollow3 : MonoBehaviour {
 
-	public GameObject camTargetObject;
-	[SerializeField]
-	float ppc;
+	GameObject camTargetObject;
+
+	void Awake(){
+		if (PlayerPrefs.GetInt("CamTypeChose") == 0) {
+			Debug.Log ("Dynamic camera true");
+			//gameObject.SetActive (true);
+			GetComponent<CameraFollow3> ().enabled = true;
+		}
+		if (PlayerPrefs.GetInt("CamTypeChose") == 1) {
+			Debug.Log ("Dynamic camera false");
+			GetComponent<CameraFollow3> ().enabled = false;
+		}
+	}
 	void Start(){
-		//camTargetObject = GameObject.Find("Player");
+		
+		camTargetObject = GameObject.Find("CameraPoint");
 
 			
 	}
 	void Update () {
-		ppc = camTargetObject.transform.localPosition.y - 19.69f;
-		//if (camTargetObject.transform.position.y)
-
-		gameObject.transform.position = new Vector3(camTargetObject.transform.position.x,ppc*-0.35f,-10f);
-
+		gameObject.transform.position = new Vector3(camTargetObject.transform.position.x,camTargetObject.transform.position.y,-10f);
+	
 
 	}
 }

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
 		playerAnimator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
-//        Time.timeScale = 1f;
+     // Time.timeScale = 1f;
 
     }
 

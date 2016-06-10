@@ -11,7 +11,17 @@ public class CameraFollowScript2 : MonoBehaviour {
 	private bool DoDamage;
 	public static Animator camAnimator;
 	GameObject player;
-
+	void Awake(){
+		if (PlayerPrefs.GetInt("CamTypeChose") == 1) {
+			Debug.Log ("Static camera true");
+			GetComponent<CameraFollowScript2> ().enabled = true;
+			//gameObject.SetActive (true);
+		}
+		if (PlayerPrefs.GetInt("CamTypeChose") == 0) {
+			Debug.Log ("Static camera false");
+			GetComponent<CameraFollowScript2> ().enabled = false;
+		}
+	}
 	void Start () {
 		player =  GameObject.Find("CameraPoint");
 		camAnimator = player.GetComponent<Animator>();

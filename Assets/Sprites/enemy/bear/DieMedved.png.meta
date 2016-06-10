@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: e05b33fae48d368489d3045c49e0714c
+timeCreated: 1465560033
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DieMedved_0
+    21300002: DieMedved_1
+    21300004: DieMedved_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: DieMedved_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 263
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.5, y: -227.5}
+        - {x: 74.5, y: -232.5}
+        - {x: 103.5, y: -231.5}
+        - {x: 127.5, y: -199.5}
+        - {x: 131.5, y: -169.5}
+        - {x: 131.5, y: -117.5}
+        - {x: 130.5, y: -107.5}
+        - {x: 109.5, y: -52.5}
+        - {x: 108.5, y: 2.5}
+        - {x: 102.5, y: 30.5}
+        - {x: 85.5, y: 122.5}
+        - {x: 101.5, y: 122.5}
+        - {x: 126.5, y: 139.5}
+        - {x: 131.5, y: 149.5}
+        - {x: 131.5, y: 188.5}
+        - {x: 126.5, y: 199.5}
+        - {x: 64.5, y: 195.5}
+        - {x: 34.5, y: 242.5}
+        - {x: 17.5, y: 242.5}
+        - {x: 5.5, y: 225.5}
+        - {x: -22.5, y: 225.5}
+        - {x: -59.5, y: 172.5}
+        - {x: -70.5, y: 142.5}
+        - {x: -96.5, y: 55.5}
+        - {x: -108.5, y: -23.5}
+        - {x: -117.5, y: -72.5}
+        - {x: -131.5, y: -133.5}
+        - {x: -131.5, y: -200.5}
+        - {x: -126.5, y: -218.5}
+        - {x: -104.5, y: -238.5}
+        - {x: -91.5, y: -236.5}
+        - {x: -72.5, y: -220.5}
+        - {x: -61.5, y: -241.5}
+        - {x: -43.5, y: -235.5}
+        - {x: -33.5, y: -242.5}
+        - {x: -14.5, y: -242.5}
+        - {x: -10.5, y: -236.5}
+        - {x: 0.5, y: -242.5}
+        - {x: 38.5, y: -242.5}
+      - - {x: 115.5, y: -11.5}
+        - {x: 118.5, y: -14.5}
+        - {x: 121.5, y: -13.5}
+        - {x: 121.5, y: -10.5}
+        - {x: 118.5, y: -7.5}
+        - {x: 115.5, y: -8.5}
+    - name: DieMedved_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 282
+        width: 49
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 64.5}
+        - {x: -24.5, y: 49.5}
+        - {x: -24.5, y: -36.5}
+        - {x: -12.5, y: -64.5}
+        - {x: 20.5, y: -64.5}
+        - {x: 24.5, y: -61.5}
+        - {x: 24.5, y: 46.5}
+        - {x: 20.5, y: 64.5}
+    - name: DieMedved_2
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 40
+        width: 194
+        height: 437
+      alignment: 9
+      pivot: {x: 0.36808398, y: 0.16814706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122.591705, y: 282.51974}
+        - {x: 44.591705, y: 360.51974}
+        - {x: 40.591705, y: 349.51974}
+        - {x: 42.591705, y: 340.51974}
+        - {x: 52.591705, y: 316.51974}
+        - {x: 54.591705, y: 302.51974}
+        - {x: 54.591705, y: 290.51974}
+        - {x: 53.591705, y: 306.51974}
+        - {x: 47.591705, y: 329.51974}
+        - {x: 21.591705, y: 362.51974}
+        - {x: 19.591705, y: 363.51974}
+        - {x: -5.4082947, y: 363.51974}
+        - {x: -53.408295, y: 208.51974}
+        - {x: -71.408295, y: 69.519745}
+        - {x: -71.408295, y: -12.480255}
+        - {x: -46.408295, y: -73.480255}
+        - {x: 52.591705, y: -73.480255}
+        - {x: 79.591705, y: -60.480255}
+        - {x: 114.591705, y: 17.519745}
+        - {x: 122.591705, y: 77.519745}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

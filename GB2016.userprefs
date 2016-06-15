@@ -1,14 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NextLvLSceneScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\tools\SuperPower.cs">
     <Files>
-      <File FileName="Assets\Scripts\newSystem\EnemyHealthScript.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\newSystem\EnemyShotScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NextLvLSceneScript.cs" Line="13" Column="6" />
-      <File FileName="Assets\Scripts\StartScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameButtons.cs" Line="3" Column="1" />
+      <File FileName="Assets\Scripts\ApplyButton.cs" Line="17" Column="35" />
       <File FileName="Assets\Scripts\Player.cs" Line="46" Column="8" />
-      <File FileName="Assets\Scripts\HealthScript.cs" Line="11" Column="5" />
+      <File FileName="Assets\Scripts\tools\SuperPower.cs" Line="80" Column="4" />
+      <File FileName="Assets\Scripts\StartGameEnablesScript.cs" Line="8" Column="43" />
+      <File FileName="Assets\Scripts\tools\ChooseSPScript.cs" Line="9" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

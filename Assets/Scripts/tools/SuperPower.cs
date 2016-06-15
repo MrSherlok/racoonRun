@@ -10,6 +10,12 @@ public class SuperPower : MonoBehaviour {
 	bool _bananaGunEnable;
 	bool _superPunchEnable;
 */
+	//FxVariables
+
+	private ParticleSystem SodaFXParts;
+	private ParticleSystem FireFXParts;
+
+
 	public Image[] spelsDamImage = new Image[3];
 	public Image[] spelsDefImage = new Image[3];
 
@@ -47,9 +53,8 @@ public class SuperPower : MonoBehaviour {
 	//private bool isGrounded;
 
 	public Rigidbody2D myRigitbody;
-	public GameObject effects;  
     private Animator animator;
-	public GameObject jetpackFX;
+
 
 
 //    private int hpSS;
@@ -63,11 +68,18 @@ public class SuperPower : MonoBehaviour {
 
     public void Awake(){
         animator = GameObject.Find("Player1").GetComponent<Animator>();
-//        effects.SetActive (false);
 		playerSpeed = GameObject.Find("2-Foreground").GetComponent<ScrollingScript>();
-    }
 
+    }
 	void Start() {
+		if (ChooseSPScript.ActiveDefSpel == 1) {
+			ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
+			ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
+			SodaFXParts.enableEmission = false;
+			FireFXParts.enableEmission = false;
+		}
+
+		
 /*		_superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
 		_flyingEnable = ChooseSPScript.choooseFlyingEnable;
 		_superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
@@ -133,28 +145,35 @@ public class SuperPower : MonoBehaviour {
 			cloudTuch = false;
 		}
 		IsGrounded = Player.IsGrounded;
-
-       
- /*       if (_flyingCooldown > 0)
-        {
-            _flyingCooldown -= Time.deltaTime;
-        }
-*/
         
 		if (_actDef == 1) {
 			if (_isFlying && timeToFly >= 0) {
 				IsFlying = true;
 				//mainCamera.GetComponent<CameraFollowScript> ().smoothTimeY = 0.005f;
 				TremorAnimOn ();
-				jetpackFX.SetActive (true);
+				//jetpackFX.SetActive (true);
 				timeToFly -= Time.deltaTime;
 				myRigitbody.gravityScale = 2f;
 				myRigitbody.velocity += FlyingForse * Vector2.up;
+				//Particle Fire - active
+				//Satricle Boubbles Start
+				//ТУТ ПОЛЕТ
+				ParticleSystem FireFXParts = GameObject.Find("InpuctFireFx").GetComponent<ParticleSystem>();
+				ParticleSystem SodaFXParts = GameObject.Find("SodaFX").GetComponent<ParticleSystem>();
+			
+				SodaFXParts.enableEmission = true;
+				FireFXParts.enableEmission = true;
 			} else {
+				//Particle Fire - !active
+				//Satricle Boubbles Stop
 				IsFlying = false;
 				myRigitbody.gravityScale = 6f;
 				TremorAnimOff ();
-				jetpackFX.SetActive (false);
+				ParticleSystem FireFXParts = GameObject.Find("InpuctFireFx").GetComponent<ParticleSystem>();
+				ParticleSystem SodaFXParts = GameObject.Find("SodaFX").GetComponent<ParticleSystem>();
+				SodaFXParts.enableEmission = false;
+				FireFXParts.enableEmission = false;
+				//jetpackFX.SetActive (false);
 			}
 		}
 

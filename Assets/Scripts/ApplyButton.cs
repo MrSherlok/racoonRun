@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ApplyButton : MonoBehaviour {
 	public GameObject volumeScrollbar;
@@ -13,6 +14,7 @@ public class ApplyButton : MonoBehaviour {
 		_camTypeChose = camPesetDropBox.GetComponent<Dropdown>().value;
 		PlayerPrefs.SetFloat ("MainAudioVolume",_mainAudioVolime);
 		PlayerPrefs.SetInt ("CamTypeChose", _camTypeChose);
+		SceneManager.LoadScene("MainMenu");
 	}
 
 }

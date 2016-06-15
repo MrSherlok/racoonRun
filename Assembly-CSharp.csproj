@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\SoundSettingsScrollbar.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
+     <Compile Include="Assets\Scripts\StartGameEnablesScript.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />

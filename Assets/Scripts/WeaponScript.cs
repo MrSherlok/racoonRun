@@ -19,8 +19,6 @@ public class WeaponScript : MonoBehaviour
 	
     void Start ()
     {
-        if (gameObject.tag == "Player")
-        {
 			if (ChooseSPScript.ActiveDamSpel == 0)
             {
 				bananas[0] = Instantiate (bananaGunPrefab);
@@ -44,7 +42,6 @@ public class WeaponScript : MonoBehaviour
 				cookieRangs[5] = Instantiate (cookieRangPrefab);
 			} 
         }
-    }
 
 	void FixedUpdate()
 	{
@@ -57,9 +54,7 @@ public class WeaponScript : MonoBehaviour
 			if(i == 6) i = 0;
 			wasShot = false;
 		}
-		if (gameObject.tag == "Player")
-		{
-			if (ChooseSPScript.ActiveDamSpel == 0)
+		if (ChooseSPScript.ActiveDamSpel == 0)
 			{
 				shotPrefab = bananas [i];
 			}
@@ -67,7 +62,6 @@ public class WeaponScript : MonoBehaviour
 				shotPrefab = cookieRangs [i];
 			} 
 		}
-	}
 
 	public void Attack(bool isEnemy)
 	{

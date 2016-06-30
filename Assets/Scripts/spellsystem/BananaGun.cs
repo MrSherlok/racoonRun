@@ -22,10 +22,8 @@ public class BananaGun : SpellParent {
 	}
 	public override void OnClick ()
 	{
-		Debug.Log ("Ipressed");
 		if (nonCooldown) {
 			nonCooldown = false;
-			Debug.Log ("ISHOOOOT");
 			//animator.SetTrigger ("Fire");
 			shoot.transform.position = transform.position;
 			shoot.GetComponent<ShotScript> ().enabled = true;

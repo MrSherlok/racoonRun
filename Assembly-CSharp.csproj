@@ -84,6 +84,8 @@
      <Compile Include="Assets\Scripts\newSystem\TapToStartScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\UpgradeScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\fpsScript.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\BananaGun.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\SpellParent.cs" />
      <Compile Include="Assets\Scripts\tools\ChooseSPScript.cs" />
      <Compile Include="Assets\Scripts\tools\SuperPower.cs" />
  <Reference Include="UnityEngine.UI">

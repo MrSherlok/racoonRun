@@ -77,7 +77,11 @@ public class SuperPower : MonoBehaviour {
 			ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
 			SodaFXParts.enableEmission = false;
 			FireFXParts.enableEmission = false;
+			GameObject.Find ("Soda").SetActive (true);
+		} else {
+			GameObject.Find ("Soda").SetActive (false);
 		}
+
 
 		
 /*		_superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;

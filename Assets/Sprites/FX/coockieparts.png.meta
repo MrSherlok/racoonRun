@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: ff4951af6e8c7344faaaba36abaf9c4d
-timeCreated: 1458057410
+guid: d69aa3c7b6c90594ba530c120a03a1f3
+timeCreated: 1467281032
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: cookey
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,14 +23,14 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -50,27 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: cookey
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 193
-        width: 69
-        height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3.5, y: 35.5}
-        - {x: -18.5, y: 26.5}
-        - {x: -23.5, y: 5.5}
-        - {x: -23.5, y: -30.5}
-        - {x: -13.5, y: -38.5}
-        - {x: -0.5, y: -38.5}
-        - {x: 32.5, y: 23.5}
-        - {x: 32.5, y: 30.5}
-        - {x: 21.5, y: 35.5}
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

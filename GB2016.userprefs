@@ -2,11 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\tools\SuperPower.cs">
     <Files>
-      <File FileName="Assets\Scripts\ApplyButton.cs" Line="17" Column="35" />
-      <File FileName="Assets\Scripts\Player.cs" Line="46" Column="8" />
-      <File FileName="Assets\Scripts\tools\SuperPower.cs" Line="80" Column="4" />
-      <File FileName="Assets\Scripts\StartGameEnablesScript.cs" Line="8" Column="43" />
-      <File FileName="Assets\Scripts\tools\ChooseSPScript.cs" Line="9" Column="20" />
+      <File FileName="Assets\Scripts\CameraScripts\CameraFollow3.cs" Line="26" Column="62" />
+      <File FileName="Assets\Scripts\CameraScripts\CameraFollowScript2.cs" Line="12" Column="36" />
+      <File FileName="Assets\Scripts\StartGameEnablesScript.cs" Line="9" Column="24" />
+      <File FileName="Assets\Scripts\ChoseCameraType.cs" Line="11" Column="47" />
+      <File FileName="Assets\Scripts\tools\SuperPower.cs" Line="279" Column="52" />
+      <File FileName="Assets\Scripts\WeaponScript.cs" Line="45" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

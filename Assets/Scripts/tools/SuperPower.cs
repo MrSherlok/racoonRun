@@ -276,11 +276,11 @@ public void SuperJump()
 
 
 void TremorAnimOn(){
-	CameraFollowScript2.camAnimator.SetBool ("Tremor",true);
+//	CameraFollowScript2.camAnimator.SetBool ("Tremor",true);
 		//Debug.Log ("asf");
 }
 void TremorAnimOff(){
-	CameraFollowScript2.camAnimator.SetBool ("Tremor",false);
+//	CameraFollowScript2.camAnimator.SetBool ("Tremor",false);
 }
 
 }

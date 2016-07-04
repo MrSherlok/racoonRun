@@ -86,8 +86,12 @@
      <Compile Include="Assets\Scripts\newSystem\fpsScript.cs" />
      <Compile Include="Assets\Scripts\spellsystem\BananaGun.cs" />
      <Compile Include="Assets\Scripts\spellsystem\CookieRang.cs" />
-     <Compile Include="Assets\Scripts\spellsystem\SpellParent.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\DamSpellParent.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\DefSpellParent.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\SodaPack.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\SuperJump.cs" />
      <Compile Include="Assets\Scripts\spellsystem\SuperPunch.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\SuperSpeed.cs" />
      <Compile Include="Assets\Scripts\tools\ChooseSPScript.cs" />
      <Compile Include="Assets\Scripts\tools\SuperPower.cs" />
  <Reference Include="UnityEngine.UI">

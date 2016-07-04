@@ -13,12 +13,10 @@ public class CameraFollowScript2 : MonoBehaviour {
 	GameObject player;
 	void Awake(){
 		if (PlayerPrefs.GetInt("CamTypeChose") == 1) {
-			Debug.Log ("Static camera true");
 			GetComponent<CameraFollowScript2> ().enabled = true;
 			//gameObject.SetActive (true);
 		}
 		if (PlayerPrefs.GetInt("CamTypeChose") == 0) {
-			Debug.Log ("Static camera false");
 			GetComponent<CameraFollowScript2> ().enabled = false;
 		}
 	}

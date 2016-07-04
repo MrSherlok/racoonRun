@@ -34,7 +34,7 @@ public class LoadSceneScript : MonoBehaviour {
 
 	IEnumerator LoadLevel(){
 		
-		ao = SceneManager.LoadSceneAsync ("1Mike", LoadSceneMode.Single);
+		ao = SceneManager.LoadSceneAsync ("1MikeNewSkill", LoadSceneMode.Single);
 		yield return ao;
 	}
 

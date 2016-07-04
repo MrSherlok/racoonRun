@@ -15,16 +15,11 @@ public class EnemyHealthScript : MonoBehaviour {
 			gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
 			Destroy (gameObject,1f);
 			Angel.SetActive (true);
-
 			StartCoroutine (AngelFLying ());
-
-
 		} else {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 			if (shot != null) {
-				/*if (shot.isEnemyShot != isEnemy) {*/
 				hp -= shot.damage;
-				Debug.Log ("ai");
 				if (hp <= 0) {
 					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);

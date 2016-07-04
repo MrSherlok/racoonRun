@@ -76,22 +76,10 @@ public class WeaponScript : MonoBehaviour
 				shotPrefab.transform.position = transform.position;
 				if (gameObject.tag == "Player") {
 					if (ChooseSPScript.ActiveDamSpel == 2)
-						shotPrefab.GetComponentInChildren<ShotScript> ().enabled = true;
+						shotPrefab.SetActive(true);
 					else
-						shotPrefab.GetComponent<ShotScript> ().enabled = true; 
+						shotPrefab.SetActive(true);
 				} 
-				// The is enemy property
-				//		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
-				//		if (shot != null)
-				//		{
-				//			shot.isEnemyShot = isEnemy;
-				//		}
-				// Make the weapon shot always towards it
-//			MoveScript move = shotPrefab.GetComponent<MoveScript>();
-//			if (move != null)
-//			{
-//				move.direction = this.transform.right; // towards in 2D space is the right of the sprite
-//			}
 			}
 		}
 	}

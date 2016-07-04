@@ -97,15 +97,15 @@ public class UpgradeScript : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (wasChange) {
-			SuperPower.FlyingForse = SodaUpgrade [_sodaLvl];
-			SuperPower.SpeedSuper = SuperSpeedUpgrade [_speedLvl];
-			SuperPower.ForceSuperJump = SuperJumpUpgrade [_jumpLvl];
+//			SuperPower.FlyingForse = SodaUpgrade [_sodaLvl];
+//			SuperPower.SpeedSuper = SuperSpeedUpgrade [_speedLvl];
+//			SuperPower.ForceSuperJump = SuperJumpUpgrade [_jumpLvl];
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 			wasChange = false;
 		}
-		soda.text = SuperPower.FlyingForse.ToString ();
-		speed.text = SuperPower.ForceSuperJump.ToString ();
-		jump.text = SuperPower.SpeedSuper.ToString ();
+//		soda.text = SuperPower.FlyingForse.ToString ();
+//		speed.text = SuperPower.ForceSuperJump.ToString ();
+//		jump.text = SuperPower.SpeedSuper.ToString ();
 		gold.text = GoldScript.Gold.ToString ();
 	}
 

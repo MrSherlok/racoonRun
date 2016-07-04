@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TapToStartScript : MonoBehaviour {
 
-	bool wasTap = false;
+//	bool wasTap = false;
 
 /*	void Start () {
 		PauseScript.isPause = false;

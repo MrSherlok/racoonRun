@@ -1,32 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BananaGun : SpellParent {
+public class BananaGun : DamSpellParent {
 //	public GameObject bananaGunPrefab;
 	GameObject[] bananas= new GameObject[6];
+	public GameObject gun;
 	int i = 0;
 	void Start(){
-		nonCooldown = true;
 		damage = 1;
-		cooldown = 1f;
-		shotPrefab = Resources.Load("banana");
-		bananas[0] = Instantiate (shotPrefab)as GameObject;
-		bananas[1] = Instantiate (shotPrefab)as GameObject;
-		bananas[2] = Instantiate (shotPrefab)as GameObject;
-		bananas[3] = Instantiate (shotPrefab)as GameObject;
-		bananas[4] = Instantiate (shotPrefab)as GameObject;
-		bananas[5] = Instantiate (shotPrefab)as GameObject;
-		shoot = bananas [0];
+		cooldown = 0.3f;
+		count = 3;
+		activeTime = 1.2f;
+		timer = 0f;
 
+		gun.GetComponent<SpriteRenderer> ().enabled = true;
+		nonCooldown = true;
+		shotPrefab = Resources.Load("banana") as GameObject;
+		bananas[0] = Instantiate (shotPrefab);
+		bananas[1] = Instantiate (shotPrefab);
+		bananas[2] = Instantiate (shotPrefab);
+		bananas[3] = Instantiate (shotPrefab);
+		bananas[4] = Instantiate (shotPrefab);
+		bananas[5] = Instantiate (shotPrefab);
+		shoot = bananas [0];
+	}
+
+	void Update() {
+		if (nonCooldown)
+			timer += Time.deltaTime;
+		else
+			timer = 0;
+		if (timer >= activeTime) {
+			timer = 0f;
+			count++;
+		}
 
 	}
+
 	public override void OnClick ()
 	{
-		if (nonCooldown) {
+		if (nonCooldown && (count>0)) {
 			nonCooldown = false;
+			count--;
 			//animator.SetTrigger ("Fire");
+			shoot.SetActive(true);
 			shoot.transform.position = transform.position;
-			shoot.GetComponent<ShotScript> ().enabled = true;
 			Invoke ("Coldown", cooldown);
 		//	StartCoroutine ("Coldown");
 		}

@@ -7,12 +7,10 @@ public class CameraFollow3 : MonoBehaviour {
 
 	void Awake(){
 		if (PlayerPrefs.GetInt("CamTypeChose") == 0) {
-			Debug.Log ("Dynamic camera true");
 			//gameObject.SetActive (true);
 			GetComponent<CameraFollow3> ().enabled = true;
 		}
 		if (PlayerPrefs.GetInt("CamTypeChose") == 1) {
-			Debug.Log ("Dynamic camera false");
 			GetComponent<CameraFollow3> ().enabled = false;
 		}
 	}

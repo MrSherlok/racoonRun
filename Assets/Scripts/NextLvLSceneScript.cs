@@ -11,10 +11,10 @@ public class NextLvLSceneScript : MonoBehaviour {
 		if (collider.tag == "Player") {
 			winImage.SetActive (true);
 			//Time.timeScale = 0;
-			Invoke("Return",4);
+			Invoke("Return",2);
 		}
 	}
 	void Return(){
-		SceneManager.LoadScene ("MainMenu");
+		SceneManager.LoadScene ("chooseLVL");
 	}
 }

@@ -3,42 +3,33 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SuperPower : MonoBehaviour {
-/*	bool _superSpeedEnable;             //блок проверки выбраных спелов
-	bool _flyingEnable;
-	bool _superJumpEnable;
-	bool _cookieRangEnable;
-	bool _bananaGunEnable;
-	bool _superPunchEnable;
-*/
-	//FxVariables
 
-	private ParticleSystem SodaFXParts;
-	private ParticleSystem FireFXParts;
+//	private ParticleSystem SodaFXParts;
+//	private ParticleSystem FireFXParts;
 
 
 	public Image[] spelsDamImage = new Image[3];
 	public Image[] spelsDefImage = new Image[3];
 
+	public GameObject damScriptsObj;
+	public GameObject defScriptsObj;
+
+	DamSpellParent[] damScripts = new DamSpellParent[3];
+	DefSpellParent[] defScripts = new DefSpellParent[3];
+
 	private int _actDam = -1;
 	private int _actDef = -1;
 
-/*    public Image superSpeedImage;           //блок картинок
-    public Image flyingImage;
-    public Image superJumpImage;
-    public Image cookieRangImage;
-    public Image bananaGunImage;
-    public Image superPunchImage;
-    public Image jumpImage;
-*/
-     
-	public Camera mainCamera;
 
-//    private float _flyingRate = 0.5f;           
-//	private float _flyingCooldown = 0; 
-	public static float FlyingForse = 0.7f;
+     
+//	public Camera mainCamera;
+
+
+/*	public static float FlyingForse = 0.7f;
 	public float timeToFly = 2f;
 	private bool _isFlying = false;
 	public static bool IsFlying = false;
+
 
 	public static bool IsSuperPunchActive = false; 
 	public GameObject superPunchIm;
@@ -56,8 +47,6 @@ public class SuperPower : MonoBehaviour {
     private Animator animator;
 
 
-
-//    private int hpSS;
 	private ScrollingScript playerSpeed;
 	public static float SpeedSuper = 40f;
 	private bool _isRunning = false;
@@ -69,38 +58,47 @@ public class SuperPower : MonoBehaviour {
     public void Awake(){
         animator = GameObject.Find("Player1").GetComponent<Animator>();
 		playerSpeed = GameObject.Find("2-Foreground").GetComponent<ScrollingScript>();
-
+		myRigitbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
     }
-	void Start() {
+*/	void Start() {
+
+		damScripts[0] = damScriptsObj.GetComponent<BananaGun>();
+		damScripts[1] = damScriptsObj.GetComponent<SuperPunch>();
+		damScripts[2] = damScriptsObj.GetComponent<CookieRang>();
+
+		defScripts[0] = defScriptsObj.GetComponent<SuperJump>();
+		defScripts[1] = defScriptsObj.GetComponent<SodaPack>();
+		defScripts[2] = defScriptsObj.GetComponent<SuperSpeed>();
+
 		if (ChooseSPScript.ActiveDefSpel == 1) {
-			ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
-			ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
-			SodaFXParts.enableEmission = false;
-			FireFXParts.enableEmission = false;
+//			ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
+//			ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
+//			SodaFXParts.enableEmission = false;
+//			FireFXParts.enableEmission = false;
 			GameObject.Find ("Soda").SetActive (true);
 		} else {
 			GameObject.Find ("Soda").SetActive (false);
 		}
 
 
-		
-/*		_superSpeedEnable = ChooseSPScript.chooseSuperSpeedEnable;
-		_flyingEnable = ChooseSPScript.choooseFlyingEnable;
-		_superJumpEnable = ChooseSPScript.chooseSuperJumpEnable;
-		_cookieRangEnable = ChooseSPScript.chooseCookieRangEnable;
-		_bananaGunEnable = ChooseSPScript.chooseBananaGunEnable;
-		_superPunchEnable = ChooseSPScript.chooseSuperPunchEnable;
-*/
-		IsRunning = false;
+
+/*		IsRunning = false;
 		IsSuperPunchActive = false;
 		IsFlying = false;
-
+*/
 		_actDam = ChooseSPScript.ActiveDamSpel;
 		_actDef = ChooseSPScript.ActiveDefSpel;
 
 
-		if(_actDam != -1) spelsDamImage[_actDam].enabled = true;
-		if (_actDef != -1) spelsDefImage [_actDef].enabled = true;
+		if(_actDam != -1){
+			spelsDamImage[_actDam].enabled = true;
+			damScripts[_actDam].enabled = true;
+		}
+		if (_actDef != -1){
+			spelsDefImage [_actDef].enabled = true;
+			defScripts[_actDef].enabled = true;
+		}
+
 
 /*		if (_superSpeedEnable == true) {
 			spelsDefImage[2].enabled = true;
@@ -131,7 +129,7 @@ public class SuperPower : MonoBehaviour {
 		} else {
 			spelsDamImage[0].enabled = false;
 		}
-*/
+
 		if (_actDam == 1) {
 //			spelsDamImage[1].enabled = true;
 			superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
@@ -140,9 +138,9 @@ public class SuperPower : MonoBehaviour {
 //			spelsDamImage[1].enabled = false;
 			superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
 		}
-	}
+*/	}
 
-	public void FixedUpdate () {
+/*	public void FixedUpdate () {
 		if (Player.isCloudfootTouch || Player.isCloudHeadTouch) {
 			cloudTuch = true;
 		} else {
@@ -247,7 +245,7 @@ public class SuperPower : MonoBehaviour {
 		} 
 	}
 */
-	public void Soda( bool isTrueFly)
+/*	public void Soda( bool isTrueFly)
     {
 	if (PauseScript.isPause) {
 			if (isTrueFly) {		
@@ -286,5 +284,5 @@ void TremorAnimOn(){
 void TremorAnimOff(){
 //	CameraFollowScript2.camAnimator.SetBool ("Tremor",false);
 }
-
+	*/
 }

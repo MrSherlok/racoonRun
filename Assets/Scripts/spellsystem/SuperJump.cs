@@ -10,6 +10,14 @@ public class SuperJump : DefSpellParent {
 	Rigidbody2D playerRigidbody;
 
 	void Start() {
+		//restoreSpeed here as max counts
+		restoreSpeed = 3;
+		activeTime = 3f;
+		timeTo = 0f;
+
+		count = restoreSpeed;
+
+
 		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
 		superJumpEnabled = false;
 	}
@@ -22,12 +30,24 @@ public class SuperJump : DefSpellParent {
 			cloudTuch = false;
 		}
 		IsGrounded = Player.IsGrounded;
+
+		if (onCooldown)
+			timeTo += Time.deltaTime;
+		else
+			timeTo = 0;
+		if (timeTo >= activeTime && count < restoreSpeed) {
+			timeTo = 0f;
+			count++;
+		}
+
 	}
 
 	public override void OnClickDef (bool isPressed)
 	{
 		if (PauseScript.isPause) {
-			if (IsGrounded || cloudTuch) {
+			if (IsGrounded || cloudTuch && (count > 0)) {
+				count--;
+				onCooldown = false;
 				playerRigidbody.gravityScale = 4f;
 				playerRigidbody.velocity += ForceSuperJump * Vector2.up;
 				superJumpEnabled = true;
@@ -40,6 +60,6 @@ public class SuperJump : DefSpellParent {
 	{
 		playerRigidbody.gravityScale = 6f;
 		superJumpEnabled = false;
-
+		onCooldown = true;
 	}
 }

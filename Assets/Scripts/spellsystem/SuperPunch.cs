@@ -10,9 +10,11 @@ public class SuperPunch : DamSpellParent {
 
 	void Start() {
 		damage = 1;
-		count = 3;
+		maxCount = 3;
 		activeTime = 0.5f;
 		timer = 0f;
+
+		count = maxCount;
 
 		nonCooldown = true;
 		IsSuperPunchActive = false;
@@ -26,7 +28,7 @@ public class SuperPunch : DamSpellParent {
 			timer += Time.deltaTime;
 		else
 			timer = 0;
-		if (timer >= activeTime) {
+		if (timer >= activeTime && count < maxCount) {
 			timer = 0f;
 			count++;
 		}

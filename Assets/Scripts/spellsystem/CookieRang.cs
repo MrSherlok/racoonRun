@@ -8,10 +8,11 @@ public class CookieRang : DamSpellParent {
 	void Start(){
 		damage = 1;
 		cooldown = 0.6f;
-		count = 3;
+		maxCount = 3;
 		activeTime = 1.5f;
 		timer = 0f;
 
+		count = maxCount;
 
 		nonCooldown = true;
 		shotPrefab = Resources.Load("CookieRang") as GameObject;
@@ -29,7 +30,7 @@ public class CookieRang : DamSpellParent {
 			timer += Time.deltaTime;
 		else
 			timer = 0;
-		if (timer >= activeTime) {
+		if (timer >= activeTime && count < maxCount) {
 			timer = 0f;
 			count++;
 		}

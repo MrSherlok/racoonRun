@@ -11,19 +11,38 @@ public class SuperSpeed : DefSpellParent {
 
 	void Start() {
 		timeTo = 2f;
+
+		onCooldown = true;
+		activeTime = 3f;
+		cooldownTimer = 0f;
+		count = timeTo;
+		restoreSpeed = 5;
+
+
 		IsRunning = false;
 		playerSpeed = GameObject.Find("2-Foreground").GetComponent<ScrollingScript>();
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		if (_isRunning && timeTo >= 0) {
+			onCooldown = false;
 			IsRunning = true;
 			timeTo -= Time.deltaTime;
 			playerSpeed.speed = new Vector2 (SpeedSuper, 0f);
 		} else {
 			IsRunning = false;
 			playerSpeed.speed = new Vector2 (0f, 0f);
+			onCooldown = true;
 		}
+
+		if (onCooldown)
+			cooldownTimer += Time.deltaTime;
+		else
+			cooldownTimer = 0;
+		if ((cooldownTimer >= activeTime) && (count <= timeTo)) {			
+			count += Time.deltaTime/restoreSpeed;
+		}
+
 	}
 
 	public override void OnClickDef (bool isPressed)

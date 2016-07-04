@@ -15,9 +15,18 @@ public class SodaPack : DefSpellParent {
 
 
 	void Start() {
+		timeTo = 2f;
+
+		onCooldown = true;
+		activeTime = 3f;
+		cooldownTimer = 0f;
+		count = timeTo;
+		restoreSpeed = 5;
+
+
 		IsFlying = false;
 		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
-		timeTo = 2f;
+
 		ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
 		ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
 		SodaFXParts.enableEmission = false;
@@ -26,12 +35,22 @@ public class SodaPack : DefSpellParent {
 	}
 
 	void Update () {
-		if (_isFlying && timeTo >= 0) {
+		if (_isFlying && count >= 0) {
+			onCooldown = false;
 			IsFlying = true;
-			timeTo -= Time.deltaTime;
+			count -= Time.deltaTime;
 			playerRigidbody.velocity += FlyingForse * Vector2.up;
 		} else {
 			IsFlying = false;
+			onCooldown = true;
+		}
+
+		if (onCooldown)
+			cooldownTimer += Time.deltaTime;
+		else
+			cooldownTimer = 0;
+		if ((cooldownTimer >= activeTime) && (count <= timeTo)) {			
+			count += Time.deltaTime/restoreSpeed;
 		}
 	}
 

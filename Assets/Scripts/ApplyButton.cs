@@ -10,10 +10,21 @@ public class ApplyButton : MonoBehaviour {
 	int _camTypeChose;
 	// Use this for initialization
 	public void SaveSettings () {
+		gameObject.transform.localScale = new Vector3(2f, 2f, 1f);
 		_mainAudioVolime = volumeScrollbar.GetComponent<Scrollbar> ().value = AudioListener.volume;
 		_camTypeChose = camPesetDropBox.GetComponent<Dropdown>().value;
 		PlayerPrefs.SetFloat ("MainAudioVolume",_mainAudioVolime);
 		PlayerPrefs.SetInt ("CamTypeChose", _camTypeChose);
+
+		Invoke ("Back", 0.3f);
+	}
+
+	void Back() {
+		gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+		Invoke ("Apply", 0.1f);
+	}
+
+	void Apply(){
 		SceneManager.LoadScene("MainMenu");
 	}
 

@@ -9,6 +9,7 @@ abstract public class DamSpellParent : MonoBehaviour {
 	public float timer;
 	public int damage;
 	public int count;
+	public int maxCount;
 	public bool nonCooldown = true;
 
 	abstract public void OnClick ();

@@ -9,9 +9,11 @@ public class BananaGun : DamSpellParent {
 	void Start(){
 		damage = 1;
 		cooldown = 0.3f;
-		count = 3;
+		maxCount = 3;
 		activeTime = 1.2f;
 		timer = 0f;
+
+		count = maxCount;
 
 		gun.GetComponent<SpriteRenderer> ().enabled = true;
 		nonCooldown = true;
@@ -30,7 +32,7 @@ public class BananaGun : DamSpellParent {
 			timer += Time.deltaTime;
 		else
 			timer = 0;
-		if (timer >= activeTime) {
+		if (timer >= activeTime && count < maxCount) {
 			timer = 0f;
 			count++;
 		}

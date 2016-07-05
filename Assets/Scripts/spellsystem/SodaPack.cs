@@ -7,21 +7,46 @@ public class SodaPack : DefSpellParent {
 	private ParticleSystem SodaFXParts;
 	private ParticleSystem FireFXParts;
 
-	public static float FlyingForse = 0.7f;
-	//public float timeToFly = 2f;
+	float FlyingForse = 0.7f;
 	private bool _isFlying = false;
 	public static bool IsFlying = false;
 	Rigidbody2D playerRigidbody;
 
 
 	void Start() {
-		timeTo = 2f;
+
+		//COUNT
+		defCount [0] = 3;
+		defCount [1] = 5;
+		defCount [2] = 6;
+
+		//RESTORE TIME
+		defRestoreTime[0] = 1.2f;
+		defRestoreTime[1] = 1.0f;
+		defRestoreTime[2] = 0.7f;
+
+		//RESTORE SPEED
+		defRestoreTime[0] = 5f;
+		defRestoreTime[1] = 3f;
+		defRestoreTime[2] = 2f;
+
+		//SPESIAL
+		defSpecial[0] = 0.7f;
+		defSpecial[1] = 0.9f;
+		defSpecial[2] = 1.2f;
+
+
+
+
+		timeTo = defCount[PlayerPrefs.GetInt("SodaCountLvl")];
+		activeTime = defRestoreTime[PlayerPrefs.GetInt("SodaRestoreTimeLvl")];
+		restoreSpeed = defRestoreSpeed[PlayerPrefs.GetInt("SodaRestoreSpeedLvl")];
+		FlyingForse = defSpecial[PlayerPrefs.GetInt("SodaSpecialLvl")];
 
 		onCooldown = true;
-		activeTime = 3f;
 		cooldownTimer = 0f;
 		count = timeTo;
-		restoreSpeed = 5;
+
 
 
 		IsFlying = false;

@@ -4,19 +4,43 @@ using System.Collections;
 public class SuperSpeed : DefSpellParent {
 
 	private ScrollingScript playerSpeed;
-	public static float SpeedSuper = 40f;
+	float SpeedSuper = 40f;
 	private bool _isRunning = false;
 	public static bool IsRunning = false;
 
 
 	void Start() {
-		timeTo = 2f;
+
+		//COUNT
+		defCount [0] = 3;
+		defCount [1] = 5;
+		defCount [2] = 6;
+
+		//RESTORE TIME
+		defRestoreTime[0] = 1.2f;
+		defRestoreTime[1] = 1.0f;
+		defRestoreTime[2] = 0.7f;
+
+		//RESTORE SPEED
+		defRestoreTime[0] = 5f;
+		defRestoreTime[1] = 3f;
+		defRestoreTime[2] = 2f;
+
+		//SPESIAL
+		defSpecial[0] = 40f;
+		defSpecial[1] = 80f;
+		defSpecial[2] = 100f;
+
+
+		timeTo = defCount[PlayerPrefs.GetInt("SuperSpeedCountLvl")];
+		activeTime = defRestoreTime[PlayerPrefs.GetInt("SuperSpeedRestoreTimeLvl")];
+		restoreSpeed = defRestoreSpeed[PlayerPrefs.GetInt("SuperSpeedSpeedLvl")];
+		SpeedSuper = defSpecial[PlayerPrefs.GetInt("SuperSpeedSpecialLvl")];
+
 
 		onCooldown = true;
-		activeTime = 3f;
 		cooldownTimer = 0f;
 		count = timeTo;
-		restoreSpeed = 5;
 
 
 		IsRunning = false;

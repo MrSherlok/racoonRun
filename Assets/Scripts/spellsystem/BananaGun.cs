@@ -7,10 +7,21 @@ public class BananaGun : DamSpellParent {
 	public GameObject gun;
 	int i = 0;
 	void Start(){
-		damage = 1;
+
+		//COUNT
+		damCount [0] = 3;
+		damCount [1] = 5;
+		damCount [2] = 6;
+
+		//RESTORE TIME
+		damRestoreTime[0] = 1.2f;
+		damRestoreTime[1] = 1.0f;
+		damRestoreTime[2] = 0.7f;
+
+
 		cooldown = 0.3f;
-		maxCount = 3;
-		activeTime = 1.2f;
+		maxCount = damCount[PlayerPrefs.GetInt("BananaCountLvl")];
+		activeTime = damRestoreTime[PlayerPrefs.GetInt("BananaRestoreTimeLvl")];
 		timer = 0f;
 
 		count = maxCount;

@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\Upgrades\UpgradesButtons.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\animatorOff.cs" />
+     <Compile Include="Assets\Scripts\lottery\RotateCylinder.cs" />
      <Compile Include="Assets\Scripts\newSystem\CloudJumpScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\DellAll.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyHeadShotScript.cs" />

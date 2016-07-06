@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\ChoseCameraType.cs" />
      <Compile Include="Assets\Scripts\CoinCollectScript.cs" />
      <Compile Include="Assets\Scripts\CollisionTrigger.cs" />
+     <Compile Include="Assets\Scripts\DraggingScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\GameButtons.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />

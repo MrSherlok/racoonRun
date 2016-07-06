@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class UpgradeScript : MonoBehaviour {
-
+/*
 	float[] SodaUpgrade = new float[4];
 	float[] SuperSpeedUpgrade = new float[4];
 	float[] SuperJumpUpgrade = new float[4];

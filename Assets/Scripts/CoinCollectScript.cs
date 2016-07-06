@@ -9,7 +9,7 @@ public class CoinCollectScript : MonoBehaviour {
 	[SerializeField] private AudioClip _coinLoot;
 
 
-	void FixedUpdate() {
+	void Update() {
 
 		if (startCutOff == true) {
 			

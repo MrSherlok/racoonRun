@@ -26,7 +26,7 @@ public class BananaGun : DamSpellParent {
 
 		count = maxCount;
 
-		gun.GetComponent<SpriteRenderer> ().enabled = true;
+		gun.SetActive(true);
 		nonCooldown = true;
 		shotPrefab = Resources.Load("banana") as GameObject;
 		bananas[0] = Instantiate (shotPrefab);

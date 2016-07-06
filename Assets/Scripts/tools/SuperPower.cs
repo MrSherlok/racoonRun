@@ -20,8 +20,6 @@ public class SuperPower : MonoBehaviour {
 	private int _actDam = -1;
 	private int _actDef = -1;
 
-
-     
 //	public Camera mainCamera;
 
 
@@ -61,6 +59,9 @@ public class SuperPower : MonoBehaviour {
 		myRigitbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
     }
 */	void Start() {
+		_actDam = ChooseSPScript.ActiveDamSpel;
+		_actDef = ChooseSPScript.ActiveDefSpel;
+
 
 		damScripts[0] = damScriptsObj.GetComponent<BananaGun>();
 		damScripts[1] = damScriptsObj.GetComponent<SuperPunch>();
@@ -70,26 +71,17 @@ public class SuperPower : MonoBehaviour {
 		defScripts[1] = defScriptsObj.GetComponent<SodaPack>();
 		defScripts[2] = defScriptsObj.GetComponent<SuperSpeed>();
 
-		if (ChooseSPScript.ActiveDefSpel == 1) {
-//			ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
-//			ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
-//			SodaFXParts.enableEmission = false;
-//			FireFXParts.enableEmission = false;
+/*		if (_actDef == 1) {
 			GameObject.Find ("Soda").SetActive (true);
-		} else {
-			GameObject.Find ("Soda").SetActive (false);
+		} 
+		if (_actDam != 1) {
+			superPunchObj.SetActive(false);
+		}
+		if(_actDam != 0) {
+			bananaGunObj.SetActive(false);
 		}
 
-
-
-/*		IsRunning = false;
-		IsSuperPunchActive = false;
-		IsFlying = false;
 */
-		_actDam = ChooseSPScript.ActiveDamSpel;
-		_actDef = ChooseSPScript.ActiveDefSpel;
-
-
 		if(_actDam != -1){
 			spelsDamImage[_actDam].enabled = true;
 			damScripts[_actDam].enabled = true;
@@ -129,16 +121,8 @@ public class SuperPower : MonoBehaviour {
 		} else {
 			spelsDamImage[0].enabled = false;
 		}
-
-		if (_actDam == 1) {
-//			spelsDamImage[1].enabled = true;
-			superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
-
-		} else {
-//			spelsDamImage[1].enabled = false;
-			superPunchIm.GetComponent<SpriteRenderer>().enabled = false;            
-		}
-*/	}
+	}		*/
+}
 
 /*	public void FixedUpdate () {
 		if (Player.isCloudfootTouch || Player.isCloudHeadTouch) {

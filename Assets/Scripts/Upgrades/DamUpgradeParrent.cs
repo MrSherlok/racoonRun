@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 abstract public class DamUpgradeParrent : MonoBehaviour {
+
+	public Image[] damImage = new Image[6];
 
 	protected int[] damCountNeedGold = new int[2];
 	protected int[] damRestoreTimeNeedGold = new int[2];

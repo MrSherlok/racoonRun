@@ -30,7 +30,7 @@ public class SuperPunch : DamSpellParent {
 		nonCooldown = true;
 		IsSuperPunchActive = false;
 		animator = GameObject.Find("Player1").GetComponent<Animator> ();
-		superPunchIm.GetComponent<SpriteRenderer>().enabled = true;
+		superPunchIm.SetActive (true);
 	}
 
 

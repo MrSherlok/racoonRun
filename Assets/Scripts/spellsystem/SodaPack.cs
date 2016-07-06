@@ -6,6 +6,7 @@ public class SodaPack : DefSpellParent {
 
 	private ParticleSystem SodaFXParts;
 	private ParticleSystem FireFXParts;
+	public GameObject sodaPack;
 
 	float FlyingForse = 0.7f;
 	private bool _isFlying = false;
@@ -47,7 +48,7 @@ public class SodaPack : DefSpellParent {
 		cooldownTimer = 0f;
 		count = timeTo;
 
-
+		sodaPack.SetActive (true);
 
 		IsFlying = false;
 		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();

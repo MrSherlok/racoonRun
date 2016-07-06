@@ -32,8 +32,24 @@ public class SuperJumpUpgrade : DefUpgradeParrent {
 		defSpecialNeedGold [1] = 30;
 
 		_defSpecialLvl = PlayerPrefs.GetInt ("SuperJumpSpecialLvl");
-
 	}
+
+
+	void Update () {
+		if (_defCountLvl >= 1)
+			defImage [0].color = Color.blue;
+		if (_defCountLvl == 2)
+			defImage [1].color = Color.blue;
+		if (_defRestoreTimeLvl >= 1)
+			defImage [2].color = Color.blue;
+		if (_defRestoreTimeLvl == 2)
+			defImage [3].color = Color.blue;
+		if (_defSpecialLvl >= 1)
+			defImage [4].color = Color.blue;
+		if (_defSpecialLvl == 2)
+			defImage [5].color = Color.blue;
+	}
+
 	public override void DefCount1 ()
 	{
 		if (GoldScript.Gold >= defCountNeedGold [0] && _defCountLvl == 0) {

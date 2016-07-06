@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 abstract public class DefUpgradeParrent : MonoBehaviour {
+
+
+	public Image[] defImage = new Image[8];
 
 	protected int[] defCountNeedGold = new int[2];
 	protected int[] defRestoreTimeNeedGold = new int[2];

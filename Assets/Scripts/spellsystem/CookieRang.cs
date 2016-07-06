@@ -48,7 +48,6 @@ public class CookieRang : DamSpellParent {
 
 	}
 
-
 	public override void OnClick ()
 	{
 		if (nonCooldown && (count>0)) {

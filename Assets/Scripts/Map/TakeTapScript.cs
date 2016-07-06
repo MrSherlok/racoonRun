@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
-     Transform map;
+	Transform map;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-
+		
     }
         public void OnDrag(PointerEventData eventData)
         {
@@ -32,16 +32,8 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 
         //    map.position += new Vector3(0, eventData.delta.y, 0);
         //}
-        
-        map.position += new Vector3(eventData.delta.x, eventData.delta.y, 0);
+
+			map.position += new Vector3(eventData.delta.x, eventData.delta.y, 0);
 
     }
 }
-
-/*	public bool isCentury19Active = false;
-
-	public void Century19Active () {
-		isCentury19Active = true;
-	}
-*/
-

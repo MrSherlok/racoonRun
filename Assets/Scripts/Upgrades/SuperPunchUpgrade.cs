@@ -24,6 +24,21 @@ public class SuperPunchUpgrade : DamUpgradeParrent {
 		_damDamageLvl = PlayerPrefs.GetInt ("PunchDamageLvl");
 	}
 
+	void Update () {
+		if (_damCountLvl >= 1)
+			damImage [0].color = Color.blue;
+		if (_damCountLvl == 2)
+			damImage [1].color = Color.blue;
+		if (_damRestoreTimeLvl >= 1)
+			damImage [2].color = Color.blue;
+		if (_damRestoreTimeLvl == 2)
+			damImage [3].color = Color.blue;
+		if (_damDamageLvl >= 1)
+			damImage [4].color = Color.blue;
+		if (_damDamageLvl == 2)
+			damImage [5].color = Color.blue;
+	}
+
 	public override void Count1 ()
 	{
 		if (GoldScript.Gold >= damCountNeedGold [0] && _damCountLvl == 0) {

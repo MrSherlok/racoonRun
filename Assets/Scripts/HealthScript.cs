@@ -35,7 +35,7 @@ public class HealthScript : MonoBehaviour
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
         if (shot != null)
         {
-			if (/*shot.isEnemyShot != isEnemy && SuperPower.IsSuperPunchActive == false && */SuperSpeed.IsRunning == false)
+			if (SuperPunch.IsSuperPunchActive == false && SuperSpeed.IsRunning == false)
             {
                 hp -= shot.damage;
 				GameObject.Find ("CameraPoint").GetComponent<AudioSource>().Play ();

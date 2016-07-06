@@ -2,15 +2,20 @@
 using System.Collections;
 
 abstract public class DamSpellParent : MonoBehaviour {
-	public GameObject shotPrefab;
-	public GameObject shoot;
-	public float cooldown;
-	public float activeTime;
-	public float timer;
-	public int damage;
-	public int count;
-	public int maxCount;
-	public bool nonCooldown = true;
+
+	protected int[] damCount = new int[3];
+	protected float[] damRestoreTime = new float[3];
+	protected int[] damDamage = new int[3];
+
+
+	protected GameObject shotPrefab;
+	protected GameObject shoot;
+	protected float cooldown;
+	protected float activeTime;
+	protected float timer;
+	protected int count;
+	protected int maxCount;
+	protected bool nonCooldown = true;
 
 	abstract public void OnClick ();
 }

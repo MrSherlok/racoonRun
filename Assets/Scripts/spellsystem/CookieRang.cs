@@ -6,10 +6,21 @@ public class CookieRang : DamSpellParent {
 	GameObject[] cookieRangs= new GameObject[6];
 	int i = 0;
 	void Start(){
-		damage = 1;
+
+		//COUNT
+		damCount [0] = 3;
+		damCount [1] = 5;
+		damCount [2] = 6;
+
+		//RESTORE TIME
+		damRestoreTime[0] = 1.5f;
+		damRestoreTime[1] = 1.1f;
+		damRestoreTime[2] = 0.7f;
+
+
 		cooldown = 0.6f;
-		maxCount = 3;
-		activeTime = 1.5f;
+		maxCount = damCount[PlayerPrefs.GetInt("CookieCountLvl")];
+		activeTime = damRestoreTime[PlayerPrefs.GetInt("CookieRestoreTimeLvl")];
 		timer = 0f;
 
 		count = maxCount;

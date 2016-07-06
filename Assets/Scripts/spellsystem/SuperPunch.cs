@@ -9,9 +9,20 @@ public class SuperPunch : DamSpellParent {
 	private Animator animator;
 
 	void Start() {
-		damage = 1;
-		maxCount = 3;
-		activeTime = 0.5f;
+		//COUNT
+		damCount [0] = 3;
+		damCount [1] = 5;
+		damCount [2] = 6;
+
+		//RESTORE TIME
+		damRestoreTime[0] = 1.2f;
+		damRestoreTime[1] = 1.0f;
+		damRestoreTime[2] = 0.7f;
+
+
+
+		maxCount = damCount[PlayerPrefs.GetInt("PunchCountLvl")];
+		activeTime = damRestoreTime[PlayerPrefs.GetInt("PunchRestoreTimeLvl")];
 		timer = 0f;
 
 		count = maxCount;

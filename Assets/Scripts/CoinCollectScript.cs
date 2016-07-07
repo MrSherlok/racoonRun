@@ -34,7 +34,8 @@ public class CoinCollectScript : MonoBehaviour {
 			//CameraFollowScript.ClaimCoinAnim();
 			cutoff = 0f;
 			startCutOff = true;
-			GoldScript.Gold += 10;
+			//GoldScript.Gold += 10;
+			CoinCollect.AddCoin();
 		}
 	}
 }

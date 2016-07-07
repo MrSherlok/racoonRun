@@ -4,8 +4,8 @@ using System.Collections;
 public class SodaPack : DefSpellParent {
 
 
-	private ParticleSystem SodaFXParts;
-	private ParticleSystem FireFXParts;
+	private ParticleSystem.EmissionModule SodaFXParts;
+	private ParticleSystem.EmissionModule FireFXParts;
 	public GameObject sodaPack;
 
 	float FlyingForse = 0.7f;
@@ -53,10 +53,10 @@ public class SodaPack : DefSpellParent {
 		IsFlying = false;
 		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
 
-		ParticleSystem FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ();
-		ParticleSystem SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ();
-		SodaFXParts.enableEmission = false;
-		FireFXParts.enableEmission = false;
+		FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ().emission;
+		SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ().emission;
+		SodaFXParts.enabled = false;
+		FireFXParts.enabled = false;
 		GameObject.Find ("Soda").SetActive (true);
 	}
 
@@ -85,13 +85,13 @@ public class SodaPack : DefSpellParent {
 		if (PauseScript.isPause) {
 			if (isPressed) {
 				_isFlying = true;
-//				SodaFXParts.enableEmission = true;
-//				FireFXParts.enableEmission = true;
+				SodaFXParts.enabled = true;
+				FireFXParts.enabled = true;
 				playerRigidbody.gravityScale = 2f;
 			} else {
 				_isFlying = false;
-//				SodaFXParts.enableEmission = false;
-//				FireFXParts.enableEmission = false;
+				SodaFXParts.enabled = false;
+				FireFXParts.enabled = false;
 				playerRigidbody.gravityScale = 6f;
 			}
 			

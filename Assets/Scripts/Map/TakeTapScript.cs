@@ -6,6 +6,10 @@ using UnityEngine.EventSystems;
 public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
 	Transform map;
+	int minX = 50;
+	int maxX = 900;
+	int minY = 20;
+	int maxY = 500;
 
     void Start()
     {
@@ -18,22 +22,11 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
     }
         public void OnDrag(PointerEventData eventData)
         {
-        //if (Mathf.Abs(eventData.delta.x) > Mathf.Abs(eventData.delta.y))
-        //{
-        //    if (eventData.delta.x > 0) GameObject.Find("Text").GetComponent<Text>().text = "Right";
-        //    else GameObject.Find("Text").GetComponent<Text>().text = "Left";
-
-        //    map.position += new Vector3(eventData.delta.x, 0, 0);
-        //}
-        //else
-        //{
-        //    if (eventData.delta.y > 0) GameObject.Find("Text").GetComponent<Text>().text = "Up";
-        //    else GameObject.Find("Text").GetComponent<Text>().text = "Down";
-
-        //    map.position += new Vector3(0, eventData.delta.y, 0);
-        //}
-
-			map.position += new Vector3(eventData.delta.x, eventData.delta.y, 0);
-
+		if ((map.gameObject.GetComponent<RectTransform> ().position.y + eventData.delta.y) < maxY && 
+			(map.gameObject.GetComponent<RectTransform> ().position.y + eventData.delta.y) > minY && 
+			(map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) < maxX && 
+			(map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) > minX) {	
+			map.position += new Vector3 (eventData.delta.x, eventData.delta.y, 0f);
+		}
     }
 }

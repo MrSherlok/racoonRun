@@ -16,12 +16,12 @@ public class ApplyButton : MonoBehaviour {
 		PlayerPrefs.SetFloat ("MainAudioVolume",_mainAudioVolime);
 		PlayerPrefs.SetInt ("CamTypeChose", _camTypeChose);
 
-		Invoke ("Back", 0.3f);
+		Invoke ("Back", 0.1f);
 	}
 
 	void Back() {
 		gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-		Invoke ("Apply", 0.1f);
+		Apply();
 	}
 
 	void Apply(){

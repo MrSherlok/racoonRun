@@ -10,6 +10,10 @@ public class DraggingScript : MonoBehaviour {
 	float startTime;
 	Vector3 previousMousePos = Vector3.zero;
 	public Transform map;
+	int minX = 50;
+	int maxX = 900;
+	int minY = 20;
+	int maxY = 500;
 
 
 	public UnityEvent OnClickEvent;
@@ -33,7 +37,14 @@ public class DraggingScript : MonoBehaviour {
 	{
 		if (isDragging) {
 			Vector3 delta = Input.mousePosition - previousMousePos;
-			map.position += delta;
+
+			if ((map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) < maxY && 
+				(map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) > minY && 
+				(map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) < maxX && 
+				(map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) > minX) {	
+				map.position += delta;
+			}
+
 			previousMousePos = Input.mousePosition;
 			return;
 		}

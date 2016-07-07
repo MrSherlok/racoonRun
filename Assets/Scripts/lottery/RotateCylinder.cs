@@ -84,12 +84,18 @@ public class RotateCylinder : MonoBehaviour {
 	void Result(){
 		//Debug.Log (GameObject.Find("Colorhosein").GetComponent<ChoseYourColor>().color);
 		if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color) {
-			Debug.Log ("X3");
+			CoinCollect.coins *= 30;
+			GoldScript.Gold += CoinCollect.coins;
+			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 		} else if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color - 1 ||
 		         color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color + 1) {
-			Debug.Log ("X2");
+			CoinCollect.coins *= 20;
+			GoldScript.Gold += CoinCollect.coins;
+			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 		} else {
-			Debug.Log ("X1");
+			CoinCollect.coins *= 10;
+			GoldScript.Gold += CoinCollect.coins;
+			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 		}
 
 	}

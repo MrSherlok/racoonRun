@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class NextLvLSceneScript : MonoBehaviour {
 	public GameObject winImage;
+	public GameObject uiBars;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.tag == "Player") {
-			winImage.SetActive (true);
+			//winImage.SetActive (true);
 			//Time.timeScale = 0;
-			Invoke("Return",2);
+			GameObject.Find("Player").transform.position = GameObject.Find("WinTeleportPoint").transform.position;
+			winImage.SetActive(true);
+			GameObject.Find ("Player1").GetComponent<Animator>().SetBool("IWIN",true);
+			uiBars.SetActive (false);
+
 		}
 	}
-	void Return(){
-		SceneManager.LoadScene ("chooseLVL");
-	}
+
 }

@@ -6,6 +6,7 @@ public class GameButtons : MonoBehaviour {
 
 	public void Reload ( int nextScene) {		
 		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
+		CoinCollect.coins = 0;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		Time.timeScale = 1f;
 	}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RotateCylinder : MonoBehaviour {
 	public int color;
@@ -9,6 +10,7 @@ public class RotateCylinder : MonoBehaviour {
 	bool isEnding = false;
 	GameObject cyl;
 	public ParticleSystem Iskru;
+	public Text rez;
 	void Start(){
 		cyl = GameObject.Find ("Cylinder");
 		grabAnim = GameObject.Find ("Grablya").GetComponent<Animator> ();
@@ -84,19 +86,32 @@ public class RotateCylinder : MonoBehaviour {
 	void Result(){
 		//Debug.Log (GameObject.Find("Colorhosein").GetComponent<ChoseYourColor>().color);
 		if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color) {
+			rez.text = CoinCollect.coins.ToString() + "x30";
 			CoinCollect.coins *= 30;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
+			CoinCollect.coins = 0;
 		} else if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color - 1 ||
 		         color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color + 1) {
+			rez.text = CoinCollect.coins.ToString() + "x20";
 			CoinCollect.coins *= 20;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
+			CoinCollect.coins = 0;
 		} else {
+			rez.text = CoinCollect.coins.ToString() + "x10";
 			CoinCollect.coins *= 10;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
+			CoinCollect.coins = 0;
 		}
 
+		Invoke("BackToMap",2.0f);
+
+	}
+
+
+	void BackToMap() {
+		SceneManager.LoadScene("chooseLVL");
 	}
 }

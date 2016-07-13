@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\CoinCollect.cs" />
      <Compile Include="Assets\GoToLotteryScene.cs" />
+     <Compile Include="Assets\IndusActivator.cs" />
      <Compile Include="Assets\ScoreFinCount.cs" />
      <Compile Include="Assets\Scripts\AirPlatformScript.cs" />
      <Compile Include="Assets\Scripts\ApplyButton.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\Scripts\GameButtons.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Map\ChengeCenturyScript.cs" />
+     <Compile Include="Assets\Scripts\Map\Choselvl.cs" />
      <Compile Include="Assets\Scripts\Map\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />

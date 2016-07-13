@@ -9,13 +9,13 @@ public class RotateCylinder : MonoBehaviour {
 	bool rotNow = false;
 	bool isEnding = false;
 	GameObject cyl;
-	public ParticleSystem Iskru;
+	public ParticleSystem.EmissionModule Iskru;
 	public Text rez;
 	void Start(){
 		cyl = GameObject.Find ("Cylinder");
 		grabAnim = GameObject.Find ("Grablya").GetComponent<Animator> ();
 		grabAnim.SetBool ("Close",false);
-		Iskru.enableEmission = false;
+		Iskru.enabled = false;
 	}
 
 	public void Roll () {
@@ -27,13 +27,13 @@ public class RotateCylinder : MonoBehaviour {
 	}
 
 	void IskruEnbling(){
-		Iskru.enableEmission = true;
+		Iskru.enabled = true;
 		Invoke ("Stop",Random.Range(1,4));
 	}
 	void Stop(){
 		rotNow = false;
 		isEnding = true;
-		Iskru.enableEmission = false;
+		Iskru.enabled = false;
 		ReadScore();
 	}
 

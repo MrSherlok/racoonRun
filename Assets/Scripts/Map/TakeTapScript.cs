@@ -7,9 +7,9 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
 	Transform map;
 	int minX = 50;
-	int maxX = 900;
+	int maxX = Screen.width - 50;
 	int minY = 20;
-	int maxY = 500;
+	int maxY = Screen.height - 50;
 
     void Start()
     {

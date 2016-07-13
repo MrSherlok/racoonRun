@@ -42,4 +42,8 @@ public void BackToChoose () {
 	public void LoadSettings() {
 		SceneManager.LoadScene("Settings");
 	}
+
+	public void LoadCollections() {
+		SceneManager.LoadScene("Collections");
+	}
 }

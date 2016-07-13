@@ -31,6 +31,7 @@ public void BackToChoose () {
 
 
 	public void BackToChooseLvl () {
+		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
         SceneManager.LoadScene("chooseLVL");
 	}
 

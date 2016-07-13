@@ -8,7 +8,6 @@ public class StartScript : MonoBehaviour {
 // Use this for initialization
 void Start () {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
 		GoldScript.Gold = PlayerPrefs.GetInt("Gold");
 //        trail.sortingLayerName = "Effects";
 //		trail2.sortingLayerName = "Effects";

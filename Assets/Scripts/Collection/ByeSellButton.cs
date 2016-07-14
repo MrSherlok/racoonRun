@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ByeSellButton : MonoBehaviour {
 
 	public ItemParrent[] Scripts = new ItemParrent[10];
 
+	public Image[] ItemsImage = new Image[10];
+
 	string[] Names = new string[10];
 
 	int activeItem = 0;
+
+	int i = 0;
 
 	void Start() {
 		Names [0] = "FirstItem";
@@ -22,8 +27,34 @@ public class ByeSellButton : MonoBehaviour {
 		Names [9] = "TenthItem";
 	}
 
-	public void ByeSell() {
+	void Update () {
 		activeItem = PlayerPrefs.GetInt ("ActiveItem");
+
+		if (PlayerPrefs.GetInt(Names[i]) != 1) {
+			ItemsImage [i].color = new Color32 (0, 0, 0, 150);
+		} else {
+			ItemsImage [i].color = new Color32 (255, 255, 255, 255);
+		}
+
+
+
+		if (activeItem == i) {
+			ItemsImage [i].GetComponent<RotateScript> ().enabled = true;
+		} else {
+			ItemsImage [i].GetComponent<RotateScript> ().enabled = false;
+			ItemsImage [i].GetComponent<RectTransform> ().rotation = Quaternion.identity;
+		}
+
+
+		i++;
+		if (i == 9)
+			i = 0;
+
+
+	}
+
+	public void ByeSell() {
+		
 		if (PlayerPrefs.GetInt (Names [activeItem].ToString ()) != 1) {
 			if (GoldScript.Gold >= Scripts [activeItem].byePrise) {
 				GoldScript.Gold -= Scripts [activeItem].byePrise;
@@ -36,4 +67,6 @@ public class ByeSellButton : MonoBehaviour {
 			Scripts[activeItem].price.text = "Bye: " + Scripts[activeItem].byePrise.ToString ();
 			}
 	}
+
+
 }

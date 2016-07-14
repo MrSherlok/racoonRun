@@ -11,9 +11,14 @@ public class ItemDrag : MonoBehaviour {
 	public Transform map;
 	int minX = -2200;
 	int maxX = Screen.width - 10;
+	int averX;
 
 
 	public UnityEvent OnClickEvent;
+
+	void Start() {
+		averX = maxX / 2;
+	}
 
 
 	public void OnMouseDown ()
@@ -33,13 +38,24 @@ public class ItemDrag : MonoBehaviour {
 	void Update ()
 	{
 
-		if (gameObject.GetComponent<RectTransform> ().position.x > 500) {
+		if (gameObject.GetComponent<RectTransform> ().position.x != averX) {
+			if (gameObject.GetComponent<RectTransform> ().position.x > averX) {
+				gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (averX/(gameObject.GetComponent<RectTransform> ().position.x - averX+(averX/2)),  averX/(gameObject.GetComponent<RectTransform> ().position.x - averX+(averX/2)) , 0f);
+			} else {
+				gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (averX/(averX - gameObject.GetComponent<RectTransform> ().position.x+(averX/2)) , averX/(averX - gameObject.GetComponent<RectTransform> ().position.x+(averX/2)) , 0f);
+			}
+			//gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (gameObject.GetComponent<RectTransform> ().position.x/500f, gameObject.GetComponent<RectTransform> ().position.x/500f, 0f);
+		}
+
+
+
+	/*	if (gameObject.GetComponent<RectTransform> ().position.x >= averX) {
 			gameObject.GetComponent<RectTransform> ().localScale = new Vector3 ((1000f - gameObject.GetComponent<RectTransform> ().position.x)/500f, (1000f - gameObject.GetComponent<RectTransform> ().position.x)/500f, 0f);
 		} else {
-			if(gameObject.GetComponent<RectTransform> ().position.x<500)
+			if(gameObject.GetComponent<RectTransform> ().position.x<=averX)
 			gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (gameObject.GetComponent<RectTransform> ().position.x/500f, gameObject.GetComponent<RectTransform> ().position.x/500f, 0f);
 		}
-		if (isDragging) {
+*/		if (isDragging) {
 			Vector3 delta = Input.mousePosition - previousMousePos;
 
 			if ((map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) < maxX &&

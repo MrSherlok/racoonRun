@@ -7,6 +7,6 @@ public class OffsetScript : MonoBehaviour {
 	public bool y = false;
 
 	void Update () {
-		gameObject.GetComponent<Renderer> ().material.mainTextureOffset = new Vector2(Time.frameCount,0);
+		gameObject.GetComponent<Renderer>().material.mainTextureOffset = new Vector2(Time.time * 0.5f,0);
 	}
 }

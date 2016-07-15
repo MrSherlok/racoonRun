@@ -98,6 +98,9 @@
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
      <Compile Include="Assets\Scripts\Trash\collect.cs" />
+     <Compile Include="Assets\Scripts\TutorialLevel\HintTextChanger.cs" />
+     <Compile Include="Assets\Scripts\TutorialLevel\StringToBanan.cs" />
+     <Compile Include="Assets\Scripts\TutorialLevel\TutorHint.cs" />
      <Compile Include="Assets\Scripts\Upgrades\BananaGunUpgrade.cs" />
      <Compile Include="Assets\Scripts\Upgrades\CookieRangUpgrade.cs" />
      <Compile Include="Assets\Scripts\Upgrades\DamUpgradeParrent.cs" />

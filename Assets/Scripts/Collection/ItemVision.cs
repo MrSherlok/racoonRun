@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ItemVision : MonoBehaviour {
 
+	public Image[] ItemsImage = new Image[10];
+
 	public Image First;
 	public Image Second;
 	public Image Third;
@@ -15,8 +17,10 @@ public class ItemVision : MonoBehaviour {
 	public Image Nineth;
 	public Image Tenth;
 	
+	int i = 0;
 
 	void Update () {
+
 		if (PlayerPrefs.GetInt("FirstItem") != 1)
 			First.color = new Color32(0,0,0,150);
 		else

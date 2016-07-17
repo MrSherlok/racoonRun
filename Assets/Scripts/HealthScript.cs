@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
 	public int hp = 2;
-
+	GameObject player;
     public bool isEnemy = false;
 
     private Image theEndImage;
@@ -20,6 +20,7 @@ public class HealthScript : MonoBehaviour
 
     void Start()
 	{
+		player = GameObject.Find ("Player");
 //		lastHp = maxhp;
 		GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
 		theEndImage = GameObject.Find ("TheEnd").GetComponent<Image> ();
@@ -38,6 +39,7 @@ public class HealthScript : MonoBehaviour
 			if (SuperPunch.IsSuperPunchActive == false && SuperSpeed.IsRunning == false)
             {
                 hp -= shot.damage;
+				player.GetComponent<Player>().IGetDamage();
 				GameObject.Find ("CameraPoint").GetComponent<AudioSource>().Play ();
 			    curHp = hp/maxhp;
 				hpBar.fillAmount -= 0.0001f;

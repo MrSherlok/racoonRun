@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Choselvl : MonoBehaviour {
 	AudioSource clickSound;
+	public bool itsTutorialLevel = false;
 	void Start(){
 		clickSound = GameObject.Find ("SoundBox").GetComponent<AudioSource> ();
 	}
@@ -16,6 +17,10 @@ public class Choselvl : MonoBehaviour {
 
 	}
 	void GoToChoseSpels(){
-		SceneManager.LoadScene ("chooseSP");
+		if (itsTutorialLevel) {
+			SceneManager.LoadScene (gameObject.name);
+		} else {
+			SceneManager.LoadScene ("chooseSP");
+		}
 	}
 }

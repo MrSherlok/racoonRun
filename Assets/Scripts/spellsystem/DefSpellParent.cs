@@ -8,13 +8,13 @@ abstract public class DefSpellParent : MonoBehaviour {
 	protected float[] defRestoreSpeed = new float[3];
 	protected float[] defSpecial = new float[3];
 
-	protected float cooldown;
-	protected float activeTime;
-	protected float timeTo;
-	protected float cooldownTimer;
-	protected float count;
-	protected bool onCooldown = true;
-	protected float restoreSpeed;
+	public float cooldown;
+    public float activeTime;
+    public float timeTo;
+    public float cooldownTimer;
+    public float count;
+    public bool onCooldown = true;
+    public float restoreSpeed;
 
 
 	abstract public void OnClickDef (bool isPressed);

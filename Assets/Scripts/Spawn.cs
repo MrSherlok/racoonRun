@@ -7,13 +7,14 @@ public class Spawn : MonoBehaviour {
 	void Update() {
 		if (!hasSpawn) {
 			if (GetComponent<Renderer>().IsVisibleFrom (Camera.main)) {
+                gameObject.GetComponent<Animator>().enabled = true;
 				Spawne ();
 			}
 		} else {
 			if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
 			{
-				Destroy(gameObject,3f);
-			}
+                gameObject.GetComponent<Animator>().enabled = false;
+            }
 		}
 	}
 

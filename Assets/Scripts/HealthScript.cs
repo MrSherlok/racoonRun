@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
-{
+{	
 	public int hp = 2;
 	GameObject player;
     public bool isEnemy = false;
@@ -27,7 +27,6 @@ public class HealthScript : MonoBehaviour
 		chooseLvl = GameObject.Find ("Back").GetComponent<Image> ();
 		theEndImage.enabled = false;
 		chooseLvl.enabled = false;
-		// end = GameObject.Find("Text").GetComponent<Text>();
 		curHp = hp / maxhp;
 	}
 
@@ -49,10 +48,10 @@ public class HealthScript : MonoBehaviour
                 {
 					hpBar.enabled = false;
 					hpBarHolder.enabled = false;
-					theEndImage.enabled = true;
+
 					chooseLvl.enabled = true;
-					//end.text = "You are dead";
-					Time.timeScale = 0;						
+
+					Dead();					
                 }
             }
         }
@@ -64,6 +63,25 @@ public class HealthScript : MonoBehaviour
 		if(curHp<hpBar.fillAmount)
 			hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount,curHp,Time.deltaTime*lerpTime);
 		}
+	void Dead(){
+		
+		//2-Foreground
+		//1-Middle
+		//0-backgroun
+		player.GetComponent<Player>().DieEnot();
+		GameObject.Find("0-backgroun").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
+		GameObject.Find("2-Foreground").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
+		GameObject.Find("1-Middle").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
+		Invoke ("EndImage", 2);
+
+			
+		
+
 	}
+	void EndImage(){
+		theEndImage.enabled = true;
+	}
+
+}
 	
 

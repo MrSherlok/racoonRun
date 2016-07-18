@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Player : MonoBehaviour
-{
-
+{	
+	public bool iDead= false;
     private Rigidbody2D myRigitbody;
     public float movementSpeed;
     public float jumpForce;
@@ -40,13 +40,15 @@ public class Player : MonoBehaviour
         IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
 		isCloudHeadTouch = Physics2D.OverlapCircle(isCloudCheck.position, isCloudCheckRadius, whatIsCloud);
 		isCloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, isCloudCheckRadius, whatIsCloud);
-		playerAnimator.SetBool("IsGrounded", IsGrounded);
+			playerAnimator.SetBool ("IsGrounded", IsGrounded);
+		
 
     }
 
     public void JumpInput()
 		{
-			if (PauseScript.isPause) {
+		if (PauseScript.isPause && iDead == false) {
+			
 			if (IsGrounded == true) {
             
 				//		прыжок велосити
@@ -58,7 +60,14 @@ public class Player : MonoBehaviour
 		playerAnimator.SetTrigger ("HeadKick");
 	}
 	public void IGetDamage(){
-		playerAnimator.SetTrigger ("GetDamage");
+		
+			playerAnimator.SetTrigger ("GetDamage");
+		
+	}
+	public void DieEnot(){
+			playerAnimator.SetTrigger("IsDead");
+		iDead = true;
+		
 	}
   
 

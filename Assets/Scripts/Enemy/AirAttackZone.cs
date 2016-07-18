@@ -8,6 +8,7 @@ public class AirAttackZone : MonoBehaviour {
 			Debug.Log("Incoming");
 			fLyToPlayer = true;
 			GameObject.Find ("Bird").GetComponent<AirBirdLogic> ().Attack ();
+			GameObject.Find ("Bird2").GetComponent<AirBirdLogic> ().Attack ();
 
 		}
 	}
@@ -16,6 +17,7 @@ public class AirAttackZone : MonoBehaviour {
 			Debug.Log("Out");
 			fLyToPlayer = false;
 			GameObject.Find ("Bird").GetComponent<AirBirdLogic> ().Return ();
+			GameObject.Find ("Bird2").GetComponent<AirBirdLogic> ().Return ();
 		}
 	}
 }

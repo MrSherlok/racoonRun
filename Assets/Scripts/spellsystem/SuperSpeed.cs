@@ -21,10 +21,10 @@ public class SuperSpeed : DefSpellParent {
 		defRestoreTime[1] = 1.0f;
 		defRestoreTime[2] = 0.7f;
 
-		//RESTORE SPEED
-		defRestoreTime[0] = 5f;
-		defRestoreTime[1] = 3f;
-		defRestoreTime[2] = 2f;
+        //RESTORE SPEED
+        defRestoreSpeed[0] = 5f;
+        defRestoreSpeed[1] = 3f;
+        defRestoreSpeed[2] = 2f;
 
 		//SPESIAL
 		defSpecial[0] = 40f;

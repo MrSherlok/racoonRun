@@ -26,10 +26,10 @@ public class SodaPack : DefSpellParent {
 		defRestoreTime[1] = 1.0f;
 		defRestoreTime[2] = 0.7f;
 
-		//RESTORE SPEED
-		defRestoreTime[0] = 5f;
-		defRestoreTime[1] = 3f;
-		defRestoreTime[2] = 2f;
+        //RESTORE SPEED
+        defRestoreSpeed[0] = 5f;
+        defRestoreSpeed[1] = 3f;
+        defRestoreSpeed[2] = 2f;
 
 		//SPESIAL
 		defSpecial[0] = 0.7f;
@@ -51,8 +51,7 @@ public class SodaPack : DefSpellParent {
 		sodaPack.SetActive (true);
 
 		IsFlying = false;
-		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
-
+		playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D> ();
 		FireFXParts = GameObject.Find ("InpuctFireFx").GetComponent<ParticleSystem> ().emission;
 		SodaFXParts = GameObject.Find ("SodaFX").GetComponent<ParticleSystem> ().emission;
 		SodaFXParts.enabled = false;

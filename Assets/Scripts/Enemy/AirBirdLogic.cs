@@ -16,7 +16,7 @@ public class AirBirdLogic : MonoBehaviour {
 		StartCoroutine ("Go");
 	}
 	IEnumerator Go () {
-		while (attacking) {
+		while (attacking == true) {
 			gameObject.transform.position = Vector3.Lerp(transform.position,player.transform.position,0.01f);	
 			yield return null;
 		}

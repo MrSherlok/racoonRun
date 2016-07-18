@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CoinCollect.cs" />
+     <Compile Include="Assets\DeleteThisShit.cs" />
      <Compile Include="Assets\GoToLotteryScene.cs" />
      <Compile Include="Assets\IndusActivator.cs" />
      <Compile Include="Assets\OffsetScript.cs" />
@@ -77,6 +78,8 @@
      <Compile Include="Assets\Scripts\Collection\ThirdItem.cs" />
      <Compile Include="Assets\Scripts\CollisionTrigger.cs" />
      <Compile Include="Assets\Scripts\DraggingScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\AirAttackZone.cs" />
+     <Compile Include="Assets\Scripts\Enemy\AirBirdLogic.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\FirstStart\FirstStartScript.cs" />
      <Compile Include="Assets\Scripts\GameButtons.cs" />

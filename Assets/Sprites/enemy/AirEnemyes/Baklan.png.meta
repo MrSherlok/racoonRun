@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: d1f01c4e06e13d247b315998d834fe10
+timeCreated: 1468838443
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Baklan_0
+    21300002: Baklan_1
+    21300004: Baklan_2
+    21300006: Baklan_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Baklan_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 14
+        width: 88
+        height: 249
+      alignment: 9
+      pivot: {x: 0.56664276, y: 0.8591749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.864563, y: 35.065445}
+        - {x: -49.864563, y: 2.065445}
+        - {x: -49.864563, y: -115.934555}
+        - {x: -39.864563, y: -213.93456}
+        - {x: 5.135437, y: -213.93456}
+        - {x: 38.135437, y: -117.934555}
+        - {x: 38.135437, y: 35.065445}
+    - name: Baklan_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 191
+        width: 338
+        height: 235
+      alignment: 9
+      pivot: {x: 0.45445424, y: 0.5873445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90.39447, y: -88.02597}
+        - {x: 182.39447, y: -28.02597}
+        - {x: 184.39447, y: -23.02597}
+        - {x: 184.39447, y: 40.97403}
+        - {x: 178.39447, y: 85.97403}
+        - {x: 162.39447, y: 96.97403}
+        - {x: 105.39447, y: 96.97403}
+        - {x: -51.60553, y: 59.97403}
+        - {x: -132.60553, y: 96.97403}
+        - {x: -134.60553, y: 96.97403}
+        - {x: -153.60553, y: 75.97403}
+        - {x: -153.60553, y: -8.02597}
+        - {x: -122.60553, y: -31.02597}
+        - {x: -15.60553, y: -94.02597}
+        - {x: -13.60553, y: -138.02597}
+        - {x: 41.39447, y: -138.02597}
+        - {x: 81.39447, y: -129.02597}
+        - {x: 94.39447, y: -115.02597}
+        - {x: 96.39447, y: -106.02597}
+    - name: Baklan_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 17
+        width: 212
+        height: 143
+      alignment: 9
+      pivot: {x: 0.19224879, y: 0.31545067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.243256, y: 97.89056}
+        - {x: 7.2432556, y: 83.89056}
+        - {x: -30.756744, y: 36.890556}
+        - {x: -40.756744, y: 18.890556}
+        - {x: -40.756744, y: -15.109444}
+        - {x: -39.756744, y: -18.109444}
+        - {x: -26.756744, y: -39.109444}
+        - {x: -14.756744, y: -45.109444}
+        - {x: 127.243256, y: -45.109444}
+        - {x: 171.24326, y: -9.109444}
+        - {x: 171.24326, y: 29.890556}
+        - {x: 100.243256, y: 97.89056}
+    - name: Baklan_3
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 9
+        width: 95
+        height: 150
+      alignment: 9
+      pivot: {x: 0.1681888, y: 0.10414196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 66.022064, y: 134.37871}
+        - {x: -15.977936, y: 63.378708}
+        - {x: -15.977936, y: -12.621292}
+        - {x: -10.977936, y: -15.621292}
+        - {x: 39.022064, y: -15.621292}
+        - {x: 79.022064, y: 5.378708}
+        - {x: 79.022064, y: 134.37871}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

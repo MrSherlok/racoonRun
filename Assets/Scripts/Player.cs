@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     bool isSuperJumpActive;       //переменная на проверку активен ли супер прыжок
 
     void Start()
-    {
+    {	
 		playerAnimator = GameObject.Find("Player1").GetComponent<Animator>();
         myRigitbody = GetComponent<Rigidbody2D>();
     }
@@ -61,14 +61,13 @@ public class Player : MonoBehaviour
 	}
 	public void IGetDamage(){
 		
-			playerAnimator.SetTrigger ("GetDamage");
-		
+			playerAnimator.SetTrigger ("GetDamage");	
 	}
-	public void DieEnot(){
+	public void DieEnot(int sposobSmerti){
+		if (sposobSmerti == 1)
 			playerAnimator.SetTrigger("IsDead");
-		iDead = true;
-		
+		if (sposobSmerti == 2)
+			playerAnimator.SetTrigger("IsDead2");
+			iDead = true;		
 	}
-  
-
 }

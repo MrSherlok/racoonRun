@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
-{	
+{	GameObject camPoint;
+	
 	public int hp = 2;
 	GameObject player;
     public bool isEnemy = false;
@@ -19,7 +20,8 @@ public class HealthScript : MonoBehaviour
 	public float lerpTime;
 
     void Start()
-	{
+	{	
+		camPoint = GameObject.Find ("CameraPoint");
 		player = GameObject.Find ("Player");
 //		lastHp = maxhp;
 		GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
@@ -39,19 +41,14 @@ public class HealthScript : MonoBehaviour
             {
                 hp -= shot.damage;
 				player.GetComponent<Player>().IGetDamage();
-				GameObject.Find ("CameraPoint").GetComponent<AudioSource>().Play ();
+				camPoint.GetComponent<AudioSource>().Play ();
 			    curHp = hp/maxhp;
 				hpBar.fillAmount -= 0.0001f;
 				GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
 
                 if (hp <= 0)
                 {
-					hpBar.enabled = false;
-					hpBarHolder.enabled = false;
-
-					chooseLvl.enabled = true;
-
-					Dead();					
+					Dead(1);					
                 }
             }
         }
@@ -63,19 +60,23 @@ public class HealthScript : MonoBehaviour
 		if(curHp<hpBar.fillAmount)
 			hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount,curHp,Time.deltaTime*lerpTime);
 		}
-	void Dead(){
+	public void Dead(int sposob){
 		
-		//2-Foreground
-		//1-Middle
-		//0-backgroun
-		player.GetComponent<Player>().DieEnot();
+		hpBar.enabled = false;
+		hpBarHolder.enabled = false;
+		chooseLvl.enabled = true;
+		Invoke ("EndImage", 1.5f);
+		Time.timeScale = 0.4f;
+		if (sposob == 1) {
+			player.GetComponent<Player> ().DieEnot (1);
+		}
+		if (sposob == 2) {
+			player.GetComponent<Player> ().DieEnot (2);
+		}
 		GameObject.Find("0-backgroun").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 		GameObject.Find("2-Foreground").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 		GameObject.Find("1-Middle").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
-		Invoke ("EndImage", 2);
 
-			
-		
 
 	}
 	void EndImage(){

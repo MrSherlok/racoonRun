@@ -58,6 +58,7 @@ public class BananaGun : DamSpellParent {
 			//animator.SetTrigger ("Fire");
 			shoot.SetActive(true);
 			shoot.transform.position = transform.position;
+			GameObject.Find ("AudioSystem").GetComponent<AudioManager> ().PlaySound ("bananagun");
 			Invoke ("Coldown", cooldown);
 		//	StartCoroutine ("Coldown");
 		}

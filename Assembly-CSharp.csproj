@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\CoinCollect.cs" />
+     <Compile Include="Assets\CosmosRade.cs" />
      <Compile Include="Assets\DeleteThisShit.cs" />
      <Compile Include="Assets\GoToLotteryScene.cs" />
      <Compile Include="Assets\IndusActivator.cs" />

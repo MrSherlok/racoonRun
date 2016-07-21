@@ -6,7 +6,7 @@ public class SuperPunch : DamSpellParent {
 	public static bool IsSuperPunchActive = false; 
 	public GameObject superPunchIm;
 	public GameObject superPunchIm1;
-	private Animator animator;
+	//private Animator animator;
 
 	void Start() {
 		//COUNT
@@ -29,7 +29,7 @@ public class SuperPunch : DamSpellParent {
 
 		nonCooldown = true;
 		IsSuperPunchActive = false;
-		animator = GameObject.Find("Player1").GetComponent<Animator> ();
+		//animator = GameObject.Find("Player1").GetComponent<Animator> ();
 		superPunchIm.SetActive (true);
 	}
 

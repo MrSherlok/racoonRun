@@ -1,11 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\lottery\RotateCylinder.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\PetLife.cs">
     <Files>
-      <File FileName="Assets\Scripts\lottery\RotateCylinder.cs" Line="22" Column="54" />
-      <File FileName="Assets\Scripts\Enemy\AirAttackZone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\BananaGun.cs" Line="61" Column="90" />
-      <File FileName="Assets\AudioManager.cs" Line="12" Column="9" />
+      <File FileName="Assets\Scripts\Enemy\PetLife.cs" Line="21" Column="22" />
+      <File FileName="Assets\Scripts\spellsystem\SuperPunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\spellsystem\BananaGun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\spellsystem\DamSpellParent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\spellsystem\CookieRang.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShotScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\PetLogic.cs" Line="7" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

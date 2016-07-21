@@ -56,6 +56,7 @@ public class CookieRang : DamSpellParent {
 			//animator.SetTrigger ("Fire");
 			shoot.SetActive(true);
 			shoot.transform.position = transform.position;
+			animator.SetTrigger ("Fire");
 			Invoke ("Coldown", cooldown);
 			//	StartCoroutine ("Coldown");
 		}

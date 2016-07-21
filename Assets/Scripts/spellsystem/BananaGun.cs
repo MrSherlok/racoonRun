@@ -5,9 +5,10 @@ public class BananaGun : DamSpellParent {
 //	public GameObject bananaGunPrefab;
 	GameObject[] bananas= new GameObject[6];
 	public GameObject gun;
+	//private Animator animator;
 	int i = 0;
 	void Start(){
-
+		//animator = GameObject.Find("Player1").GetComponent<Animator> ();
 		//COUNT
 		damCount [0] = 3;
 		damCount [1] = 5;
@@ -58,6 +59,7 @@ public class BananaGun : DamSpellParent {
 			//animator.SetTrigger ("Fire");
 			shoot.SetActive(true);
 			shoot.transform.position = transform.position;
+			animator.SetTrigger ("Fire");
 			GameObject.Find ("AudioSystem").GetComponent<AudioManager> ().PlaySound ("bananagun");
 			Invoke ("Coldown", cooldown);
 		//	StartCoroutine ("Coldown");

@@ -82,6 +82,8 @@
      <Compile Include="Assets\Scripts\DraggingScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\AirAttackZone.cs" />
      <Compile Include="Assets\Scripts\Enemy\AirBirdLogic.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PetLife.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PetLogic.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\FirstStart\FirstStartScript.cs" />
      <Compile Include="Assets\Scripts\GameButtons.cs" />

@@ -16,6 +16,11 @@ abstract public class DamSpellParent : MonoBehaviour {
 	protected int count;
 	protected int maxCount;
 	protected bool nonCooldown = true;
+	protected Animator animator;
 
 	abstract public void OnClick ();
+
+void Awake(){
+	animator = GameObject.Find("Player1").GetComponent<Animator> ();
+}
 }

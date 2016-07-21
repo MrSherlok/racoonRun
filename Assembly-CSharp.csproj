@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\Map\Choselvl.cs" />
      <Compile Include="Assets\Scripts\Map\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
+     <Compile Include="Assets\Scripts\Map\UnlockLevel.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\NextLvLSceneScript.cs" />
      <Compile Include="Assets\Scripts\PauseScript.cs" />

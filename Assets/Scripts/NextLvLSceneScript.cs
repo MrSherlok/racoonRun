@@ -9,6 +9,7 @@ public class NextLvLSceneScript : MonoBehaviour {
 	public GameObject uiBars;
 	public Text coinsCollet;
 	public int LevelIndex;
+	int currentIndex;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
@@ -20,6 +21,8 @@ public class NextLvLSceneScript : MonoBehaviour {
 			coinsCollet.text = "Coins = " + CoinCollect.coins.ToString ();
 			GameObject.Find ("Player1").GetComponent<Animator>().SetBool("IWIN",true);
 			uiBars.SetActive (false);
+			currentIndex = PlayerPrefs.GetInt ("UnlockingLvls");
+			if(currentIndex < LevelIndex)
 			PlayerPrefs.SetInt ("UnlockingLvls",LevelIndex);
 
 		}

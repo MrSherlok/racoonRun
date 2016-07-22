@@ -1,14 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\PetLife.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\EnemyASLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy\PetLife.cs" Line="21" Column="22" />
-      <File FileName="Assets\Scripts\spellsystem\SuperPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\BananaGun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\DamSpellParent.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\CookieRang.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShotScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\PetLogic.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyASLogic.cs" Line="17" Column="1" />
+      <File FileName="Assets\Scripts\NextLvLSceneScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\KrotKilling.cs" Line="1" Column="1" />
+      <File FileName="Assets\CosmosRade.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\spellsystem\AnimatorInCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealthScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TutorialLevel\TutorHint.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\lottery\RotateCylinder.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\spellsystem\SodaPack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\PetLife.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

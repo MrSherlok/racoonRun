@@ -11,10 +11,12 @@ public class RotateCylinder : MonoBehaviour {
 	GameObject cyl;
 	public ParticleSystem.EmissionModule Iskru;
 	public Text rez;
+
 	void Start(){
 		cyl = GameObject.Find ("Cylinder");
 		grabAnim = GameObject.Find ("Grablya").GetComponent<Animator> ();
 		grabAnim.SetBool ("Close",false);
+		Iskru = GameObject.Find ("IskryPS").GetComponent<ParticleSystem> ().emission;
 		Iskru.enabled = false;
 	}
 

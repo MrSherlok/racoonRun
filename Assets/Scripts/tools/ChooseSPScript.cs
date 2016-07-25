@@ -8,95 +8,83 @@ public class ChooseSPScript : MonoBehaviour {
 	public static int ActiveDamSpel = -1;
 	public static int ActiveDefSpel = -1;
 
-	public Image[] spellsDamImage = new Image[3];
-	public Image[] spellsDefImage = new Image[3];
+	[SerializeField]
+	Text NameTxt;
+	[SerializeField]
+	Text DiscTxt;
 
-	public bool[] spellsDamActive = new bool[3];
-	public bool[] spellsDefActive = new bool[3];
+	[SerializeField]
+	Image[] spellsDamImage = new Image[3];
+	[SerializeField]
+	Image[] spellsDefImage = new Image[3];
+
+	[SerializeField]
+	bool[] spellsDamActive = new bool[3];
+	[SerializeField]
+	bool[] spellsDefActive = new bool[3];
 
 
-/*	public static bool chooseSuperSpeedEnable = false;
-	public static bool choooseFlyingEnable = false;
-	public static bool chooseSuperJumpEnable = false;
-	public static bool chooseCookieRangEnable = false;
-	public static bool chooseBananaGunEnable = false;
-	public static bool chooseSuperPunchEnable = false;
+	string[] Names = new string[6];
+	string[] Discr = new string[6];
 
-	public Image chooseSuperSpeedImage;
-	public Image chooseFlyingImage;
-	public Image chooseSuperJumpImage;
-    public Image chooseCookieRangImage;
-    public Image chooseBananaGunImage;
-    public Image chooseSuperPunchImage;
-*/
-//    private int _lvl = 0; 
+	int i = 0;
 
-    //   public Sprite[] chooseSuperSpeedSprites = new Sprite[2];
-    //public Sprite[] chooseFlyingSprites = new Sprite[2];
-    //public Sprite[] chooseSuperJumpSprites = new Sprite[2];
-    //   public Sprite[] chooseCookieRangSprites = new Sprite[2];
-    //   public Sprite[] chooseBananaGunSprites = new Sprite[2];
-    //   public Sprite[] chooseSuperPowerSprites = new Sprite[2];
 
-/*        public void Start()
+	void Start() {
+		Names[0] = "Super Jump";
+		Names[1] = "Soda Pack";
+		Names[2] = "Super Run";
+		Names[3] = "Banana Gun";
+		Names[4] = "Super Punch";
+		Names[5] = "Cookie Rang";
+
+
+		Discr [0] = "Jump hieght";
+		Discr [1] = "Fly whith mentos";
+		Discr [2] = "Run as gepard";
+		Discr [3] = "Give them bananas";
+		Discr [4] = "Strong Punch";
+		Discr [5] = "Cookie Rang";
+	}
+
+    void Update()
     {
-        _lvl = ChengeCenturyScript.lvl;
-    }
-*/
-    public void FixedUpdate()
-    {
-		//DefSpells
 
-		if (ActiveDefSpel == 0)
+		if (ActiveDefSpel == -1 && ActiveDamSpel == -1) {
+			NameTxt.text = "";
+			DiscTxt.text = "";
+		}
+		if (ActiveDefSpel == -1 && ActiveDamSpel != -1) {
+			NameTxt.text = Names [ActiveDamSpel + 3];
+			DiscTxt.text = Discr [ActiveDamSpel + 3];
+		}
+		if (ActiveDefSpel != -1 && ActiveDamSpel == -1) {
+			NameTxt.text = Names [ActiveDefSpel];
+			DiscTxt.text = Discr [ActiveDefSpel];
+		}
+
+
+
+
+		if (ActiveDefSpel == i) {
+			spellsDefImage [ActiveDefSpel].color = Color.red;
+		} else {
+			spellsDefImage[i].color = Color.white;
+		}
+
+
+
+		if (ActiveDamSpel ==  i)
 		{
-			spellsDefImage[0].color = Color.red;
+			spellsDamImage [ActiveDamSpel].color = Color.red;
 		}
 		else {
-			spellsDefImage[0].color = Color.white;
+			spellsDamImage [i].color = Color.white;
 		}
 
-		if (ActiveDefSpel == 1)
-		{
-			spellsDefImage[1].color = Color.red;
-		}
-		else {
-			spellsDefImage[1].color = Color.white;
-		}
-
-		if (ActiveDefSpel == 2)
-        {
-			spellsDefImage[2].color = Color.red;
-        }
-        else {
-			spellsDefImage[2].color = Color.white;
-        }
-
-		//DamSpells
-
-		if (ActiveDamSpel == 0)
-		{
-			spellsDamImage [0].color = Color.red;
-		}
-		else {
-			spellsDamImage [0].color = Color.white;
-		}
-
-		if (ActiveDamSpel ==  1)
-		{
-			spellsDamImage [1].color = Color.red;
-		}
-		else {
-			spellsDamImage [1].color = Color.white;
-		}
-
-		if (ActiveDamSpel == 2)
-        {
-			spellsDamImage [2].color = Color.red;
-        }
-        else {
-			spellsDamImage [2].color = Color.white;
-        }
-
+		i++;
+		if (i == 3)
+			i = 0;
     }
 
 	public void SuperJumpEnable () {
@@ -113,6 +101,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDefSpel = 0;
 			spellsDefActive [1] = false;
 			spellsDefActive [2] = false;
+			NameTxt.text = Names [0];
+			DiscTxt.text = Discr [0];
 
 		}
 		else ActiveDefSpel = -1;
@@ -132,6 +122,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDefSpel = 1;
 			spellsDefActive [0] = false;
 			spellsDefActive [2] = false;
+			NameTxt.text = Names [1];
+			DiscTxt.text = Discr [1];
 		}
 		else ActiveDefSpel = -1;
 	}
@@ -149,6 +141,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDefSpel = 2;
 			spellsDefActive [1] = false;
 			spellsDefActive [0] = false;
+			NameTxt.text = Names [2];
+			DiscTxt.text = Discr [2];
 		}
 		else ActiveDefSpel = -1;
     }
@@ -167,6 +161,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 0;
 			spellsDamActive [1] = false;
 			spellsDamActive [2] = false;
+			NameTxt.text = Names [3];
+			DiscTxt.text = Discr [3];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -185,6 +181,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 1;
 			spellsDamActive [0] = false;
 			spellsDamActive [2] = false;
+			NameTxt.text = Names [4];
+			DiscTxt.text = Discr [4];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -203,6 +201,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 2;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
+			NameTxt.text = Names [5];
+			DiscTxt.text = Discr [5];
 		}
 		else ActiveDamSpel = -1;
 	}

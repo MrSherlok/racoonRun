@@ -22,7 +22,7 @@ public class DragCollection : MonoBehaviour, IDragHandler, IBeginDragHandler
 	{
 		if ((map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) < maxX && 
 			(map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) > minX) {	
-			map.position += new Vector3 (eventData.delta.x, 0f, 0f);
+			map.position += new Vector3 (eventData.delta.x*3f, 0f, 0f);
 		}
 	}
 }

@@ -8,13 +8,13 @@ public class SuperPower : MonoBehaviour {
 //	private ParticleSystem FireFXParts;
 
 
-	public Image[] spelsDamImage = new Image[3];
+	public Image[] spelsDamImage = new Image[4];
 	public Image[] spelsDefImage = new Image[3];
 
 	public GameObject damScriptsObj;
 	public GameObject defScriptsObj;
 
-	DamSpellParent[] damScripts = new DamSpellParent[3];
+	DamSpellParent[] damScripts = new DamSpellParent[4];
 	DefSpellParent[] defScripts = new DefSpellParent[3];
 
 	private int _actDam = -1;
@@ -66,6 +66,7 @@ public class SuperPower : MonoBehaviour {
 		damScripts[0] = damScriptsObj.GetComponent<BananaGun>();
 		damScripts[1] = damScriptsObj.GetComponent<SuperPunch>();
 		damScripts[2] = damScriptsObj.GetComponent<CookieRang>();
+		damScripts[3] = damScriptsObj.GetComponent<BamBlade>();
 
 		defScripts[0] = defScriptsObj.GetComponent<SuperJump>();
 		defScripts[1] = defScriptsObj.GetComponent<SodaPack>();

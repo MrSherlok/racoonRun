@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragSP : MonoBehaviour, IDragHandler, IBeginDragHandler {
 	Transform map;
 	int minY = 0;
-	int maxY = Screen.height - 10;
+	int maxY = Screen.height + 100;
 
 	void Start()
 	{

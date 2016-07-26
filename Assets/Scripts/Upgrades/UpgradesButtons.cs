@@ -7,6 +7,7 @@ public class UpgradesButtons : MonoBehaviour {
 	public GameObject bananaPanel;
 	public GameObject cookiePanel;
 	public GameObject punchPanel;
+	public GameObject bamBladePanel;
 	public GameObject jumpPanel;
 	public GameObject sodaPanel;
 	public GameObject speedPanel;
@@ -19,6 +20,7 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (true);
 		cookiePanel.SetActive (false);
 		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
@@ -28,6 +30,7 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (false);
 		cookiePanel.SetActive (true);
 		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
@@ -37,6 +40,17 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (false);
 		cookiePanel.SetActive (false);
 		punchPanel.SetActive (true);
+		bamBladePanel.SetActive (false);
+		jumpPanel.SetActive (false);
+		sodaPanel.SetActive (false);
+		speedPanel.SetActive (false);
+	}
+
+	public void BamBladePanel() {
+		bananaPanel.SetActive (false);
+		cookiePanel.SetActive (false);
+		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (true);
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
@@ -46,6 +60,7 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (false);
 		cookiePanel.SetActive (false);
 		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
 		jumpPanel.SetActive (true);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
@@ -55,6 +70,7 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (false);
 		cookiePanel.SetActive (false);
 		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (true);
 		speedPanel.SetActive (false);
@@ -64,6 +80,7 @@ public class UpgradesButtons : MonoBehaviour {
 		bananaPanel.SetActive (false);
 		cookiePanel.SetActive (false);
 		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (true);

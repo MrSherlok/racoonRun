@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\TutorialLevel\HintTextChanger.cs" />
      <Compile Include="Assets\Scripts\TutorialLevel\StringToBanan.cs" />
      <Compile Include="Assets\Scripts\TutorialLevel\TutorHint.cs" />
+     <Compile Include="Assets\Scripts\Upgrades\BamBladeUpgrate.cs" />
      <Compile Include="Assets\Scripts\Upgrades\BananaGunUpgrade.cs" />
      <Compile Include="Assets\Scripts\Upgrades\CookieRangUpgrade.cs" />
      <Compile Include="Assets\Scripts\Upgrades\DamUpgradeParrent.cs" />
@@ -139,6 +140,7 @@
      <Compile Include="Assets\Scripts\newSystem\UpgradeScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\fpsScript.cs" />
      <Compile Include="Assets\Scripts\spellsystem\AnimatorInCollision.cs" />
+     <Compile Include="Assets\Scripts\spellsystem\BamBlade.cs" />
      <Compile Include="Assets\Scripts\spellsystem\BananaGun.cs" />
      <Compile Include="Assets\Scripts\spellsystem\CookieRang.cs" />
      <Compile Include="Assets\Scripts\spellsystem\DamSpellParent.cs" />

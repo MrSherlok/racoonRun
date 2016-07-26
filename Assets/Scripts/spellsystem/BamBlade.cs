@@ -29,7 +29,7 @@ public class BamBlade : DamSpellParent {
 			bamBladeIm.GetComponent<Collider2D> ().enabled = true;
 			count--;
 			//animator.SetBool ("bamBladeMili", true);
-			//animator.SetBool("Run", false);
+			animator.SetTrigger("Fire2");
 			Invoke ("StopBamBlade", 0.5f);
 		}
 
@@ -40,6 +40,7 @@ public class BamBlade : DamSpellParent {
 			count--;
 			//animator.SetBool ("bamBladeRange", true);
 			//animator.SetBool("Run", false);
+			animator.SetTrigger("Fire2");
 			Invoke ("StopRange",1.5f);
 		}
 

@@ -13,7 +13,7 @@ public class UnlockLevel : MonoBehaviour {
 		savingLevel = PlayerPrefs.GetInt ("UnlockingLvls");
 		if (savingLevel != null && savingLevel < levels.Length) {
 			levels [savingLevel].enabled = true;
-			for (i=savingLevel; i != 0; i--) {
+			for (i=0; i <= savingLevel; i++) {
 				levels [i].enabled = true;
 			}
 

@@ -14,20 +14,21 @@ public class ChooseSPScript : MonoBehaviour {
 	Text DiscTxt;
 
 	[SerializeField]
-	Image[] spellsDamImage = new Image[3];
+	Image[] spellsDamImage = new Image[4];
 	[SerializeField]
 	Image[] spellsDefImage = new Image[3];
 
 	[SerializeField]
-	bool[] spellsDamActive = new bool[3];
+	bool[] spellsDamActive = new bool[4];
 	[SerializeField]
 	bool[] spellsDefActive = new bool[3];
 
 
-	string[] Names = new string[6];
-	string[] Discr = new string[6];
+	string[] Names = new string[7];
+	string[] Discr = new string[7];
 
 	int i = 0;
+	int j = 0;
 
 
 	void Start() {
@@ -37,6 +38,7 @@ public class ChooseSPScript : MonoBehaviour {
 		Names[3] = "Banana Gun";
 		Names[4] = "Super Punch";
 		Names[5] = "Cookie Rang";
+		Names[6] = "Bamboo Blade";
 
 
 		Discr [0] = "Jump hieght";
@@ -45,6 +47,7 @@ public class ChooseSPScript : MonoBehaviour {
 		Discr [3] = "Give them bananas";
 		Discr [4] = "Strong Punch";
 		Discr [5] = "Cookie Rang";
+		Discr [6] = "Fish and bamboo blade";
 	}
 
     void Update()
@@ -66,10 +69,10 @@ public class ChooseSPScript : MonoBehaviour {
 
 
 
-		if (ActiveDefSpel == i) {
+		if (ActiveDefSpel == j) {
 			spellsDefImage [ActiveDefSpel].color = Color.red;
 		} else {
-			spellsDefImage[i].color = Color.white;
+			spellsDefImage[j].color = Color.white;
 		}
 
 
@@ -83,8 +86,12 @@ public class ChooseSPScript : MonoBehaviour {
 		}
 
 		i++;
-		if (i == 3)
+		if (i == 4)
 			i = 0;
+
+		j++;
+		if (j == 3)
+			j = 0;
     }
 
 	public void SuperJumpEnable () {
@@ -161,6 +168,7 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 0;
 			spellsDamActive [1] = false;
 			spellsDamActive [2] = false;
+			spellsDamActive [3] = false;
 			NameTxt.text = Names [3];
 			DiscTxt.text = Discr [3];
 		}
@@ -181,6 +189,7 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 1;
 			spellsDamActive [0] = false;
 			spellsDamActive [2] = false;
+			spellsDamActive [3] = false;
 			NameTxt.text = Names [4];
 			DiscTxt.text = Discr [4];
 		}
@@ -203,6 +212,28 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [0] = false;
 			NameTxt.text = Names [5];
 			DiscTxt.text = Discr [5];
+		}
+		else ActiveDamSpel = -1;
+	}
+
+
+	public void BamBladeEnable () {
+		/*		chooseCookieRangEnable = !chooseCookieRangEnable;
+		if (chooseCookieRangEnable)
+		{
+			chooseBananaGunEnable = false;
+			chooseSuperPunchEnable = false;
+			ActiveDamSpel = 2;
+		} else ActiveDamSpel = -1; */
+
+		spellsDamActive [3] = !spellsDamActive [3];
+		if (spellsDamActive [3]) {
+			ActiveDamSpel = 3;
+			spellsDamActive [2] = false;
+			spellsDamActive [1] = false;
+			spellsDamActive [0] = false;
+			NameTxt.text = Names [6];
+			DiscTxt.text = Discr [6];
 		}
 		else ActiveDamSpel = -1;
 	}

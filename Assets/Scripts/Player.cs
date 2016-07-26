@@ -5,21 +5,21 @@ public class Player : MonoBehaviour
 {	
 	public bool iDead= false;
     private Rigidbody2D myRigitbody;
-    public float movementSpeed;
-    public float jumpForce;
+    
+	float jumpForce = 30f;
 
 	public static Animator playerAnimator;
     private float isgroundtimer;
 
 	//IsGrounded start
-	public float groundCheckRadius;
+	public float groundCheckRadius = 0.5f;
 	public Transform groundCheck;
 	public LayerMask whatIsGrounded;
 	public static bool IsGrounded;
 
 	//IsGrounded  end
 	//IsClouded start
-	public float isCloudCheckRadius;//адиус соприкосновения глова-хмара
+	public float isCloudCheckRadius = 0.5f;//адиус соприкосновения глова-хмара
 	public Transform isCloudCheck; // сама точка на голове (headpoint)
 	public LayerMask whatIsCloud; // леер для определения соприкосновений с тучками
 	public static bool isCloudHeadTouch; // возвращает true когда голова в контакте с тучей
@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
 
     //IsClouded end
 
-    bool isSuperJumpActive;       //переменная на проверку активен ли супер прыжок
 
     void Start()
     {	
@@ -40,7 +39,7 @@ public class Player : MonoBehaviour
         IsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
 		isCloudHeadTouch = Physics2D.OverlapCircle(isCloudCheck.position, isCloudCheckRadius, whatIsCloud);
 		isCloudfootTouch = Physics2D.OverlapCircle(groundCheck.position, isCloudCheckRadius, whatIsCloud);
-			playerAnimator.SetBool ("IsGrounded", IsGrounded);
+		playerAnimator.SetBool ("IsGrounded", IsGrounded);
 		
 
     }

@@ -10,7 +10,7 @@ public class SpellDrag : MonoBehaviour {
 	Vector3 previousMousePos = Vector3.zero;
 	public Transform map;
 	int minY = 0;
-	int maxY = Screen.height - 10;
+	int maxY = Screen.height + 100;
 	int averY;
 
 

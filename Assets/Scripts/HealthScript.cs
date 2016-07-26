@@ -2,9 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class HealthScript : MonoBehaviour
-{	GameObject camPoint;
-	
+public class HealthScript : MonoBehaviour {	
+//	GameObject camPoint;
+
+	[SerializeField]
+	private AudioClip _getDamage;
+
 	public int hp = 2;
 	GameObject player;
     public bool isEnemy = false;
@@ -21,7 +24,7 @@ public class HealthScript : MonoBehaviour
 
     void Start()
 	{	
-		camPoint = GameObject.Find ("CameraPoint");
+//		camPoint = GameObject.Find ("CameraPoint");
 		player = GameObject.Find ("Player");
 //		lastHp = maxhp;
 		GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
@@ -41,7 +44,8 @@ public class HealthScript : MonoBehaviour
             {
                 hp -= shot.damage;
 				player.GetComponent<Player>().IGetDamage();
-				camPoint.GetComponent<AudioSource>().Play ();
+				player.GetComponent<AudioSource>().clip = _getDamage;
+				player.GetComponent<AudioSource>().Play ();
 			    curHp = hp/maxhp;
 				hpBar.fillAmount -= 0.0001f;
 				GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
@@ -74,7 +78,7 @@ public class HealthScript : MonoBehaviour
 			player.GetComponent<Player> ().DieEnot (2);
 		}
 		GameObject.Find("0-backgroun").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
-		GameObject.Find("2-Foreground").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
+		GameObject.Find("Earth").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 		GameObject.Find("1-Middle").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 
 

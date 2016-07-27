@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 	public bool iDead= false;
     private Rigidbody2D myRigitbody;
     
-	float jumpForce = 30f;
+	float jumpForce = 40f;
 
 	public static Animator playerAnimator;
     private float isgroundtimer;

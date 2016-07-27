@@ -51,7 +51,7 @@ public class SuperSpeed : DefSpellParent {
 		if (_isRunning && timeTo >= 0) {
 			onCooldown = false;
 			IsRunning = true;
-			timeTo -= Time.deltaTime;
+			count -= Time.deltaTime;
 			playerSpeed.speed = new Vector2 (SpeedSuper, 0f);
 		} else {
 			IsRunning = false;

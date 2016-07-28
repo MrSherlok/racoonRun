@@ -52,6 +52,7 @@ public class HealthScript : MonoBehaviour {
 
                 if (hp <= 0)
                 {
+					SuperPower.ActImage = true;
 					Dead(1);					
                 }
             }

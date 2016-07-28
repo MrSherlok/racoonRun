@@ -6,7 +6,7 @@ public class AirAttackZone : MonoBehaviour {
 	public AudioSource soundOfIncoming;
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.tag == "Player") {
-			Debug.Log("Incoming");
+//			Debug.Log("Incoming");
 			fLyToPlayer = true;
 			GameObject.Find ("Bird").GetComponent<AirBirdLogic> ().Attack ();
 			GameObject.Find ("Bird2").GetComponent<AirBirdLogic> ().Attack ();
@@ -16,7 +16,7 @@ public class AirAttackZone : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D col){
 		if (col.tag == "Player") {
-			Debug.Log("Out");
+//			Debug.Log("Out");
 			fLyToPlayer = false;
 			GameObject.Find ("Bird").GetComponent<AirBirdLogic> ().Return ();
 			GameObject.Find ("Bird2").GetComponent<AirBirdLogic> ().Return ();

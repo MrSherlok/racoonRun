@@ -17,7 +17,7 @@ public class ItemVision : MonoBehaviour {
 	public Image Nineth;
 	public Image Tenth;
 	
-	int i = 0;
+//	int i = 0;
 
 	void Update () {
 

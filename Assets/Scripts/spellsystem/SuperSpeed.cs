@@ -12,9 +12,9 @@ public class SuperSpeed : DefSpellParent {
 	void Start() {
 
 		//COUNT
-		defCount [0] = 3;
-		defCount [1] = 5;
-		defCount [2] = 6;
+		defCount [0] = 1.5f;
+		defCount [1] = 3f;
+		defCount [2] = 5f;
 
 		//RESTORE TIME
 		defRestoreTime[0] = 1.2f;
@@ -48,7 +48,7 @@ public class SuperSpeed : DefSpellParent {
 	}
 
 	void Update() {
-		if (_isRunning && timeTo >= 0) {
+		if (_isRunning && count >= 0) {
 			onCooldown = false;
 			IsRunning = true;
 			count -= Time.deltaTime;

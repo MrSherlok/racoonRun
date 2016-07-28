@@ -20,6 +20,9 @@ public class SuperPower : MonoBehaviour {
 	private int _actDam = -1;
 	private int _actDef = -1;
 
+
+	public static bool ActImage = false;
+
 //	public Camera mainCamera;
 
 
@@ -59,6 +62,9 @@ public class SuperPower : MonoBehaviour {
 		myRigitbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
     }
 */	void Start() {
+
+		ActImage = false;
+
 		_actDam = ChooseSPScript.ActiveDamSpel;
 		_actDef = ChooseSPScript.ActiveDefSpel;
 
@@ -124,6 +130,19 @@ public class SuperPower : MonoBehaviour {
 		}
 	}		*/
 }
+
+	void Update () {
+
+		if(ActImage) {
+			if (_actDam != -1) {
+				spelsDamImage [_actDam].enabled = false;
+			}
+			if (_actDef != -1) {
+				spelsDefImage [_actDef].enabled = false;
+			}
+		}
+	}
+
 
 /*	public void FixedUpdate () {
 		if (Player.isCloudfootTouch || Player.isCloudHeadTouch) {

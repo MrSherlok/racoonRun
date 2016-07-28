@@ -22,7 +22,7 @@ public class DragSP : MonoBehaviour, IDragHandler, IBeginDragHandler {
 	{
 		if ((map.gameObject.GetComponent<RectTransform> ().position.y + eventData.delta.y) < maxY && 
 			(map.gameObject.GetComponent<RectTransform> ().position.y + eventData.delta.y) > minY) {	
-			map.position += new Vector3 (0f, eventData.delta.y, 0f);
+			map.position += new Vector3 (0f, eventData.delta.y*2f, 0f);
 		}
 	}
 }

@@ -26,7 +26,7 @@ public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 			(map.gameObject.GetComponent<RectTransform> ().position.y + eventData.delta.y) > minY && 
 			(map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) < maxX && 
 			(map.gameObject.GetComponent<RectTransform> ().position.x + eventData.delta.x) > minX) {	
-			map.position += new Vector3 (eventData.delta.x, eventData.delta.y, 0f);
+			map.position += new Vector3 (eventData.delta.x*1.5f, eventData.delta.y*1.5f, 0f);
 		}
     }
 }

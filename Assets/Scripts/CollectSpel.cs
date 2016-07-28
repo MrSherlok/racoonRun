@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class CollectSpel : MonoBehaviour {
-	bool isCatch = false;
+	//bool isCatch = false;
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject.tag == "Player") {
-			isCatch = true;
+	//		isCatch = true;
 			StartCoroutine (RotObject ());
 		}
 	}

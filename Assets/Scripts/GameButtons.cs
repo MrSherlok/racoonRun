@@ -16,17 +16,15 @@ public void BackToChoose () {
 		Time.timeScale = 1;
 		ChooseSPScript.ActiveDamSpel = -1;
 		ChooseSPScript.ActiveDefSpel = -1;
-/*		ChooseSPScript.chooseSuperSpeedEnable = false;
-		ChooseSPScript.choooseFlyingEnable = false;
-		ChooseSPScript.chooseSuperJumpEnable = false;
-        ChooseSPScript.chooseCookieRangEnable = false;
-        ChooseSPScript.chooseBananaGunEnable = false;
-        ChooseSPScript.chooseSuperPunchEnable = false; */
 		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
     }
 
 	public void BackToMainMenu () {
         SceneManager.LoadScene("MainMenu");
+	}
+
+	public void BackFromLVLToMap() {
+		SceneManager.LoadScene("chooseLVL");
 	}
 
 

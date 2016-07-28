@@ -18,7 +18,7 @@ public class Choselvl : MonoBehaviour {
 	}
 	void GoToChoseSpels(){
 		if (itsTutorialLevel) {
-			SceneManager.LoadScene (gameObject.name);
+			SceneManager.LoadScene ("LoadScene");
 		} else {
 			SceneManager.LoadScene ("chooseSP");
 		}

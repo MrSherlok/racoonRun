@@ -11,7 +11,7 @@ public class SpellDrag : MonoBehaviour {
 	public Transform map;
 	int minY = 0;
 	int maxY = Screen.height + 100;
-	int averY;
+	int averY =0;
 
 
 	public UnityEvent OnClickEvent;
@@ -42,7 +42,7 @@ public class SpellDrag : MonoBehaviour {
 
 			if ((map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) < maxY &&
 				(map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) > minY) {
-				map.position += new Vector3 (0f, delta.y, 0f);
+				map.position += new Vector3 (0f, delta.y*2f, 0f);
 			}
 
 			previousMousePos = Input.mousePosition;

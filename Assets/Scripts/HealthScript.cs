@@ -70,7 +70,7 @@ public class HealthScript : MonoBehaviour {
 		hpBarHolder.enabled = false;
 		chooseLvl.enabled = true;
 		Invoke ("EndImage", 1.5f);
-		Time.timeScale = 0.4f;
+		//Time.timeScale = 0.4f;
 		if (sposob == 1) {
 			player.GetComponent<Player> ().DieEnot (1);
 		}
@@ -84,6 +84,9 @@ public class HealthScript : MonoBehaviour {
 
 	}
 	void EndImage(){
+
+		SuperPower.ActImage = true;
+
 		theEndImage.enabled = true;
 	}
 

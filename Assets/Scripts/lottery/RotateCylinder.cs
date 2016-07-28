@@ -52,57 +52,56 @@ public class RotateCylinder : MonoBehaviour {
 	}
 	public void ReadScore(){
 		if(cyl.transform.eulerAngles.y >0 && cyl.transform.eulerAngles.y <45){
-			Debug.Log ("DarkBlue");
+	//		Debug.Log ("DarkBlue");
 			color = 6;
 		}
 		if(cyl.transform.eulerAngles.y >45 && cyl.transform.eulerAngles.y <90){
-			Debug.Log ("LightBLue");
+	//		Debug.Log ("LightBLue");
 			color = 5;
 		}
 		if(cyl.transform.eulerAngles.y >90 && cyl.transform.eulerAngles.y <135){
-			Debug.Log ("Green");
+	//		Debug.Log ("Green");
 			color = 4;
 		}
 		if(cyl.transform.eulerAngles.y >135 && cyl.transform.eulerAngles.y <180){
-			Debug.Log ("Yellow");
+	//		Debug.Log ("Yellow");
 			color = 3;
 		}
 		if(cyl.transform.eulerAngles.y >180 && cyl.transform.eulerAngles.y <225){
-			Debug.Log ("Orange");
+	//		Debug.Log ("Orange");
 			color = 2;
 		}
 		if(cyl.transform.eulerAngles.y >225 && cyl.transform.eulerAngles.y <270){
-			Debug.Log ("Red");
+	//		Debug.Log ("Red");
 			color = 1;
 		}
 		if(cyl.transform.eulerAngles.y >270 && cyl.transform.eulerAngles.y <315){
-			Debug.Log ("Gray");
+	//		Debug.Log ("Gray");
 			color = 8;
 		}
 		if(cyl.transform.eulerAngles.y >315 && cyl.transform.eulerAngles.y <360){
-			Debug.Log ("Violet");
+	//		Debug.Log ("Violet");
 			color = 7;
 		}
 		Invoke ("Result",1);
 	}
 	void Result(){
 		//Debug.Log (GameObject.Find("Colorhosein").GetComponent<ChoseYourColor>().color);
-		if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color) {
-			rez.text = CoinCollect.coins.ToString() + "x30";
-			CoinCollect.coins *= 30;
+		if (color == 1 || color == 5) {
+			rez.text = CoinCollect.coins.ToString() + "x3";
+			CoinCollect.coins *= 3;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 			CoinCollect.coins = 0;
-		} else if (color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color - 1 ||
-		         color == GameObject.Find ("Colorhosein").GetComponent<ChoseYourColor> ().color + 1) {
-			rez.text = CoinCollect.coins.ToString() + "x20";
-			CoinCollect.coins *= 20;
+		} else if (color == 3 || color == 7) {
+			rez.text = CoinCollect.coins.ToString() + "x2";
+			CoinCollect.coins *= 2;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 			CoinCollect.coins = 0;
 		} else {
-			rez.text = CoinCollect.coins.ToString() + "x10";
-			CoinCollect.coins *= 10;
+			rez.text = CoinCollect.coins.ToString() + "x1";
+			CoinCollect.coins *= 1;
 			GoldScript.Gold += CoinCollect.coins;
 			PlayerPrefs.SetInt ("Gold", GoldScript.Gold);
 			CoinCollect.coins = 0;

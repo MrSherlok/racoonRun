@@ -14,6 +14,9 @@ public class NextLvLSceneScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.tag == "Player") {
+
+			SuperPower.ActImage = true;
+
 			//winImage.SetActive (true);
 			//Time.timeScale = 0;
 			GameObject.Find("Player").transform.position = GameObject.Find("WinTeleportPoint").transform.position;

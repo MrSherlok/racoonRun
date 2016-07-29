@@ -69,4 +69,7 @@ public class Player : MonoBehaviour
 			playerAnimator.SetTrigger("IsDead2");
 			iDead = true;		
 	}
+	public void BearFatality(){
+		playerAnimator.SetTrigger ("IsDead3");
+	}
 }

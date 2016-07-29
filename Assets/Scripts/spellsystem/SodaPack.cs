@@ -13,9 +13,8 @@ public class SodaPack : DefSpellParent {
 	public static bool IsFlying = false;
 	Rigidbody2D playerRigidbody;
 
-
 	void Start() {
-
+		maxCount = count;
 		//COUNT
 		defCount [0] = 3;
 		defCount [1] = 5;
@@ -35,8 +34,6 @@ public class SodaPack : DefSpellParent {
 		defSpecial[0] = 0.7f;
 		defSpecial[1] = 0.9f;
 		defSpecial[2] = 1.2f;
-
-
 
 
 		timeTo = defCount[PlayerPrefs.GetInt("SodaCountLvl")];

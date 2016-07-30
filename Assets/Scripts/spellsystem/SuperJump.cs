@@ -36,7 +36,7 @@ public class SuperJump : DefSpellParent {
 		count = restoreSpeed;
 
 
-		playerRigidbody = GameObject.FindWithTag ("Player").GetComponent<Rigidbody2D> ();
+		playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D> ();
 		superJumpEnabled = false;
 	}
 
@@ -56,6 +56,7 @@ public class SuperJump : DefSpellParent {
 		if (timeTo >= activeTime && count < restoreSpeed) {
 			timeTo = 0f;
 			count++;
+			CountIndication ();
 		}
 
 	}
@@ -65,6 +66,7 @@ public class SuperJump : DefSpellParent {
 		if (PauseScript.isPause) {
 			if (IsGrounded || cloudTuch && (count > 0)) {
 				count--;
+				CountIndication ();
 				onCooldown = false;
 				playerRigidbody.gravityScale = 4f;
 				playerRigidbody.velocity += ForceSuperJump * Vector2.up;
@@ -80,4 +82,5 @@ public class SuperJump : DefSpellParent {
 		superJumpEnabled = false;
 		onCooldown = true;
 	}
+
 }

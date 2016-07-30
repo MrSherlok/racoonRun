@@ -57,6 +57,7 @@ public class SodaPack : DefSpellParent {
 	}
 
 	void Update () {
+		CountIndication ();
 		if (_isFlying && count >= 0) {
 			onCooldown = false;
 			IsFlying = true;

@@ -44,6 +44,7 @@ public class CookieRang : DamSpellParent {
 		if (timer >= activeTime && count < maxCount) {
 			timer = 0f;
 			count++;
+			CountIndication ();
 		}
 
 	}
@@ -53,6 +54,7 @@ public class CookieRang : DamSpellParent {
 		if (nonCooldown && (count>0)) {
 			nonCooldown = false;
 			count--;
+			CountIndication ();
 			//animator.SetTrigger ("Fire");
 			shoot.SetActive(true);
 			shoot.transform.position = transform.position;

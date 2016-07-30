@@ -28,6 +28,7 @@ public class BamBlade : DamSpellParent {
 		if (PauseScript.isPause && (count > 1)) {
 			bamBladeIm.GetComponent<Collider2D> ().enabled = true;
 			count--;
+			CountIndication ();
 			//animator.SetBool ("bamBladeMili", true);
 			animator.SetTrigger("Fire2");
 			Invoke ("StopBamBlade", 0.5f);
@@ -38,6 +39,7 @@ public class BamBlade : DamSpellParent {
 			bamBladeIm.transform.SetParent (null);
 			bamBladeIm.GetComponent<ScrollingScript> ().enabled = true;
 			count--;
+			CountIndication ();
 			//animator.SetBool ("bamBladeRange", true);
 			//animator.SetBool("Run", false);
 			animator.SetTrigger("Fire2");

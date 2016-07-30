@@ -42,6 +42,7 @@ public class SuperPunch : DamSpellParent {
 		if (timer >= activeTime && count < maxCount) {
 			timer = 0f;
 			count++;
+			CountIndication ();
 		}
 
 	}
@@ -52,6 +53,7 @@ public class SuperPunch : DamSpellParent {
 
 			nonCooldown = false;
 			count--;
+			CountIndication();
 			superPunchIm1.GetComponent<Renderer> ().enabled = true;
 			superPunchIm.GetComponent<Collider2D> ().enabled = true;
 			IsSuperPunchActive = true;

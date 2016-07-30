@@ -48,6 +48,7 @@ public class SuperSpeed : DefSpellParent {
 	}
 
 	void Update() {
+		CountIndication ();
 		if (_isRunning && count >= 0) {
 			onCooldown = false;
 			IsRunning = true;

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SuperSpeed : DefSpellParent {
+public class MoonWalk : DefSpellParent {
 
 	private ScrollingScript playerSpeed;
-	float SpeedSuper = 40f;
+	float moonWalk = 40f;
 	private bool _isRunning = false;
-	public static bool IsRunning = false;
+	public static bool IsMoonWalkActive = false;
 
 
 	void Start() {
@@ -21,10 +21,10 @@ public class SuperSpeed : DefSpellParent {
 		defRestoreTime[1] = 1.0f;
 		defRestoreTime[2] = 0.7f;
 
-        //RESTORE SPEED
-        defRestoreSpeed[0] = 5f;
-        defRestoreSpeed[1] = 3f;
-        defRestoreSpeed[2] = 2f;
+		//RESTORE SPEED
+		defRestoreSpeed[0] = 5f;
+		defRestoreSpeed[1] = 3f;
+		defRestoreSpeed[2] = 2f;
 
 		//SPESIAL
 		defSpecial[0] = 40f;
@@ -32,10 +32,10 @@ public class SuperSpeed : DefSpellParent {
 		defSpecial[2] = 100f;
 
 
-		timeTo = defCount[PlayerPrefs.GetInt("SuperSpeedCountLvl")];
-		activeTime = defRestoreTime[PlayerPrefs.GetInt("SuperSpeedRestoreTimeLvl")];
-		restoreSpeed = defRestoreSpeed[PlayerPrefs.GetInt("SuperSpeedSpeedLvl")];
-		SpeedSuper = defSpecial[PlayerPrefs.GetInt("SuperSpeedSpecialLvl")];
+		timeTo = defCount[PlayerPrefs.GetInt("MoonWalkCountLvl")];
+		activeTime = defRestoreTime[PlayerPrefs.GetInt("MoonWalkRestoreTimeLvl")];
+		restoreSpeed = defRestoreSpeed[PlayerPrefs.GetInt("MoonWalkSpeedLvl")];
+		moonWalk = defSpecial[PlayerPrefs.GetInt("MoonWalkSpecialLvl")];
 
 
 		onCooldown = true;
@@ -43,20 +43,20 @@ public class SuperSpeed : DefSpellParent {
 		count = timeTo;
 
 
-		IsRunning = false;
+		IsMoonWalkActive = false;
 		playerSpeed = GameObject.Find("Earth").GetComponent<ScrollingScript>();
-		playerSpeed.direction.x = -1f;
+		playerSpeed.direction.x = 1f;
 	}
 
 	void Update() {
 		CountIndication ();
 		if (_isRunning && count >= 0) {
 			onCooldown = false;
-			IsRunning = true;
+			IsMoonWalkActive = true;
 			count -= Time.deltaTime;
-			playerSpeed.speed = new Vector2 (SpeedSuper, 0f);
+			playerSpeed.speed = new Vector2 (moonWalk, 0f);
 		} else {
-			IsRunning = false;
+			IsMoonWalkActive = false;
 			playerSpeed.speed = new Vector2 (0f, 0f);
 			onCooldown = true;
 		}

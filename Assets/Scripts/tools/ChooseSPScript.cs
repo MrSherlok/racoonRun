@@ -16,16 +16,16 @@ public class ChooseSPScript : MonoBehaviour {
 	[SerializeField]
 	Image[] spellsDamImage = new Image[4];
 	[SerializeField]
-	Image[] spellsDefImage = new Image[3];
+	Image[] spellsDefImage = new Image[4];
 
 	[SerializeField]
 	bool[] spellsDamActive = new bool[4];
 	[SerializeField]
-	bool[] spellsDefActive = new bool[3];
+	bool[] spellsDefActive = new bool[4];
 
 
-	string[] Names = new string[7];
-	string[] Discr = new string[7];
+	string[] Names = new string[8];
+	string[] Discr = new string[8];
 
 	int i = 0;
 	int j = 0;
@@ -35,19 +35,21 @@ public class ChooseSPScript : MonoBehaviour {
 		Names[0] = "Super Jump";
 		Names[1] = "Soda Pack";
 		Names[2] = "Super Run";
-		Names[3] = "Banana Gun";
-		Names[4] = "Super Punch";
-		Names[5] = "Cookie Rang";
-		Names[6] = "Bamboo Blade";
+		Names[3] = "Moonwalk";
+		Names[4] = "Banana Gun";
+		Names[5] = "Super Punch";
+		Names[6] = "Cookie Rang";
+		Names[7] = "Bamboo Blade";
 
 
 		Discr [0] = "Jump hieght";
 		Discr [1] = "Fly whith mentos";
 		Discr [2] = "Run as gepard";
-		Discr [3] = "Give them bananas";
-		Discr [4] = "Strong Punch";
-		Discr [5] = "Cookie Rang";
-		Discr [6] = "Fish and bamboo blade";
+		Discr [3] = "Walking on the Moon";
+		Discr [4] = "Give them bananas";
+		Discr [5] = "Strong Punch";
+		Discr [6] = "Cookie Rang";
+		Discr [7] = "Fish and bamboo blade";
 	}
 
     void Update()
@@ -90,7 +92,7 @@ public class ChooseSPScript : MonoBehaviour {
 			i = 0;
 
 		j++;
-		if (j == 3)
+		if (j == 4)
 			j = 0;
     }
 
@@ -108,6 +110,7 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDefSpel = 0;
 			spellsDefActive [1] = false;
 			spellsDefActive [2] = false;
+			spellsDefActive [3] = false;
 			NameTxt.text = Names [0];
 			DiscTxt.text = Discr [0];
 
@@ -129,6 +132,7 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDefSpel = 1;
 			spellsDefActive [0] = false;
 			spellsDefActive [2] = false;
+			spellsDefActive [3] = false;
 			NameTxt.text = Names [1];
 			DiscTxt.text = Discr [1];
 		}
@@ -146,6 +150,7 @@ public class ChooseSPScript : MonoBehaviour {
 		spellsDefActive [2] = !spellsDefActive [2];
 		if (spellsDefActive [2]) {
 			ActiveDefSpel = 2;
+			spellsDefActive [3] = false;
 			spellsDefActive [1] = false;
 			spellsDefActive [0] = false;
 			NameTxt.text = Names [2];
@@ -153,6 +158,21 @@ public class ChooseSPScript : MonoBehaviour {
 		}
 		else ActiveDefSpel = -1;
     }
+
+
+	public void MoonWalkEnable () {
+
+		spellsDefActive [3] = !spellsDefActive [3];
+		if (spellsDefActive [3]) {
+			ActiveDefSpel = 3;
+			spellsDefActive [2] = false;
+			spellsDefActive [1] = false;
+			spellsDefActive [0] = false;
+			NameTxt.text = Names [3];
+			DiscTxt.text = Discr [3];
+		}
+		else ActiveDefSpel = -1;
+	}
 		
 	public void BananaGunEnable() {
 /*        chooseBananaGunEnable = !chooseBananaGunEnable;
@@ -169,8 +189,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [1] = false;
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
-			NameTxt.text = Names [3];
-			DiscTxt.text = Discr [3];
+			NameTxt.text = Names [4];
+			DiscTxt.text = Discr [4];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -190,8 +210,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [0] = false;
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
-			NameTxt.text = Names [4];
-			DiscTxt.text = Discr [4];
+			NameTxt.text = Names [5];
+			DiscTxt.text = Discr [5];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -210,8 +230,8 @@ public class ChooseSPScript : MonoBehaviour {
 			ActiveDamSpel = 2;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [5];
-			DiscTxt.text = Discr [5];
+			NameTxt.text = Names [6];
+			DiscTxt.text = Discr [6];
 		}
 		else ActiveDamSpel = -1;
 	}
@@ -232,8 +252,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [2] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [6];
-			DiscTxt.text = Discr [6];
+			NameTxt.text = Names [7];
+			DiscTxt.text = Discr [7];
 		}
 		else ActiveDamSpel = -1;
 	}

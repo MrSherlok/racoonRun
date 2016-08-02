@@ -11,6 +11,7 @@ public class UpgradesButtons : MonoBehaviour {
 	public GameObject jumpPanel;
 	public GameObject sodaPanel;
 	public GameObject speedPanel;
+	public GameObject moonWalkPanel;
 
 
 	public Text gold;
@@ -24,6 +25,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void CookiePanel() {
@@ -34,6 +36,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void PunchPanel() {
@@ -44,6 +47,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void BamBladePanel() {
@@ -54,6 +58,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void JumpPanel() {
@@ -64,6 +69,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (true);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void SodaPanel() {
@@ -74,6 +80,7 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (true);
 		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (false);
 	}
 
 	public void SpeedPanel() {
@@ -84,6 +91,18 @@ public class UpgradesButtons : MonoBehaviour {
 		jumpPanel.SetActive (false);
 		sodaPanel.SetActive (false);
 		speedPanel.SetActive (true);
+		moonWalkPanel.SetActive (false);
+	}
+
+	public void MoonWalkPanel() {
+		bananaPanel.SetActive (false);
+		cookiePanel.SetActive (false);
+		punchPanel.SetActive (false);
+		bamBladePanel.SetActive (false);
+		jumpPanel.SetActive (false);
+		sodaPanel.SetActive (false);
+		speedPanel.SetActive (false);
+		moonWalkPanel.SetActive (true);
 	}
 
 

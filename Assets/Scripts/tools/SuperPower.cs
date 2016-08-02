@@ -9,13 +9,13 @@ public class SuperPower : MonoBehaviour {
 
 
 	public Image[] spelsDamImage = new Image[4];
-	public Image[] spelsDefImage = new Image[3];
+	public Image[] spelsDefImage = new Image[4];
 
 	public GameObject damScriptsObj;
 	public GameObject defScriptsObj;
 
 	DamSpellParent[] damScripts = new DamSpellParent[4];
-	DefSpellParent[] defScripts = new DefSpellParent[3];
+	DefSpellParent[] defScripts = new DefSpellParent[4];
 
 	private int _actDam = -1;
 	private int _actDef = -1;
@@ -77,6 +77,7 @@ public class SuperPower : MonoBehaviour {
 		defScripts[0] = defScriptsObj.GetComponent<SuperJump>();
 		defScripts[1] = defScriptsObj.GetComponent<SodaPack>();
 		defScripts[2] = defScriptsObj.GetComponent<SuperSpeed>();
+		defScripts[3] = defScriptsObj.GetComponent<MoonWalk>();
 
 /*		if (_actDef == 1) {
 			GameObject.Find ("Soda").SetActive (true);

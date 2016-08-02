@@ -38,31 +38,49 @@ public class HealthScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
-        if (shot != null)
-        {
-			if (SuperPunch.IsSuperPunchActive == false && SuperSpeed.IsRunning == false)
-            {
-                hp -= shot.damage;
-				player.GetComponent<Player>().IGetDamage();
-				player.GetComponent<AudioSource>().clip = _getDamage;
-				player.GetComponent<AudioSource>().Play ();
-			    curHp = hp/maxhp;
-				hpBar.fillAmount -= 0.0001f;
-				GameObject.Find("hpTxt").GetComponent<Text>().text = hp.ToString();
+		if (shot != null) {
+			if (MoonWalk.IsMoonWalkActive) {
+				if (hp != 6) {
+					hp += shot.damage;
+					if (hp > 6) {
+						hp = 6;
+					}
 
-                if (hp <= 0)
-                {
-					SuperPower.ActImage = true;
-					Dead(1);					
-                }
-            }
-        }
+					//тут должно в хпбаре заполниться юшка
+					curHp = hp / maxhp;
+					hpBar.fillAmount += 0.0001f;
+					GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
+
+					//тут анимация + удаление врага
+					Destroy(collider.gameObject);
+				}
+
+			} else {
+				if (SuperPunch.IsSuperPunchActive == false && SuperSpeed.IsRunning == false) {
+					hp -= shot.damage;
+					player.GetComponent<Player> ().IGetDamage ();
+					player.GetComponent<AudioSource> ().clip = _getDamage;
+					player.GetComponent<AudioSource> ().Play ();
+
+					curHp = hp / maxhp;
+					hpBar.fillAmount -= 0.0001f;
+					GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
+
+					if (hp <= 0) {
+						SuperPower.ActImage = true;
+						Dead (1);					
+					}
+				}
+			}
+		}
     }
+
+
 	void FixedUpdate(){
 		HpCorrector();
 	}
 	void HpCorrector(){
-		if(curHp<hpBar.fillAmount)
+		if(curHp!=hpBar.fillAmount)
 			hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount,curHp,Time.deltaTime*lerpTime);
 		}
 	public void Dead(int sposob){

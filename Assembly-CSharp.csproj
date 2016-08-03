@@ -99,7 +99,6 @@
      <Compile Include="Assets\Scripts\Map\MapSize.cs" />
      <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
      <Compile Include="Assets\Scripts\Map\UnlockLevel.cs" />
-     <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\NextLvLSceneScript.cs" />
      <Compile Include="Assets\Scripts\PauseScript.cs" />
      <Compile Include="Assets\Scripts\Player\HealthScript.cs" />
@@ -110,11 +109,13 @@
      <Compile Include="Assets\Scripts\RotateScript.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SoundSettingsScrollbar.cs" />
-     <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\StartGameEnablesScript.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\TrailSortingLayer.cs" />
+     <Compile Include="Assets\Scripts\Trash\EnemyHeadShotScript.cs" />
+     <Compile Include="Assets\Scripts\Trash\MoveScript.cs" />
      <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
+     <Compile Include="Assets\Scripts\Trash\Spawn.cs" />
      <Compile Include="Assets\Scripts\Trash\collect.cs" />
      <Compile Include="Assets\Scripts\TutorialLevel\HintTextChanger.cs" />
      <Compile Include="Assets\Scripts\TutorialLevel\StartTutorial.cs" />
@@ -136,7 +137,6 @@
      <Compile Include="Assets\Scripts\lottery\RotateCylinder.cs" />
      <Compile Include="Assets\Scripts\newSystem\CloudJumpScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\DellAll.cs" />
-     <Compile Include="Assets\Scripts\newSystem\EnemyHeadShotScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyHealthScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\EnemyShotScript.cs" />
      <Compile Include="Assets\Scripts\newSystem\GoldScript.cs" />

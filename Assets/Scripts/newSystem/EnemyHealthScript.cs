@@ -26,6 +26,10 @@ public class EnemyHealthScript : MonoBehaviour {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 			if (shot != null) {
 				hp -= shot.damage;
+				if (collider.gameObject.tag == "bananaGun") {
+					collider.gameObject.SetActive(false);
+				}
+
 				if (hp <= 0) {
 					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);

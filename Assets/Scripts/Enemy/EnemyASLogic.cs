@@ -17,8 +17,12 @@ public class EnemyASLogic : MonoBehaviour {
 				col.gameObject.transform.parent.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 
 			}
-			Debug.Log (col.name +" in " + gameObject.name);
+	//		Debug.Log (col.name +" in " + gameObject.name);
 			ani.SetTrigger("attack");
+		}
+
+		if (col.tag == "bananaGun") {
+			GetDamageAnim ();
 		}
 
 	}

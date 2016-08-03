@@ -8,7 +8,7 @@ public class HealthScript : MonoBehaviour {
 	[SerializeField]
 	private AudioClip _getDamage;
 
-	public int hp = 2;
+	public float hp = 6;
 	GameObject player;
     public bool isEnemy = false;
 
@@ -17,7 +17,7 @@ public class HealthScript : MonoBehaviour {
     private Image chooseLvl;
 	public Image hpBar;
 	public Image hpBarHolder;
-	public float maxhp = 12;
+	public float maxhp = 6;
 	public float curHp;
 //	float lastHp;
 	public float lerpTime;
@@ -42,8 +42,10 @@ public class HealthScript : MonoBehaviour {
 			if (MoonWalk.IsMoonWalkActive) {
 				if (hp != 6) {
 					hp += shot.damage;
-					if (hp > 6) {
-						hp = 6;
+
+					//проверка на то, чтобы хп не было больше заданого
+					if (hp > maxhp) {
+						hp = maxhp;
 					}
 
 					//тут должно в хпбаре заполниться юшка
@@ -67,6 +69,7 @@ public class HealthScript : MonoBehaviour {
 					GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
 
 					if (hp <= 0) {
+						SuperPower.ActImage = true;
 						SuperPower.ActImage = true;
 						Dead (1);					
 					}

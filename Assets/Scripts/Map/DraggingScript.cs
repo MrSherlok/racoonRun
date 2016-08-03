@@ -43,6 +43,16 @@ public class DraggingScript : MonoBehaviour {
 				(map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) < maxX && 
 				(map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) > minX) {	
 				map.position += delta*1.5f;
+
+				if ((map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) < maxX && 
+					(map.gameObject.GetComponent<RectTransform> ().position.x + delta.x) > minX) {	
+					map.position += new Vector3 (delta.x*1.5f, 0f, 0f);
+				}
+
+				if ((map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) < maxY && 
+					(map.gameObject.GetComponent<RectTransform> ().position.y + delta.y) > minY) {	
+					map.position += new Vector3 (0f,delta.y*1.5f, 0f);
+				}
 			}
 
 			previousMousePos = Input.mousePosition;

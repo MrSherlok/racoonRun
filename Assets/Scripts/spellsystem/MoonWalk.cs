@@ -42,6 +42,7 @@ public class MoonWalk : DefSpellParent {
 		cooldownTimer = 0f;
 		count = timeTo;
 
+		CountCorection ();
 
 		IsMoonWalkActive = false;
 		playerSpeed = GameObject.Find("Earth").GetComponent<ScrollingScript>();

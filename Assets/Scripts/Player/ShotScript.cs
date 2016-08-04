@@ -32,7 +32,7 @@ public class ShotScript : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		if (gameObject.tag == "bananaGun") {
+		if (gameObject.tag == "bananaGun" || gameObject.tag == "slamon") {
 			removeTime += Time.deltaTime;
 			if (removeTime >= lifeTime) {
 				gameObject.SetActive (false);

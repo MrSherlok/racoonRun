@@ -12,26 +12,28 @@ abstract public class DefSpellParent : MonoBehaviour {
 	protected Image restoreImage;
 	protected float maxCount;
 
-	public float cooldown;
-	public float activeTime;
-	public float timeTo;
-	public float cooldownTimer;
-	public float count;
-	public bool onCooldown = true;
-	public float restoreSpeed;
+	protected float cooldown;
+	protected float activeTime;
+	protected float timeTo;
+	protected float cooldownTimer;
+	protected float count;
+	protected bool onCooldown = true;
+	protected float restoreSpeed;
 
 
 	abstract public void OnClickDef (bool isPressed);
-	void OnEnable(){
+	protected void OnEnable(){
 		
 		restoreImage = GameObject.Find("Energy").GetComponent<Image>();
-		Invoke("CountCorection",0.2f);
-		restoreImage.fillAmount = 1;
+		restoreImage.fillAmount = 1f;
+
+	}
+		
+	protected void CountCorection(){
+		maxCount = count;
+
 	}
 
-	void CountCorection(){
-		maxCount = count;
-	}
 	protected void CountIndication(){
 		
 		restoreImage.fillAmount = Mathf.Lerp(restoreImage.fillAmount,count/maxCount,Time.deltaTime * 3f);

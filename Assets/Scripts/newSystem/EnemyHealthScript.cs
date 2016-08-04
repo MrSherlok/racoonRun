@@ -25,15 +25,27 @@ public class EnemyHealthScript : MonoBehaviour {
 		} else {
 		ShotScript shot = collider.gameObject.GetComponent<ShotScript> ();
 			if (shot != null) {
-				hp -= shot.damage;
-				if (collider.gameObject.tag == "bananaGun") {
-					collider.gameObject.SetActive(false);
-				}
-
-				if (hp <= 0) {
+				
+				if (collider.gameObject.tag == "salmon") {
 					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+
+					//ТИХОН ТУТ АНИМАЦИЯ С РЫБКОЙ
 					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
-					Destroy (gameObject,1f);
+
+
+					collider.gameObject.SetActive (false);
+					Destroy (gameObject, 3f);
+				} else {
+					hp -= shot.damage;
+					if (collider.gameObject.tag == "bananaGun") {
+						collider.gameObject.SetActive (false);
+					}
+
+					if (hp <= 0) {
+						gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+						gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
+						Destroy (gameObject, 1f);
+					}
 				}
 			}
 		}

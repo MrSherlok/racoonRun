@@ -5,16 +5,15 @@ public class SuperJump : DefSpellParent {
 
 	public static bool superJumpEnabled = false;
 	float ForceSuperJump = 30f;
-	public bool IsGrounded = false; 
 	bool cloudTuch = false;
 	Rigidbody2D playerRigidbody;
 
 	void Start() {
 
 		//COUNT
-		defCount [0] = 3;
-		defCount [1] = 5;
-		defCount [2] = 6;
+		defCount [0] = 2f;
+		defCount [1] = 3f;
+		defCount [2] = 4f;
 
 		//RESTORE TIME
 		defRestoreTime[0] = 2f;
@@ -22,9 +21,9 @@ public class SuperJump : DefSpellParent {
 		defRestoreTime[2] = 1f;
 
 		//SPECIAL
-		defSpecial[0] = 30f;
+		defSpecial[0] = 40f;
 		defSpecial[1] = 40f;
-		defSpecial[2] = 50f;
+		defSpecial[2] = 40f;
 
 
 		//restoreSpeed here as max counts
@@ -35,6 +34,7 @@ public class SuperJump : DefSpellParent {
 		timeTo = 0f;
 		count = restoreSpeed;
 
+		CountCorection ();
 
 		playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D> ();
 		superJumpEnabled = false;
@@ -42,12 +42,6 @@ public class SuperJump : DefSpellParent {
 
 
 	public void FixedUpdate () {
-		if (Player.isCloudfootTouch || Player.isCloudHeadTouch) {
-			cloudTuch = true;
-		} else {
-			cloudTuch = false;
-		}
-		IsGrounded = Player.IsGrounded;
 
 		if (onCooldown)
 			timeTo += Time.deltaTime;
@@ -64,11 +58,11 @@ public class SuperJump : DefSpellParent {
 	public override void OnClickDef (bool isPressed)
 	{
 		if (PauseScript.isPause) {
-			if (IsGrounded || cloudTuch && (count > 0)) {
+			if ((count > 0)) {
 				count--;
 				CountIndication ();
 				onCooldown = false;
-				playerRigidbody.gravityScale = 4f;
+	//			playerRigidbody.gravityScale = 6f;
 				playerRigidbody.velocity += ForceSuperJump * Vector2.up;
 				superJumpEnabled = true;
 				Invoke ("StopSuperJump", 0.1f);
@@ -78,7 +72,7 @@ public class SuperJump : DefSpellParent {
 
 	void StopSuperJump()
 	{
-		playerRigidbody.gravityScale = 6f;
+//		playerRigidbody.gravityScale = 6f;
 		superJumpEnabled = false;
 		onCooldown = true;
 	}

@@ -14,7 +14,7 @@ public class SodaPack : DefSpellParent {
 	Rigidbody2D playerRigidbody;
 
 	void Start() {
-		maxCount = count;
+		
 		//COUNT
 		defCount [0] = 3;
 		defCount [1] = 5;
@@ -44,6 +44,8 @@ public class SodaPack : DefSpellParent {
 		onCooldown = true;
 		cooldownTimer = 0f;
 		count = timeTo;
+
+		CountCorection ();
 
 		sodaPack.SetActive (true);
 

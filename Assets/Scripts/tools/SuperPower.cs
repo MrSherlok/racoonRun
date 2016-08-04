@@ -8,14 +8,14 @@ public class SuperPower : MonoBehaviour {
 //	private ParticleSystem FireFXParts;
 
 
-	public Image[] spelsDamImage = new Image[4];
-	public Image[] spelsDefImage = new Image[4];
+	public Image[] spelsDamImage = new Image[5];
+	public Image[] spelsDefImage = new Image[5];
 
 	public GameObject damScriptsObj;
 	public GameObject defScriptsObj;
 
-	DamSpellParent[] damScripts = new DamSpellParent[4];
-	DefSpellParent[] defScripts = new DefSpellParent[4];
+	DamSpellParent[] damScripts = new DamSpellParent[5];
+	DefSpellParent[] defScripts = new DefSpellParent[5];
 
 	private int _actDam = -1;
 	private int _actDef = -1;
@@ -73,11 +73,13 @@ public class SuperPower : MonoBehaviour {
 		damScripts[1] = damScriptsObj.GetComponent<SuperPunch>();
 		damScripts[2] = damScriptsObj.GetComponent<CookieRang>();
 		damScripts[3] = damScriptsObj.GetComponent<BamBlade>();
+		damScripts[4] = damScriptsObj.GetComponent<Salmon>();
 
 		defScripts[0] = defScriptsObj.GetComponent<SuperJump>();
 		defScripts[1] = defScriptsObj.GetComponent<SodaPack>();
 		defScripts[2] = defScriptsObj.GetComponent<SuperSpeed>();
 		defScripts[3] = defScriptsObj.GetComponent<MoonWalk>();
+		defScripts[4] = defScriptsObj.GetComponent<Dominator3000>();
 
 /*		if (_actDef == 1) {
 			GameObject.Find ("Soda").SetActive (true);

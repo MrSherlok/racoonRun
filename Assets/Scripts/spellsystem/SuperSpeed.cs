@@ -42,6 +42,8 @@ public class SuperSpeed : DefSpellParent {
 		cooldownTimer = 0f;
 		count = timeTo;
 
+		CountCorection ();
+
 
 		IsRunning = false;
 		playerSpeed = GameObject.Find("Earth").GetComponent<ScrollingScript>();

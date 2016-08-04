@@ -14,18 +14,18 @@ public class ChooseSPScript : MonoBehaviour {
 	Text DiscTxt;
 
 	[SerializeField]
-	Image[] spellsDamImage = new Image[4];
+	Image[] spellsDamImage = new Image[5];
 	[SerializeField]
-	Image[] spellsDefImage = new Image[4];
+	Image[] spellsDefImage = new Image[5];
 
 	[SerializeField]
-	bool[] spellsDamActive = new bool[4];
+	bool[] spellsDamActive = new bool[5];
 	[SerializeField]
-	bool[] spellsDefActive = new bool[4];
+	bool[] spellsDefActive = new bool[5];
 
 
-	string[] Names = new string[8];
-	string[] Discr = new string[8];
+	string[] Names = new string[10];
+	string[] Discr = new string[10];
 
 	int i = 0;
 	int j = 0;
@@ -36,20 +36,28 @@ public class ChooseSPScript : MonoBehaviour {
 		Names[1] = "Soda Pack";
 		Names[2] = "Super Run";
 		Names[3] = "Moonwalk";
-		Names[4] = "Banana Gun";
-		Names[5] = "Super Punch";
-		Names[6] = "Cookie Rang";
-		Names[7] = "Bamboo Blade";
+		Names[4] = "Dominator3000";
+
+
+		Names[5] = "Banana Gun";
+		Names[6] = "Super Punch";
+		Names[7] = "Cookie Rang";
+		Names[8] = "Bamboo Blade";
+		Names[9] = "Salmon";
 
 
 		Discr [0] = "Jump hieght";
 		Discr [1] = "Fly whith mentos";
 		Discr [2] = "Run as gepard";
 		Discr [3] = "Walking on the Moon";
-		Discr [4] = "Give them bananas";
-		Discr [5] = "Strong Punch";
-		Discr [6] = "Cookie Rang";
-		Discr [7] = "Fish and bamboo blade";
+		Discr [4] = "Dominate and destroy aweryone";
+
+
+		Discr [5] = "Give them bananas";
+		Discr [6] = "Strong Punch";
+		Discr [7] = "Cookie Rang";
+		Discr [8] = "Fish and bamboo blade";
+		Discr [9] = "Good vs bears";
 	}
 
     void Update()
@@ -88,11 +96,11 @@ public class ChooseSPScript : MonoBehaviour {
 		}
 
 		i++;
-		if (i == 4)
+		if (i == 5)
 			i = 0;
 
 		j++;
-		if (j == 4)
+		if (j == 5)
 			j = 0;
     }
 
@@ -111,6 +119,7 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDefActive [1] = false;
 			spellsDefActive [2] = false;
 			spellsDefActive [3] = false;
+			spellsDefActive [4] = false;
 			NameTxt.text = Names [0];
 			DiscTxt.text = Discr [0];
 
@@ -133,6 +142,7 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDefActive [0] = false;
 			spellsDefActive [2] = false;
 			spellsDefActive [3] = false;
+			spellsDefActive [4] = false;
 			NameTxt.text = Names [1];
 			DiscTxt.text = Discr [1];
 		}
@@ -150,6 +160,7 @@ public class ChooseSPScript : MonoBehaviour {
 		spellsDefActive [2] = !spellsDefActive [2];
 		if (spellsDefActive [2]) {
 			ActiveDefSpel = 2;
+			spellsDefActive [4] = false;
 			spellsDefActive [3] = false;
 			spellsDefActive [1] = false;
 			spellsDefActive [0] = false;
@@ -165,6 +176,7 @@ public class ChooseSPScript : MonoBehaviour {
 		spellsDefActive [3] = !spellsDefActive [3];
 		if (spellsDefActive [3]) {
 			ActiveDefSpel = 3;
+			spellsDefActive [4] = false;
 			spellsDefActive [2] = false;
 			spellsDefActive [1] = false;
 			spellsDefActive [0] = false;
@@ -174,6 +186,23 @@ public class ChooseSPScript : MonoBehaviour {
 		else ActiveDefSpel = -1;
 	}
 		
+	public void Dominator3000Enable () {
+
+		spellsDefActive [4] = !spellsDefActive [4];
+		if (spellsDefActive [4]) {
+			ActiveDefSpel = 4;
+			spellsDefActive [3] = false;
+			spellsDefActive [2] = false;
+			spellsDefActive [1] = false;
+			spellsDefActive [0] = false;
+			NameTxt.text = Names [4];
+			DiscTxt.text = Discr [4];
+		}
+		else ActiveDefSpel = -1;
+	}
+
+
+
 	public void BananaGunEnable() {
 /*        chooseBananaGunEnable = !chooseBananaGunEnable;
         if (chooseBananaGunEnable)
@@ -189,8 +218,9 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [1] = false;
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
-			NameTxt.text = Names [4];
-			DiscTxt.text = Discr [4];
+			spellsDamActive [4] = false;
+			NameTxt.text = Names [5];
+			DiscTxt.text = Discr [5];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -210,8 +240,9 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [0] = false;
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
-			NameTxt.text = Names [5];
-			DiscTxt.text = Discr [5];
+			spellsDamActive [4] = false;
+			NameTxt.text = Names [6];
+			DiscTxt.text = Discr [6];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -228,32 +259,43 @@ public class ChooseSPScript : MonoBehaviour {
 		spellsDamActive [2] = !spellsDamActive [2];
 		if (spellsDamActive [2]) {
 			ActiveDamSpel = 2;
+			spellsDamActive [4] = false;
+			spellsDamActive [3] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [6];
-			DiscTxt.text = Discr [6];
+			NameTxt.text = Names [7];
+			DiscTxt.text = Discr [7];
 		}
 		else ActiveDamSpel = -1;
 	}
 
 
 	public void BamBladeEnable () {
-		/*		chooseCookieRangEnable = !chooseCookieRangEnable;
-		if (chooseCookieRangEnable)
-		{
-			chooseBananaGunEnable = false;
-			chooseSuperPunchEnable = false;
-			ActiveDamSpel = 2;
-		} else ActiveDamSpel = -1; */
 
 		spellsDamActive [3] = !spellsDamActive [3];
 		if (spellsDamActive [3]) {
 			ActiveDamSpel = 3;
+			spellsDamActive [4] = false;
 			spellsDamActive [2] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [7];
-			DiscTxt.text = Discr [7];
+			NameTxt.text = Names [8];
+			DiscTxt.text = Discr [8];
+		}
+		else ActiveDamSpel = -1;
+	}
+
+	public void SalmonEnable () {
+
+		spellsDamActive [4] = !spellsDamActive [4];
+		if (spellsDamActive [4]) {
+			ActiveDamSpel = 4;
+			spellsDamActive [3] = false;
+			spellsDamActive [2] = false;
+			spellsDamActive [1] = false;
+			spellsDamActive [0] = false;
+			NameTxt.text = Names [9];
+			DiscTxt.text = Discr [9];
 		}
 		else ActiveDamSpel = -1;
 	}

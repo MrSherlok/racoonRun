@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {	
+	public ParticleSystem particeJumpTrava;
 	public bool iDead= false;
     private Rigidbody2D myRigitbody;
     
@@ -49,7 +50,8 @@ public class Player : MonoBehaviour
 		if (PauseScript.isPause && iDead == false) {
 			
 			if (IsGrounded == true) {
-            
+            	//particle
+				particeJumpTrava.Play();
 				//		прыжок велосити
 				myRigitbody.velocity += jumpForce * Vector2.up;
 			}

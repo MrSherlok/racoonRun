@@ -28,7 +28,7 @@ public class EnemyHealthScript : MonoBehaviour {
 				
 				if (collider.gameObject.tag == "salmon") {
 					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
-
+					collider.GetComponent<ParticleSystem>().Play();
 					//ТИХОН ТУТ АНИМАЦИЯ С РЫБКОЙ
 					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
 
@@ -38,7 +38,11 @@ public class EnemyHealthScript : MonoBehaviour {
 				} else {
 					hp -= shot.damage;
 					if (collider.gameObject.tag == "bananaGun") {
-						collider.gameObject.SetActive (false);
+						collider.GetComponent<ParticleSystem>().Play();
+						collider.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+					}
+					if (collider.gameObject.tag == "cookieRang") {
+						collider.GetComponent<ParticleSystem>().Play();
 					}
 
 					if (hp <= 0) {

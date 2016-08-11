@@ -35,7 +35,7 @@ public class CoinCollectScript : MonoBehaviour {
 			cutoff = 0f;
 			startCutOff = true;
 			//GoldScript.Gold += 10;
-			CoinCollect.AddCoin();
+			CoinCollect.AddCoin(1);
 		}
 	}
 }

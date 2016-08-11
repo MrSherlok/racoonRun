@@ -1,16 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Map\TakeTapScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GribLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\FLyLevel\cursorMover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FLyLevel\GunLookToPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FLyLevel\Bulletshot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\BananaGun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\ShotScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FLyLevel\E_ballonHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Map\Choselvl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\lottery\RotateCylinder.cs" Line="26" Column="28" />
-      <File FileName="Assets\Scripts\Map\TakeTapScript.cs" Line="3" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="53" Column="24" />
+      <File FileName="Assets\GribLogic.cs" Line="51" Column="64" />
+      <File FileName="Assets\CoinCollect.cs" Line="13" Column="15" />
+      <File FileName="Assets\Scripts\CoinCollectScript.cs" Line="38" Column="25" />
+      <File FileName="Assets\Scripts\Enemy\KrotKilling.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

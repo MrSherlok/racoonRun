@@ -51,6 +51,7 @@
      <Compile Include="Assets\DelReycasttesting.cs" />
      <Compile Include="Assets\DeleteThisShit.cs" />
      <Compile Include="Assets\GoToLotteryScene.cs" />
+     <Compile Include="Assets\GribLogic.cs" />
      <Compile Include="Assets\IndusActivator.cs" />
      <Compile Include="Assets\OffsetScript.cs" />
      <Compile Include="Assets\RaycastDraw.cs" />

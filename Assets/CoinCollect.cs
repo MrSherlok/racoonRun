@@ -9,8 +9,10 @@ public class CoinCollect : MonoBehaviour {
 	void Start(){
 		score = GameObject.Find ("CoinsScore").GetComponent<Text> ();
 	}
-	public static void AddCoin () {
+	public static void AddCoin(int coint) {
+		for(int i = 0;i<coint;i++){
 		coins++;
+		}
 		score.text = (coins.ToString());
 
 	}

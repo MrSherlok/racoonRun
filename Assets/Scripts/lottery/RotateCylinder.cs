@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RotateCylinder : MonoBehaviour {
 	public int color;
+	public GameObject hintText;
 	Animator grabAnim;
 	bool rotNow = false;
 	bool isEnding = false;
@@ -22,6 +23,7 @@ public class RotateCylinder : MonoBehaviour {
 
 	public void Roll () {
 		gameObject.GetComponent<Button> ().enabled = false;
+		hintText.SetActive (false);
 		//cyl.GetComponent<Rigidbody>().AddTorque(transform.forward * 1800f * 50f);
 		rotNow = true;
 		grabAnim.SetBool("Close",true);

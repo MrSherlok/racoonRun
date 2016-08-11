@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 85838cc797a1232468a32e390e6a6c02
+timeCreated: 1470685948
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: E_moon_0
+    21300002: E_moon_1
+    21300004: E_moon_2
+    21300006: E_moon_3
+    21300008: E_moon_4
+    21300010: E_moon_5
+    21300012: E_moon_6
+    21300014: E_moon_7
+    21300016: E_moon_8
+    21300018: E_moon_9
+    21300020: E_moon_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E_moon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 407
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_1
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 417
+        width: 54
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_2
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 429
+        width: 51
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_3
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 371
+        width: 32
+        height: 119
+      alignment: 9
+      pivot: {x: 0.6500397, y: 0.85639554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_4
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 373
+        width: 37
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5865083, y: 0.91663784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 339
+        width: 145
+        height: 57
+      alignment: 9
+      pivot: {x: 0.93088883, y: 0.30743784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_6
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 267
+        width: 146
+        height: 59
+      alignment: 9
+      pivot: {x: 0.037364595, y: 0.3139659}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_7
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 271
+        width: 44
+        height: 64
+      alignment: 9
+      pivot: {x: 0.40906733, y: 0.87509775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_8
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 127
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 127
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: E_moon_10
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 35
+        width: 291
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

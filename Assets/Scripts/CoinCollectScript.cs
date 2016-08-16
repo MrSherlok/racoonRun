@@ -6,9 +6,12 @@ public class CoinCollectScript : MonoBehaviour {
 	bool startCutOff = false;
 //	float n = 0.1f;
 	float speedUp = 7;
+	ParticleSystem partsPlay;
 	[SerializeField] private AudioClip _coinLoot;
 
-
+	void Start(){
+		partsPlay = GetComponent<ParticleSystem>();
+	}
 	void Update() {
 
 		if (startCutOff == true) {
@@ -34,6 +37,7 @@ public class CoinCollectScript : MonoBehaviour {
 			//CameraFollowScript.ClaimCoinAnim();
 			cutoff = 0f;
 			startCutOff = true;
+			partsPlay.Play ();
 			//GoldScript.Gold += 10;
 			CoinCollect.AddCoin(1);
 		}

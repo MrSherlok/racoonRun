@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SmartLocalization;
 
 public class TutorHint : MonoBehaviour {
 	
@@ -9,7 +10,8 @@ public class TutorHint : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D col) {
 		if (col.gameObject.tag == "Player") {
 //			Time.timeScale = timeScaleSmoother;
-			GameObject.Find("HintText").GetComponent<HintTextChanger>().ChangeMessage(hintText);
+
+			GameObject.Find("HintText").GetComponent<HintTextChanger>().ChangeMessage(LanguageManager.Instance.GetTextValue(hintText));
 		}
 	}
 	void OnTriggerExit2D(Collider2D col){

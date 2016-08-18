@@ -1,0 +1,255 @@
+fileFormatVersion: 2
+guid: 0abe29d944581bd46bf3fd766cc6973e
+timeCreated: 1471535576
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bgdetails_0
+    21300002: bgdetails_1
+    21300004: bgdetails_2
+    21300006: bgdetails_3
+    21300008: bgdetails_4
+    21300010: bgdetails_5
+    21300012: bgdetails_6
+    21300014: bgdetails_7
+    21300016: bgdetails_8
+    21300018: bgdetails_9
+    21300020: bgdetails_10
+    21300022: bgdetails_11
+    21300024: bgdetails_12
+    21300026: bgdetails_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bgdetails_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 761
+        width: 164
+        height: 96
+      alignment: 9
+      pivot: {x: 0.9186897, y: 0.8021367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 319
+        width: 150
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 651
+        width: 190
+        height: 100
+      alignment: 9
+      pivot: {x: 0.9112429, y: 0.74861574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 595
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 595
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 531
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 531
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 461
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_8
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 461
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_9
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 301
+        width: 120
+        height: 95
+      alignment: 9
+      pivot: {x: 0.07156455, y: 0.12769775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 203
+        width: 75
+        height: 103
+      alignment: 9
+      pivot: {x: 0.6419336, y: 0.07250828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_11
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 201
+        width: 70
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5898603, y: 0.058008634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 33
+        width: 173
+        height: 117
+      alignment: 9
+      pivot: {x: 0.058327734, y: 0.17620888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: bgdetails_13
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 7
+        width: 89
+        height: 149
+      alignment: 9
+      pivot: {x: 0.26191968, y: 0.08630159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

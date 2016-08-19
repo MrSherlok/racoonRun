@@ -29,9 +29,10 @@ public class ChooseSPScript : MonoBehaviour {
 
 	int i = 0;
 	int j = 0;
-
+	public Animator aniPlayer;
 
 	void Start() {
+		aniPlayer.SetTrigger("Idle");
 		Names[0] = "Super Jump";
 		Names[1] = "Soda Pack";
 		Names[2] = "Super Run";
@@ -61,7 +62,7 @@ public class ChooseSPScript : MonoBehaviour {
 	}
 
     void Update()
-    {
+	{
 
 		if (ActiveDefSpel == -1 && ActiveDamSpel == -1) {
 			NameTxt.text = "";

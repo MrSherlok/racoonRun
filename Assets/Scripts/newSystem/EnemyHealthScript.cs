@@ -30,7 +30,7 @@ public class EnemyHealthScript : MonoBehaviour {
 					gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 					collider.GetComponent<ParticleSystem>().Play();
 					//ТИХОН ТУТ АНИМАЦИЯ С РЫБКОЙ
-					gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
+					gameObject.GetComponentInChildren<Animator> ().SetTrigger("salmonDie");
 
 
 					collider.gameObject.SetActive (false);
@@ -46,6 +46,7 @@ public class EnemyHealthScript : MonoBehaviour {
 					}
 
 					if (hp <= 0) {
+						if (this.name == "")
 						gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 						gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
 						Destroy (gameObject, 1f);

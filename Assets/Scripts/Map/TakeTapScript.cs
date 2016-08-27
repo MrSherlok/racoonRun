@@ -5,16 +5,13 @@ using UnityEngine.EventSystems;
 
 public class TakeTapScript : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
+	[SerializeField]
 	Transform map;
 	int minX = 50;
 	int maxX = Screen.width - 50;
 	int minY = 20;
 	int maxY = Screen.height - 50;
 
-    void Start()
-    {
-        map = transform.GetChild(0);    // получаем ссылку на Transform зеленой панели.
-    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

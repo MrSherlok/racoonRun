@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SuperPunch : DamSpellParent {
 
-	public static bool IsSuperPunchActive = false; 
+//	public static bool IsSuperPunchActive = false; 
 	public GameObject superPunchIm;
 	public GameObject superPunchIm1;
 	//private Animator animator;
@@ -28,7 +28,6 @@ public class SuperPunch : DamSpellParent {
 		count = maxCount;
 
 		nonCooldown = true;
-		IsSuperPunchActive = false;
 		//animator = GameObject.Find("Player1").GetComponent<Animator> ();
 		superPunchIm.SetActive (true);
 	}
@@ -56,7 +55,7 @@ public class SuperPunch : DamSpellParent {
 			CountIndication();
 			superPunchIm1.GetComponent<Renderer> ().enabled = true;
 			superPunchIm.GetComponent<Collider2D> ().enabled = true;
-			IsSuperPunchActive = true;
+			HealthScript.Invulnerability = true;
 			animator.SetBool ("superPunch", true);
 			animator.SetBool ("Run", false);
 			Invoke ("StopPunch", 0.25f);
@@ -68,7 +67,7 @@ public class SuperPunch : DamSpellParent {
 		nonCooldown = true;
 		superPunchIm1.GetComponent<Renderer> ().enabled = false;
 		superPunchIm.GetComponent<Collider2D>().enabled = false;
-		IsSuperPunchActive = false;
+		HealthScript.Invulnerability = false;
 		animator.SetBool("superPunch", false);
 		animator.SetBool("Run", true);
 	}

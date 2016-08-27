@@ -22,6 +22,8 @@ public class HealthScript : MonoBehaviour {
 //	float lastHp;
 	public float lerpTime;
 
+	public static bool Invulnerability = false;
+
     void Start()
 	{	
 //		camPoint = GameObject.Find ("CameraPoint");
@@ -33,6 +35,8 @@ public class HealthScript : MonoBehaviour {
 		theEndImage.enabled = false;
 		chooseLvl.enabled = false;
 		curHp = hp / maxhp;
+
+		Invulnerability = false;
 	}
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -40,8 +44,11 @@ public class HealthScript : MonoBehaviour {
         EnemyShotScript shot = collider.gameObject.GetComponent<EnemyShotScript>();
 		if (shot != null) {
 			if (MoonWalk.IsMoonWalkActive) {
-				if (hp != 6) {
-					hp += shot.damage;
+				if (hp != maxhp) {
+					if (shot.damage < 2)
+						hp += shot.damage;
+					else
+						hp += 2f;
 
 					//проверка на то, чтобы хп не было больше заданого
 					if (hp > maxhp) {
@@ -58,7 +65,7 @@ public class HealthScript : MonoBehaviour {
 				}
 
 			} else {
-				if (SuperPunch.IsSuperPunchActive == false && SuperSpeed.IsRunning == false) {
+				if (!Invulnerability) {
 					hp -= shot.damage;
 					player.GetComponent<Player> ().IGetDamage ();
 					player.GetComponent<AudioSource> ().clip = _getDamage;
@@ -66,6 +73,8 @@ public class HealthScript : MonoBehaviour {
 
 					curHp = hp / maxhp;
 					hpBar.fillAmount -= 0.0001f;
+					if (hp < 0)
+						hp = 0;
 					GameObject.Find ("hpTxt").GetComponent<Text> ().text = hp.ToString ();
 
 					if (hp <= 0) {

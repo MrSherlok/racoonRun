@@ -51,20 +51,19 @@ public class Dominator3000 : DefSpellParent {
 	void Update () {
 		CountIndication ();
 		if (_isDominatorActive && count >= 0) {
-			onCooldown = false;
 			IsDominatorActive = true;
 			count -= Time.deltaTime;
 			DominatorCircle.SetActive (true);
+			cooldownTimer = 0;
 		} else {
+			_isDominatorActive = false;
 			IsDominatorActive = false;
-			onCooldown = true;
+			cooldownTimer += Time.deltaTime;
+
+
 			DominatorCircle.SetActive (false);
 		}
 
-		if (onCooldown)
-			cooldownTimer += Time.deltaTime;
-		else
-			cooldownTimer = 0;
 		if ((cooldownTimer >= activeTime) && (count <= timeTo)) {			
 			count += Time.deltaTime/restoreSpeed;
 		}
@@ -73,11 +72,7 @@ public class Dominator3000 : DefSpellParent {
 	public override void OnClickDef (bool isPressed)
 	{
 		if (PauseScript.isPause) {
-			if (isPressed) {
 				_isDominatorActive = true;
-			} else {
-				_isDominatorActive = false;
-			}
 		}
 	}
 }

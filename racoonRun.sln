@@ -7,6 +7,8 @@ Project("{5B173FD4-35D5-E155-B8FD-0E8C8E904F61}") = "racoonRun", "Assembly-CShar
 EndProject
 Project("{5B173FD4-35D5-E155-B8FD-0E8C8E904F61}") = "racoonRun", "Assembly-CSharp-Editor-firstpass.csproj", "{E485D9FF-7201-CC7B-7923-46F758723074}"
 EndProject
+Project("{5B173FD4-35D5-E155-B8FD-0E8C8E904F61}") = "racoonRun", "Assembly-CSharp-Editor.csproj", "{6BC9E8B2-5BD5-6443-0BA0-B10EF7E119BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{E485D9FF-7201-CC7B-7923-46F758723074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E485D9FF-7201-CC7B-7923-46F758723074}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E485D9FF-7201-CC7B-7923-46F758723074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC9E8B2-5BD5-6443-0BA0-B10EF7E119BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC9E8B2-5BD5-6443-0BA0-B10EF7E119BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC9E8B2-5BD5-6443-0BA0-B10EF7E119BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC9E8B2-5BD5-6443-0BA0-B10EF7E119BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

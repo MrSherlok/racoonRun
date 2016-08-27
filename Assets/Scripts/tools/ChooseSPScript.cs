@@ -13,6 +13,7 @@ public class ChooseSPScript : MonoBehaviour {
 	[SerializeField]
 	Text DiscTxt;
 
+
 	[SerializeField]
 	Image[] spellsDamImage = new Image[5];
 	[SerializeField]
@@ -22,6 +23,12 @@ public class ChooseSPScript : MonoBehaviour {
 	bool[] spellsDamActive = new bool[5];
 	[SerializeField]
 	bool[] spellsDefActive = new bool[5];
+
+
+	[SerializeField]
+	GameObject[] spellsDamItemsImage = new GameObject[5];
+	[SerializeField]
+	GameObject[] spellsDefItemsImage = new GameObject[5];
 
 
 	string[] Names = new string[10];
@@ -82,8 +89,10 @@ public class ChooseSPScript : MonoBehaviour {
 
 		if (ActiveDefSpel == j) {
 			spellsDefImage [ActiveDefSpel].color = Color.red;
+			spellsDefItemsImage [ActiveDefSpel].SetActive (true);
 		} else {
 			spellsDefImage[j].color = Color.white;
+			spellsDefItemsImage [j].SetActive (false);
 		}
 
 
@@ -91,9 +100,11 @@ public class ChooseSPScript : MonoBehaviour {
 		if (ActiveDamSpel ==  i)
 		{
 			spellsDamImage [ActiveDamSpel].color = Color.red;
+			spellsDamItemsImage [ActiveDamSpel].SetActive (true);
 		}
 		else {
 			spellsDamImage [i].color = Color.white;
+			spellsDamItemsImage [i].SetActive (false);
 		}
 
 		i++;

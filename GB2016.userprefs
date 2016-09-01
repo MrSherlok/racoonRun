@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\spellsystem\MoonWalk.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ComixScenePlayButton.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\KrotKilling.cs" Line="1" Column="1" />
@@ -8,8 +8,11 @@
       <File FileName="Assets\Scripts\TutorialLevel\TutorHint.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\newSystem\EnemyHealthScript.cs" Line="1" Column="1" />
       <File FileName="Assets\TurtleLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\MoonWalk.cs" Line="63" Column="45" />
+      <File FileName="Assets\Scripts\spellsystem\MoonWalk.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\spellsystem\DefSpellParent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Map\Choselvl.cs" Line="27" Column="41" />
+      <File FileName="Assets\ComixScenePlayButton.cs" Line="8" Column="9" />
+      <File FileName="Assets\Scripts\tools\ChooseSPScript.cs" Line="316" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

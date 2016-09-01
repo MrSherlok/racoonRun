@@ -51,6 +51,7 @@
      <Compile Include="Assets\CloudMover.cs" />
      <Compile Include="Assets\CloudSpawner.cs" />
      <Compile Include="Assets\CoinCollect.cs" />
+     <Compile Include="Assets\ComixScenePlayButton.cs" />
      <Compile Include="Assets\CosmosRade.cs" />
      <Compile Include="Assets\DelReycasttesting.cs" />
      <Compile Include="Assets\DeleteThisShit.cs" />

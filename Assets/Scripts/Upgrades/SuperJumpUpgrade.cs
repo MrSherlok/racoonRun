@@ -45,9 +45,9 @@ public class SuperJumpUpgrade : DefUpgradeParrent {
 		if (_defRestoreTimeLvl == 2)
 			defImage [3].color = Color.blue;
 		if (_defSpecialLvl >= 1)
-			defImage [4].color = Color.blue;
+			defImage [6].color = Color.blue;
 		if (_defSpecialLvl == 2)
-			defImage [5].color = Color.blue;
+			defImage [7].color = Color.blue;
 	}
 
 	public override void DefCount1 ()

@@ -7,8 +7,17 @@ public class SeventhItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("SeventhItem");
 		name = "Soda";
 		description = "Drink me";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("7FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

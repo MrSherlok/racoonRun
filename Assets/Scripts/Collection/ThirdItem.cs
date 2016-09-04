@@ -7,8 +7,17 @@ public class ThirdItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("ThirdItem");
 		name = "Mario";
 		description = "Be";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("3FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

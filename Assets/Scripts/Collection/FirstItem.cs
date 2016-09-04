@@ -7,9 +7,20 @@ public class FirstItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("FirstItem");
 		name = "SuperMario";
 		description = "Be like Mario";
-		sellPrise = 20;
-		byePrise = 25;
+		DataUpdate ();
 	}
+
+	public override void DataUpdate() {
+		sellPrise = 20;
+		wasFirstBye = PlayerPrefs.GetInt ("1FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
+	}
+
+
 
 	public override void OnItemClick ()
 	{

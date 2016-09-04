@@ -7,8 +7,17 @@ public class NinethItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("NinethItem");
 		name = "Cookie";
 		description = "eat me";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("9FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

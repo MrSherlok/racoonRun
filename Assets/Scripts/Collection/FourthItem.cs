@@ -7,8 +7,17 @@ public class FourthItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("FourthItem");
 		name = "Eagle";
 		description = "Fly as eagle";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("3FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

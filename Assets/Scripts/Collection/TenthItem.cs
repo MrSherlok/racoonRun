@@ -8,8 +8,17 @@ public class TenthItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("TenthItem");
 		name = "Speed";
 		description = "be faster then me";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("10FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

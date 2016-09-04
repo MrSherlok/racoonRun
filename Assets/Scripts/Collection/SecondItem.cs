@@ -7,8 +7,17 @@ public class SecondItem : ItemParrent {
 		isActiveItem = PlayerPrefs.GetInt("SecondItem");
 		name = "SuperPunch";
 		description = "Be strong";
+		DataUpdate ();
+	}
+
+	public override void DataUpdate() {
 		sellPrise = 20;
-		byePrise = 25;
+		wasFirstBye = PlayerPrefs.GetInt ("2FBye");
+		if (wasFirstBye == 0) {
+			byePrise = 50;
+		} else {
+			byePrise = 25;
+		}
 	}
 
 	public override void OnItemClick ()

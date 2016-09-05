@@ -25,6 +25,7 @@ public void BackToChoose () {
 
 	public void BackFromLVLToMap() {
 		SceneManager.LoadScene("chooseLVL");
+		Time.timeScale = 1;
 	}
 
 

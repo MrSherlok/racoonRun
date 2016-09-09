@@ -21,8 +21,9 @@ public class CameraFollow3 : MonoBehaviour {
 			
 	}
 	void Update () {
-		gameObject.transform.position = new Vector3(camTargetObject.transform.position.x,camTargetObject.transform.position.y,-10f);
-	
+		if (HealthScript.playerDead == false) {
+			gameObject.transform.position = new Vector3 (camTargetObject.transform.position.x, camTargetObject.transform.position.y, -10f);
+		}	
 
 	}
 }

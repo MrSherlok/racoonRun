@@ -21,11 +21,16 @@ public class HealthScript : MonoBehaviour {
 	public float curHp;
 //	float lastHp;
 	public float lerpTime;
-
+	//DEAD2
+	public static bool playerDead;
 	public static bool Invulnerability = false;
 
+	void Awake(){
+		playerDead = false;	
+	}
     void Start()
-	{	
+	{	//DEAD1
+		
 //		camPoint = GameObject.Find ("CameraPoint");
 		player = GameObject.Find ("Player");
 //		lastHp = maxhp;
@@ -108,17 +113,25 @@ public class HealthScript : MonoBehaviour {
 		if (sposob == 2) {
 			player.GetComponent<Player> ().DieEnot (2);
 		}
+		playerDead = true;
 		GameObject.Find("0-backgroun").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 		GameObject.Find("Earth").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
 		GameObject.Find("1-Middle").GetComponent<ScrollingScript>().speed = new Vector2(0,0);
-
-
+		StartCoroutine("CameraInc");
 	}
 	void EndImage(){
 
 		SuperPower.ActImage = true;
 
 		theEndImage.enabled = true;
+	}
+	IEnumerator CameraInc(){
+		while (Camera.main.orthographicSize > 3f && PauseScript.isPause) {
+			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,2f,Time.deltaTime * 0.5f);
+			Camera.main.transform.Translate (Vector2.left * Time.deltaTime * 15f);
+			Debug.Log ("-");
+			yield return null;
+		}
 	}
 
 }

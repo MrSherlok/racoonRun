@@ -6,7 +6,7 @@ public class CloudSpawner : MonoBehaviour {
 	int chosedPointNumber;
 	void OnTriggerExit2D (Collider2D col) {
 		if (col.tag == "BlackCloud") {
-			Debug.Log ("DRATUTI");
+
 			chosedPointNumber = Random.Range (0, 3);
 			if (chosedPointNumber == 0)
 				col.transform.position = spawnPoints[0].position;

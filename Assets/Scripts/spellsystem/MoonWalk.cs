@@ -8,7 +8,6 @@ public class MoonWalk : DefSpellParent {
 	private bool _isRunning = false;
 	public static bool IsMoonWalkActive = false;
 	Animator ani;
-
 	void Start() {
 		ani = GameObject.Find("Player1").GetComponent<Animator>();
 		//COUNT
@@ -55,14 +54,15 @@ public class MoonWalk : DefSpellParent {
 		if (_isRunning && count >= 0) {
 			onCooldown = false;
 			IsMoonWalkActive = true;
-			ani.SetBool("MoonWalk",IsMoonWalkActive);
+			//if(isMoonWalkStarting = true)
+			//isMoonWalkStarting = false;
 			count -= Time.deltaTime;
 			playerSpeed.speed = new Vector2 (moonWalk, 0f);
 		} else {
 			IsMoonWalkActive = false;
-			ani.SetBool("MoonWalk",IsMoonWalkActive);
 			playerSpeed.speed = new Vector2 (0f, 0f);
 			onCooldown = true;
+			//isMoonWalkStarting = true;
 		}
 
 		if (onCooldown)
@@ -78,12 +78,7 @@ public class MoonWalk : DefSpellParent {
 
 	public override void OnClickDef (bool isPressed)
 	{
-		if (PauseScript.isPause) {
-			if (isPressed) {
-				_isRunning = true;
-			} else {
-				_isRunning = false;
-			}
-		}
+		_isRunning = isPressed && PauseScript.isPause;
+		ani.SetBool("MoonWalk", _isRunning);
 	}
 }

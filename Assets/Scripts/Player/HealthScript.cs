@@ -128,8 +128,8 @@ public class HealthScript : MonoBehaviour {
 	IEnumerator CameraInc(){
 		while (Camera.main.orthographicSize > 3f && PauseScript.isPause) {
 			Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize,2f,Time.deltaTime * 0.5f);
-			Camera.main.transform.Translate (Vector2.left * Time.deltaTime * 15f);
-			Debug.Log ("-");
+			Camera.main.transform.Translate (Vector2.left * Time.deltaTime * 12f);
+			Camera.main.transform.Translate (Vector2.down * Time.deltaTime * 4f);
 			yield return null;
 		}
 	}

@@ -46,7 +46,6 @@ public class EnemyHealthScript : MonoBehaviour {
 					}
 
 					if (hp <= 0) {
-						if (this.name == "")
 						gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 						gameObject.GetComponentInChildren<Animator> ().SetBool ("die", true);
 						Destroy (gameObject, 1f);

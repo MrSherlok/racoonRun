@@ -1,18 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ComixScenePlayButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\spellsystem\BananaGun.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\KrotKilling.cs" Line="1" Column="1" />
-      <File FileName="Assets\E_hedgehogLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TutorialLevel\TutorHint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\newSystem\EnemyHealthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\TurtleLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\MoonWalk.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\spellsystem\DefSpellParent.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Map\Choselvl.cs" Line="27" Column="41" />
-      <File FileName="Assets\ComixScenePlayButton.cs" Line="8" Column="9" />
-      <File FileName="Assets\Scripts\tools\ChooseSPScript.cs" Line="316" Column="3" />
+      <File FileName="Assets\Scripts\newSystem\EnemyHealthScript.cs" Line="48" Column="20" />
+      <File FileName="Assets\Scripts\spellsystem\BananaGun.cs" Line="61" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

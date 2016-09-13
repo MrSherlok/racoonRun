@@ -21,7 +21,7 @@ public class BananaGun : DamSpellParent {
 		damRestoreTime[2] = 0.7f;
 
 
-		cooldown = 0.3f;
+		cooldown = 0.15f;
 		maxCount = damCount[PlayerPrefs.GetInt("BananaCountLvl")];
 		activeTime = damRestoreTime[PlayerPrefs.GetInt("BananaRestoreTimeLvl")];
 		timer = 0f;

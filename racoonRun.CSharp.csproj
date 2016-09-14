@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{139D95C2-C059-BD4B-F7FF-222E41741203}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.5.0b3</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VIDEO;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PlaymodeTestsRunner">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartLocalization_Runtime">
+      <HintPath>Assets\SmartLocalization\SmartLocalization_Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="racoonRun.CSharp.Plugins.csproj">
+      <Project>{A247683C-AE42-120E-B3E2-8D424085430A}</Project>
+      <Name>racoonRun.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AnimatedBG\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
+    <Compile Include="Assets\ChangeLanguage.cs" />
+    <Compile Include="Assets\CloudMover.cs" />
+    <Compile Include="Assets\CloudSpawner.cs" />
+    <Compile Include="Assets\CoinCollect.cs" />
+    <Compile Include="Assets\ComixScenePlayButton.cs" />
+    <Compile Include="Assets\CosmosRade.cs" />
+    <Compile Include="Assets\DelReycasttesting.cs" />
+    <Compile Include="Assets\DeleteThisShit.cs" />
+    <Compile Include="Assets\E_SlugLogic.cs" />
+    <Compile Include="Assets\E_hedgehogLogic.cs" />
+    <Compile Include="Assets\FX_OrderLayer.cs" />
+    <Compile Include="Assets\GoToLotteryScene.cs" />
+    <Compile Include="Assets\GribLogic.cs" />
+    <Compile Include="Assets\IndusActivator.cs" />
+    <Compile Include="Assets\OffsetScript.cs" />
+    <Compile Include="Assets\RaycastDraw.cs" />
+    <Compile Include="Assets\ScoreFinCount.cs" />
+    <Compile Include="Assets\Scripts\AirPlatformScript.cs" />
+    <Compile Include="Assets\Scripts\ApplyButton.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
+    <Compile Include="Assets\Scripts\CameraScripts\CameraFollow3.cs" />
+    <Compile Include="Assets\Scripts\CameraScripts\CameraFollowScript2.cs" />
+    <Compile Include="Assets\Scripts\ChooseSP\DragSP.cs" />
+    <Compile Include="Assets\Scripts\ChooseSP\SpellDrag.cs" />
+    <Compile Include="Assets\Scripts\ChoseCameraType.cs" />
+    <Compile Include="Assets\Scripts\CoinCollectScript.cs" />
+    <Compile Include="Assets\Scripts\CollectSpel.cs" />
+    <Compile Include="Assets\Scripts\Collection\BackButton.cs" />
+    <Compile Include="Assets\Scripts\Collection\ByeSellButton.cs" />
+    <Compile Include="Assets\Scripts\Collection\DragCollection.cs" />
+    <Compile Include="Assets\Scripts\Collection\EighthItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\FifthItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\FirstItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\FourthItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\GoldUpdate.cs" />
+    <Compile Include="Assets\Scripts\Collection\ItemDrag.cs" />
+    <Compile Include="Assets\Scripts\Collection\ItemParrent.cs" />
+    <Compile Include="Assets\Scripts\Collection\ItemVision.cs" />
+    <Compile Include="Assets\Scripts\Collection\NinethItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\SecondItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\SeventhItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\SixthItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\TenthItem.cs" />
+    <Compile Include="Assets\Scripts\Collection\ThirdItem.cs" />
+    <Compile Include="Assets\Scripts\CollisionTrigger.cs" />
+    <Compile Include="Assets\Scripts\Enemy\AirAttackZone.cs" />
+    <Compile Include="Assets\Scripts\Enemy\AirBirdLogic.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyASLogic.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\KrotKilling.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PetLife.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PetLogic.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\Bulletshot.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\E_ballonHealth.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\GunLookToPoint.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\Petmover.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\Shooter.cs" />
+    <Compile Include="Assets\Scripts\FLyLevel\cursorMover.cs" />
+    <Compile Include="Assets\Scripts\FirstStart\FirstStartScript.cs" />
+    <Compile Include="Assets\Scripts\GameButtons.cs" />
+    <Compile Include="Assets\Scripts\Map\AutoScale.cs" />
+    <Compile Include="Assets\Scripts\Map\ChengeCenturyScript.cs" />
+    <Compile Include="Assets\Scripts\Map\Choselvl.cs" />
+    <Compile Include="Assets\Scripts\Map\DraggingScript.cs" />
+    <Compile Include="Assets\Scripts\Map\MainMenuScript.cs" />
+    <Compile Include="Assets\Scripts\Map\MapSize.cs" />
+    <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
+    <Compile Include="Assets\Scripts\Map\UnlockLevel.cs" />
+    <Compile Include="Assets\Scripts\NextLvLSceneScript.cs" />
+    <Compile Include="Assets\Scripts\PauseScript.cs" />
+    <Compile Include="Assets\Scripts\Player\HealthScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\ShotScript.cs" />
+    <Compile Include="Assets\Scripts\Player\animatorOff.cs" />
+    <Compile Include="Assets\Scripts\RendererExtensions.cs" />
+    <Compile Include="Assets\Scripts\RotateScript.cs" />
+    <Compile Include="Assets\Scripts\ScrollingScript.cs" />
+    <Compile Include="Assets\Scripts\SoundSettingsScrollbar.cs" />
+    <Compile Include="Assets\Scripts\StartGameEnablesScript.cs" />
+    <Compile Include="Assets\Scripts\StartScript.cs" />
+    <Compile Include="Assets\Scripts\TrailSortingLayer.cs" />
+    <Compile Include="Assets\Scripts\Trash\EnemyHeadShotScript.cs" />
+    <Compile Include="Assets\Scripts\Trash\MoveScript.cs" />
+    <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
+    <Compile Include="Assets\Scripts\Trash\Spawn.cs" />
+    <Compile Include="Assets\Scripts\Trash\collect.cs" />
+    <Compile Include="Assets\Scripts\TutorialLevel\HintTextChanger.cs" />
+    <Compile Include="Assets\Scripts\TutorialLevel\StartTutorial.cs" />
+    <Compile Include="Assets\Scripts\TutorialLevel\StringToBanan.cs" />
+    <Compile Include="Assets\Scripts\TutorialLevel\TutorHint.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\BamBladeUpgrate.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\BananaGunUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\CookieRangUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\DamUpgradeParrent.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\DefUpgradeParrent.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\Dominator3000Upgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\MoonWalkUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\SalmonUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\SodaPackUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\SuperJumpUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\SuperPunchUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\SuperSpeedUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\UpgradesButtons.cs" />
+    <Compile Include="Assets\Scripts\WeaponScript.cs" />
+    <Compile Include="Assets\Scripts\lottery\ChoseYourColor.cs" />
+    <Compile Include="Assets\Scripts\lottery\RotateCylinder.cs" />
+    <Compile Include="Assets\Scripts\newSystem\CloudJumpScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\DellAll.cs" />
+    <Compile Include="Assets\Scripts\newSystem\EnemyHealthScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\EnemyShotScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\GoldScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\LoadSceneScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\MoleHealthScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\TapToStartScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\UpgradeScript.cs" />
+    <Compile Include="Assets\Scripts\newSystem\fpsScript.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\AnimatorInCollision.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\BamBlade.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\BananaGun.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\CookieRang.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\DamSpellParent.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\DefSpellParent.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\Dominator3000.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\MoonWalk.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\Salmon.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\SodaPack.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\SuperJump.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\SuperPunch.cs" />
+    <Compile Include="Assets\Scripts\spellsystem\SuperSpeed.cs" />
+    <Compile Include="Assets\Scripts\tools\ChooseSPScript.cs" />
+    <Compile Include="Assets\Scripts\tools\DominatorCollision.cs" />
+    <Compile Include="Assets\Scripts\tools\SuperPower.cs" />
+    <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUILabel.cs" />
+    <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUISpriteAtlas.cs" />
+    <Compile Include="Assets\SmartLocalization\Scripts\NGUI\SL_NGUISpriteName.cs" />
+    <Compile Include="Assets\SmartLocalization\Scripts\uGUI\LocalizedText.cs" />
+    <Compile Include="Assets\TurtleLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AnimatedBG\Diffuse_Lava_Distort.shader" />
+    <None Include="Assets\AnimatedBG\Unlit_Lava_Distort.shader" />
+    <None Include="Assets\AnimatedBG\Unlit_Lava_Distort_Transparent.shader" />
+    <None Include="Assets\AnimatedBG\Unlit_Lava_Simple.shader" />
+    <None Include="Assets\SmartLocalization\Editor\SmartLocalization_Editor.XML" />
+    <None Include="Assets\SmartLocalization\README.txt" />
+    <None Include="Assets\SmartLocalization\Resources\EmptyResourceHeader.txt" />
+    <None Include="Assets\SmartLocalization\SmartLocalization_Runtime.XML" />
+    <None Include="Assets\SmartLocalization\smartloc_licenses.txt" />
+    <None Include="Assets\SmartLocalizationWorkspace\AutoGenerated\Resources\AvailableCultures.xml" />
+    <None Include="Assets\SmartLocalizationWorkspace\AutoGenerated\Resources\Language.en.txt" />
+    <None Include="Assets\SmartLocalizationWorkspace\AutoGenerated\Resources\Language.ru.txt" />
+    <None Include="Assets\SmartLocalizationWorkspace\AutoGenerated\Resources\Language.txt" />
+    <None Include="Assets\SmartLocalizationWorkspace\Data\SmartCultureInfoData\SmartCultureInfo.xml" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\AmbientOcclusion\Resources\AmbientOcclusion.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\Bloom\Resources\Bloom.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\DepthOfField\Resources\BokehSplatting.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\DepthOfField\Resources\DepthOfField.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\DepthOfField\Resources\MedianFilter.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\LensAberrations\Resources\LensAberrations.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\ScreenSpaceReflection\Resources\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\ScreenSpaceReflection\Resources\ScreenSpaceReflection.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\HistogramCompute.compute" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\HistogramRender.shader" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
+    <None Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\TonemappingColorGrading.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>

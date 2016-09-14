@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class EnemyHealthScript : MonoBehaviour {
-
-	public int hp = 2;
+    [SerializeField]
+	int hp = 2;
 	public GameObject Angel;
-	public bool isEnemy = true;
 	GameObject player;
 	void Start(){
 		player = GameObject.Find ("Player");	

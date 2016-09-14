@@ -10,7 +10,7 @@ public class EnemyASLogic : MonoBehaviour {
 	}
 	public void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "Player") {
-			if (col.GetComponent<HealthScript> ().hp <= 0) {
+			if (col.GetComponent<HealthScript>().hp <= 0) {
 				col.gameObject.transform.parent.gameObject.transform.SetParent(hand,false);
 				Fatality ();
 				col.gameObject.transform.parent.gameObject.transform.localPosition = new Vector3 (0f,0f,0f);

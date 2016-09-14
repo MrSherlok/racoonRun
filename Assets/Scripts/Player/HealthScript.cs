@@ -6,12 +6,11 @@ public class HealthScript : MonoBehaviour {
 //	GameObject camPoint;
 
 	[SerializeField]
-	private AudioClip _getDamage;
+	AudioClip _getDamage;
 
 	public float hp = 6;
 	GameObject player;
-    public bool isEnemy = false;
-
+   
     private Image theEndImage;
     private Text end;
     private Image chooseLvl;
@@ -93,7 +92,7 @@ public class HealthScript : MonoBehaviour {
     }
 
 
-	void FixedUpdate(){
+	void Update(){
 		HpCorrector();
 	}
 	void HpCorrector(){

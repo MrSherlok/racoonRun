@@ -2,5 +2,5 @@
 using System.Collections;
 
 public class EnemyShotScript : MonoBehaviour {
-	public int damage = 1;
+    public int damage = 1;
 }

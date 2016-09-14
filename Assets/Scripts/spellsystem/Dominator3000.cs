@@ -12,9 +12,9 @@ public class Dominator3000 : DefSpellParent {
 	void Start() {
 
 		//COUNT
-		defCount [0] = 3;
-		defCount [1] = 5;
-		defCount [2] = 6;
+		defCount [0] = 1;
+		defCount [1] = 2;
+		defCount [2] = 3;
 
 		//RESTORE TIME
 		defRestoreTime[0] = 1.2f;

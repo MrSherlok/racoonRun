@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UnlockLevel : MonoBehaviour {
 	public Image[] levels;
+	public Image lvlTargetImage;
 	int i;
 	[SerializeField]
 	int savingLevel;
@@ -15,6 +16,7 @@ public class UnlockLevel : MonoBehaviour {
 			levels [savingLevel].enabled = true;
 			for (i=0; i <= savingLevel; i++) {
 				levels [i].enabled = true;
+				lvlTargetImage.transform.position = levels [i].transform.position;
 			}
 
 		}

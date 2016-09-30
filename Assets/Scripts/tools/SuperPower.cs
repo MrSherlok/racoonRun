@@ -7,12 +7,20 @@ public class SuperPower : MonoBehaviour {
 //	private ParticleSystem SodaFXParts;
 //	private ParticleSystem FireFXParts;
 
+    [SerializeField]
+	Image[] spelsDamImage = new Image[5];
+    [SerializeField]
+    Image[] spelsDefImage = new Image[5];
 
-	public Image[] spelsDamImage = new Image[5];
-	public Image[] spelsDefImage = new Image[5];
+    [SerializeField]
+    GameObject[] spelsDamObj = new GameObject[5];
+    [SerializeField]
+    GameObject[] spelsDefObj = new GameObject[5];
 
-	public GameObject damScriptsObj;
-	public GameObject defScriptsObj;
+    [SerializeField]
+    GameObject damScriptsObj;
+    [SerializeField]
+    GameObject defScriptsObj;
 
 	DamSpellParent[] damScripts = new DamSpellParent[5];
 	DefSpellParent[] defScripts = new DefSpellParent[5];
@@ -95,10 +103,13 @@ public class SuperPower : MonoBehaviour {
 		if(_actDam != -1){
 			spelsDamImage[_actDam].enabled = true;
 			damScripts[_actDam].enabled = true;
-		}
+            spelsDamObj[_actDam].SetActive(true);
+        }
 		if (_actDef != -1){
 			spelsDefImage [_actDef].enabled = true;
 			defScripts[_actDef].enabled = true;
+            if (_actDef != 0 && _actDef != 2)
+                spelsDefObj[_actDef].SetActive(true);
 		}
 
 

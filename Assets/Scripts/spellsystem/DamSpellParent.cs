@@ -35,7 +35,6 @@ abstract public class DamSpellParent : MonoBehaviour {
 		//gunPoint = weaponSprite;
 		restoreImage = GameObject.Find("Power").GetComponent<Image>();
 		restoreImage.fillAmount = 1;
-		GameObject.Find ("GunPoint").GetComponent<SpriteRenderer>().sprite = weaponSprite;
 	}
 	protected void CountIndication(){
 		restoreImage.fillAmount = ((float)count / (float)maxCount);

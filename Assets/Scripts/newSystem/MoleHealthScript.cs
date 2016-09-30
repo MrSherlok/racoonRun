@@ -17,7 +17,7 @@ public class MoleHealthScript : MonoBehaviour
             if (collider.gameObject.tag == "superPunch")
             {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                gameObject.GetComponent<ShotScript>().enabled = false;
+                gameObject.GetComponent<EnemyShotScript>().enabled = false;
                 //ТИХОН ТУТ АНИМАЦИЯ С УБИЙСТВОМ КРОТА
 
                // Destroy(gameObject, 3f);

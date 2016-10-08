@@ -9,7 +9,8 @@ public class DraggingScript : MonoBehaviour {
 	float timeout = 0.15f;
 	float startTime;
 	Vector3 previousMousePos = Vector3.zero;
-	public Transform map;
+    [SerializeField]
+	Transform map;
 	int minX = 50;
 	int maxX = Screen.width - 50;
 	int minY = 20;

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class UnlockLevel : MonoBehaviour {
-	public Image[] levels;
-	public Image lvlTargetImage;
+    [SerializeField]
+    GameObject[] levels;
+    [SerializeField]
+    GameObject lvlTargetImage;
 	int i;
 	[SerializeField]
 	int savingLevel;
@@ -13,9 +14,9 @@ public class UnlockLevel : MonoBehaviour {
 		//PlayerPrefs.DeleteAll();
 		savingLevel = PlayerPrefs.GetInt ("UnlockingLvls");
 		if (savingLevel != null && savingLevel < levels.Length) {
-			levels [savingLevel].enabled = true;
+			levels [savingLevel].SetActive(true);
 			for (i=0; i <= savingLevel; i++) {
-				levels [i].enabled = true;
+				levels [i].SetActive(true);
 				lvlTargetImage.transform.position = levels [i].transform.position;
 			}
 

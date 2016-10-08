@@ -7,8 +7,8 @@ public class AutoScale : MonoBehaviour {
 	float koefY;
 
 	void Start() {
-		koefX = Screen.width / 1600f;
-		koefY = Screen.height / 900f;
+		koefX = Screen.width / 1024f;
+		koefY = Screen.height / 600f;
 
 		gameObject.transform.localScale = new Vector3 (koefX, koefY, 1f);
 	}

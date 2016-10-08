@@ -1,0 +1,121 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MapDragging : MonoBehaviour {
+
+    //for dragging point
+    bool isDragging;
+    bool isMouseDown;
+    float timeout = 0.15f;
+    float startTime;
+    Vector3 previousMousePos = Vector3.zero;
+
+    // map limit to drag
+    [SerializeField]
+    Transform map;
+    int minX = 50;
+    int maxX = Screen.width;
+    int minY = -20;
+    int maxY = Screen.height - 20;
+    
+
+    //for scene load
+    AudioSource clickSound;
+    [SerializeField]
+    bool itsTutorialLevel = false;
+    //Если истина - включаем сценку с комиксом
+    [SerializeField]
+    bool isComixScene = false;
+    void Start()
+    {
+        clickSound = GameObject.Find("SoundBox").GetComponent<AudioSource>();
+    }
+
+
+    void OnMouseDown()
+    {
+        startTime = Time.time;
+        isMouseDown = true;
+    }
+
+    void OnMouseUp()
+    {
+        isMouseDown = isDragging = false;
+        if (Time.time < (startTime + timeout))
+        {
+            GoToChoseSP();
+        }
+    }
+
+    void Update()
+    {
+        if (isDragging)
+        {
+            Vector3 delta = Input.mousePosition - previousMousePos;
+
+            if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
+                (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY &&
+                (map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
+                (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
+            {
+                map.position += delta * 1.5f;
+
+                if ((map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
+                    (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
+                {
+                    map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                }
+
+                if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
+                    (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY)
+                {
+                    map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                }
+            }
+
+            previousMousePos = Input.mousePosition;
+            return;
+        }
+
+        if (isMouseDown)
+        {
+            if (Time.time > (startTime + timeout))
+            {
+                previousMousePos = Input.mousePosition;
+                isDragging = true;
+            }
+        }
+    }
+
+    void GoToChoseSP()
+    {
+        PlayerPrefs.SetString("ChosingLevel", gameObject.name);
+        if (itsTutorialLevel)
+        {
+            //Invoke("GoToChoseSpels", 0.1f);
+            SceneManager.LoadScene("LoadScene");
+        }
+        else
+        {
+            //Invoke("GoToChoseSpels", 0.1f);
+            SceneManager.LoadScene("chooseSP");
+        }
+        clickSound.Play();
+    }
+    //void GoToChoseSpels()
+    //{
+    //    if (itsTutorialLevel)
+    //    {
+    //        SceneManager.LoadScene("LoadScene");
+    //    }
+    //    else
+    //    {
+    //        SceneManager.LoadScene("chooseSP");
+    //    }
+    //}
+    //void GoToComixScene()
+    //{
+    //    SceneManager.LoadScene(PlayerPrefs.GetString("ChosingLevel") + "Comix");
+    //}
+
+}

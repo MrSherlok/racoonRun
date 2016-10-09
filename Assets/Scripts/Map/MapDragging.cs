@@ -13,10 +13,10 @@ public class MapDragging : MonoBehaviour {
     // map limit to drag
     [SerializeField]
     Transform map;
-    int minX = 50;
-    int maxX = Screen.width;
-    int minY = -20;
-    int maxY = Screen.height - 20;
+    //int minX = 50;
+    //int maxX = Screen.width;
+    //int minY = -20;
+    //int maxY = Screen.height - 20;
     
 
     //for scene load
@@ -53,36 +53,78 @@ public class MapDragging : MonoBehaviour {
         {
             Vector3 delta = Input.mousePosition - previousMousePos;
 
-            if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
-                (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY &&
-                (map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
-                (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
-            {
-                map.position += delta * 1.5f;
 
-                if ((map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
-                    (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
+            if (DragMap.IsVisibleXLSide && delta.x < 0)
+            {
+                map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+            }
+            else
+            {
+                if (DragMap.IsVisibleXRSide && delta.x > 0)
                 {
                     map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
                 }
-
-                if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
-                    (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY)
+                else
                 {
-                    map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                    if (!DragMap.IsVisibleXLSide && !DragMap.IsVisibleXRSide)
+                    {
+                        map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                    }
                 }
             }
 
-            previousMousePos = Input.mousePosition;
-            return;
-        }
-
-        if (isMouseDown)
-        {
-            if (Time.time > (startTime + timeout))
+            if (DragMap.IsVisibleYUSide && delta.y > 0)
             {
+                map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+            }
+            else
+            {
+                if (DragMap.IsVisibleYDSide && delta.y < 0)
+                {
+                    map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                }
+                else
+                {
+                    if (!DragMap.IsVisibleYUSide && !DragMap.IsVisibleYDSide)
+                    {
+                        map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                    }
+                }
+
+
+
+
+                //if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
+                //    (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY &&
+                //    (map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
+                //    (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
+                //{
+                //    map.position += delta * 1.5f;
+
+                //    if ((map.gameObject.GetComponent<Transform>().position.x + delta.x) < maxX &&
+                //        (map.gameObject.GetComponent<Transform>().position.x + delta.x) > minX)
+                //    {
+                //        map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                //    }
+
+                //    if ((map.gameObject.GetComponent<Transform>().position.y + delta.y) < maxY &&
+                //        (map.gameObject.GetComponent<Transform>().position.y + delta.y) > minY)
+                //    {
+                //        map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                //    }
+                //}
+
                 previousMousePos = Input.mousePosition;
-                isDragging = true;
+                return;
+            }
+
+            if (isMouseDown)
+            {
+                if (Time.time > (startTime + timeout))
+                {
+                    previousMousePos = Input.mousePosition;
+                    isDragging = true;
+                }
             }
         }
     }

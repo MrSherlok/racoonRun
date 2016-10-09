@@ -12,7 +12,7 @@ public class TurtleLogic : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.name == "GroundPoint") {
-			Debug.Log ("TurtleOnWork");
+			//Debug.Log ("TurtleOnWork");
 			moving = true;
 			player = col.gameObject;
 			player.GetComponentInParent<Rigidbody2D>().velocity += 45* Vector2.up;

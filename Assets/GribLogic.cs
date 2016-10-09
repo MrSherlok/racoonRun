@@ -82,7 +82,6 @@ public class GribLogic : MonoBehaviour
         if (modificator == 4)
         {
             CoinCollect.AddCoin(3);
-            Debug.Log("coins+3");
         }
 
         if (modificator == 5)

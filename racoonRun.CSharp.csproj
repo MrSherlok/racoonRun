@@ -153,13 +153,17 @@
     <Compile Include="Assets\Scripts\FirstStart\FirstStartScript.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />
     <Compile Include="Assets\Scripts\Map\AutoScale.cs" />
+    <Compile Include="Assets\Scripts\Map\BGSize.cs" />
     <Compile Include="Assets\Scripts\Map\ChengeCenturyScript.cs" />
     <Compile Include="Assets\Scripts\Map\Choselvl.cs" />
     <Compile Include="Assets\Scripts\Map\DragMap.cs" />
     <Compile Include="Assets\Scripts\Map\DraggingScript.cs" />
+    <Compile Include="Assets\Scripts\Map\IsVisible.cs" />
     <Compile Include="Assets\Scripts\Map\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Map\MapDragging.cs" />
     <Compile Include="Assets\Scripts\Map\MapSize.cs" />
+    <Compile Include="Assets\Scripts\Map\MapZoom.cs" />
+    <Compile Include="Assets\Scripts\Map\RendererExtensions.cs" />
     <Compile Include="Assets\Scripts\Map\TakeTapScript.cs" />
     <Compile Include="Assets\Scripts\Map\UnlockLevel.cs" />
     <Compile Include="Assets\Scripts\NextLvLSceneScript.cs" />
@@ -168,7 +172,6 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\ShotScript.cs" />
     <Compile Include="Assets\Scripts\Player\animatorOff.cs" />
-    <Compile Include="Assets\Scripts\RendererExtensions.cs" />
     <Compile Include="Assets\Scripts\RotateScript.cs" />
     <Compile Include="Assets\Scripts\ScrollingScript.cs" />
     <Compile Include="Assets\Scripts\SoundSettingsScrollbar.cs" />

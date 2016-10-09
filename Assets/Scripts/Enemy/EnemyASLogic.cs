@@ -32,7 +32,5 @@ public class EnemyASLogic : MonoBehaviour {
 	private void Fatality(){
 		ani.SetTrigger("fatality");
 		GameObject.Find ("Player").GetComponent<Player> ().BearFatality ();
-		Debug.Log ("Fatality");
-
-	}
+    }
 }

@@ -3,7 +3,7 @@
 public class MapZoom : MonoBehaviour
 {
     [SerializeField]
-    float orthoZoomSpeed = 1f;
+    float orthoZoomSpeed = 1.5f;
     [SerializeField]
     Camera cam;
     [SerializeField]

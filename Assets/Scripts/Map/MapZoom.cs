@@ -31,9 +31,9 @@ public class MapZoom : MonoBehaviour
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
             // ... change the orthographic size based on the change in distance between the touches.
-            if (!(DragMap.IsVisibleXLSide && DragMap.IsVisibleXRSide) || !(DragMap.IsVisibleYDSide && DragMap.IsVisibleYUSide) && deltaMagnitudeDiff < 0)
+            if ((!(DragMap.IsVisibleXLSide && DragMap.IsVisibleXRSide) || !(DragMap.IsVisibleYDSide && DragMap.IsVisibleYUSide)))
             {
-                if (cam.orthographicSize + deltaMagnitudeDiff > 200)
+                if(cam.orthographicSize + deltaMagnitudeDiff > 200)
                 {
                     cam.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
 

@@ -26,38 +26,38 @@ public class DragMap : MonoBehaviour, IDragHandler, IBeginDragHandler
     {        
         if (IsVisibleXLSide && eventData.delta.x < 0)
             {
-                map.position += new Vector3(eventData.delta.x * 1.5f, 0f, 0f);
+                map.position += new Vector3(eventData.delta.x, 0f, 0f);
             }
         else
         {
             if (IsVisibleXRSide && eventData.delta.x > 0)
                 {
-                    map.position += new Vector3(eventData.delta.x * 1.5f, 0f, 0f);
+                    map.position += new Vector3(eventData.delta.x, 0f, 0f);
                 }
             else
             {
                 if (!IsVisibleXLSide && !IsVisibleXRSide)
                 {
-                    map.position += new Vector3(eventData.delta.x * 1.5f, 0f, 0f);
+                    map.position += new Vector3(eventData.delta.x, 0f, 0f);
                 }
             }
         }
 
         if (IsVisibleYUSide && eventData.delta.y > 0)
             {
-                map.position += new Vector3(0f, eventData.delta.y * 1.5f, 0f);
+                map.position += new Vector3(0f, eventData.delta.y, 0f);
             }
         else
         {
             if (IsVisibleYDSide && eventData.delta.y < 0)
                 {
-                    map.position += new Vector3(0f, eventData.delta.y * 1.5f, 0f);
+                    map.position += new Vector3(0f, eventData.delta.y, 0f);
                 }
             else
             {
                 if (!IsVisibleYUSide && !IsVisibleYDSide)
                 {
-                    map.position += new Vector3(0f, eventData.delta.y * 1.5f, 0f);
+                    map.position += new Vector3(0f, eventData.delta.y, 0f);
                 }
             }
         }

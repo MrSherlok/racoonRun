@@ -56,38 +56,38 @@ public class MapDragging : MonoBehaviour {
 
             if (DragMap.IsVisibleXLSide && delta.x < 0)
             {
-                map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                map.position += new Vector3(delta.x, 0f, 0f);
             }
             else
             {
                 if (DragMap.IsVisibleXRSide && delta.x > 0)
                 {
-                    map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                    map.position += new Vector3(delta.x, 0f, 0f);
                 }
                 else
                 {
                     if (!DragMap.IsVisibleXLSide && !DragMap.IsVisibleXRSide)
                     {
-                        map.position += new Vector3(delta.x * 1.5f, 0f, 0f);
+                        map.position += new Vector3(delta.x, 0f, 0f);
                     }
                 }
             }
 
             if (DragMap.IsVisibleYUSide && delta.y > 0)
             {
-                map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                map.position += new Vector3(0f, delta.y, 0f);
             }
             else
             {
                 if (DragMap.IsVisibleYDSide && delta.y < 0)
                 {
-                    map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                    map.position += new Vector3(0f, delta.y, 0f);
                 }
                 else
                 {
                     if (!DragMap.IsVisibleYUSide && !DragMap.IsVisibleYDSide)
                     {
-                        map.position += new Vector3(0f, delta.y * 1.5f, 0f);
+                        map.position += new Vector3(0f, delta.y, 0f);
                     }
                 }
 

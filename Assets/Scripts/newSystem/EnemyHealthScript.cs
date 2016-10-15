@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class EnemyHealthScript : MonoBehaviour {
-    [SerializeField]
-	int hp = 2;
+    
+	public int hp = 2;
 	public GameObject Angel;
 	GameObject player;
 	void Start(){

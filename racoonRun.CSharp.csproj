@@ -183,6 +183,7 @@
     <Compile Include="Assets\Scripts\Trash\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\Trash\Spawn.cs" />
     <Compile Include="Assets\Scripts\Trash\collect.cs" />
+    <Compile Include="Assets\Scripts\TutorialLevel\BearDead.cs" />
     <Compile Include="Assets\Scripts\TutorialLevel\HintTextChanger.cs" />
     <Compile Include="Assets\Scripts\TutorialLevel\StartTutorial.cs" />
     <Compile Include="Assets\Scripts\TutorialLevel\StringToBanan.cs" />

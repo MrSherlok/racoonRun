@@ -12,7 +12,7 @@ public class GameButtons : MonoBehaviour {
 	}
 
 public void BackToChoose () {
-        SceneManager.LoadScene("chooseSP");
+        SceneManager.LoadScene("chooseLVL");
 		Time.timeScale = 1;
 		ChooseSPScript.ActiveDamSpel = -1;
 		ChooseSPScript.ActiveDefSpel = -1;

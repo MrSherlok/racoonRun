@@ -53,7 +53,7 @@ public class EnemyHealthScript : MonoBehaviour {
                         if (collider.gameObject.tag == "bananaGun")
                         {
                             collider.GetComponent<ParticleSystem>().Play();
-                            collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                            collider.gameObject.SetActive(false);
                         }
                         if (collider.gameObject.tag == "cookieRang")
                         {

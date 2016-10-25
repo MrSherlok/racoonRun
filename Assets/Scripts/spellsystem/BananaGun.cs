@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class BananaGun : DamSpellParent {
 //	public GameObject bananaGunPrefab;
-	GameObject[] bananas= new GameObject[6];
+	GameObject[] bananas= new GameObject[10];
 	public GameObject gun;
 	//private Animator animator;
 	int i = 0;
@@ -11,9 +10,9 @@ public class BananaGun : DamSpellParent {
 		
 		//animator = GameObject.Find("Player1").GetComponent<Animator> ();
 		//COUNT
-		damCount [0] = 3;
-		damCount [1] = 5;
-		damCount [2] = 6;
+		damCount [0] = 6;
+		damCount [1] = 8;
+		damCount [2] = 10;
 
 		//RESTORE TIME
 		damRestoreTime[0] = 1.2f;
@@ -37,7 +36,11 @@ public class BananaGun : DamSpellParent {
 		bananas[3] = Instantiate (shotPrefab);
 		bananas[4] = Instantiate (shotPrefab);
 		bananas[5] = Instantiate (shotPrefab);
-		shoot = bananas [0];
+        bananas[6] = Instantiate(shotPrefab);
+        bananas[7] = Instantiate(shotPrefab);
+        bananas[8] = Instantiate(shotPrefab);
+        bananas[9] = Instantiate(shotPrefab);
+        shoot = bananas [0];
 
 	}
 
@@ -73,7 +76,7 @@ public class BananaGun : DamSpellParent {
 
 	void Coldown(){
 			i++;
-			if(i == 6) i = 0;
+			if(i == 9) i = 0;
 			shoot = bananas[i];
 			nonCooldown = true;
 		}

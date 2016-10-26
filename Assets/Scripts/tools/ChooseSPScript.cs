@@ -39,7 +39,6 @@ public class ChooseSPScript : MonoBehaviour {
 	public Animator aniPlayer;
 
 	void Start() {
-		aniPlayer.SetTrigger("Idle");
 		Names[0] = "Super Jump";
 		Names[1] = "Soda Pack";
 		Names[2] = "Super Run";

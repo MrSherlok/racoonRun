@@ -63,7 +63,7 @@ public class SpellDrag : MonoBehaviour {
 		}
 	}
 	public void PlaySPAnim(){
-		Debug.Log (i);
+		//Debug.Log (i);
 		if (i == 2) {
 			i = 0;
 		}

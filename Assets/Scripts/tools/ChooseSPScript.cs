@@ -31,40 +31,40 @@ public class ChooseSPScript : MonoBehaviour {
 	GameObject[] spellsDefItemsImage = new GameObject[5];
 
 
-	string[] Names = new string[10];
-	string[] Discr = new string[10];
+	string[] Names = new string[20];
+	string[] Discr = new string[20];
 
 	int i = 0;
 	int j = 0;
 	public Animator aniPlayer;
 
 	void Start() {
-		Names[0] = "Super Jump";
+		Names[0] = "Double Jump";
 		Names[1] = "Soda Pack";
 		Names[2] = "Super Run";
 		Names[3] = "Moonwalk";
 		Names[4] = "Dominator3000";
 
 
-		Names[5] = "Banana Gun";
-		Names[6] = "Super Punch";
-		Names[7] = "Cookie Rang";
-		Names[8] = "Bamboo Blade";
-		Names[9] = "Salmon";
+		Names[10] = "Banana Gun";
+		Names[11] = "Super Punch";
+		Names[12] = "Cookie Rang";
+		Names[13] = "Bamboo Blade";
+		Names[14] = "Salmon";
 
 
-		Discr [0] = "Jump hieght";
-		Discr [1] = "Fly whith mentos";
+		Discr [0] = "Jump twice";
+		Discr [1] = "Soda+mentos";
 		Discr [2] = "Run as gepard";
 		Discr [3] = "Walking on the Moon";
 		Discr [4] = "Dominate and destroy aweryone";
 
 
-		Discr [5] = "Give them bananas";
-		Discr [6] = "Strong Punch";
-		Discr [7] = "Cookie Rang";
-		Discr [8] = "Fish and bamboo blade";
-		Discr [9] = "Good vs bears";
+		Discr [10] = "Give them bananas";
+		Discr [11] = "Strong Punch";
+		Discr [12] = "Cookie Rang";
+		Discr [13] = "Fish and bamboo blade";
+		Discr [14] = "Good vs bears";
 	}
 
     void Update()
@@ -75,8 +75,8 @@ public class ChooseSPScript : MonoBehaviour {
 			DiscTxt.text = "";
 		}
 		if (ActiveDefSpel == -1 && ActiveDamSpel != -1) {
-			NameTxt.text = Names [ActiveDamSpel + 3];
-			DiscTxt.text = Discr [ActiveDamSpel + 3];
+			NameTxt.text = Names [ActiveDamSpel + 10];
+			DiscTxt.text = Discr [ActiveDamSpel + 10];
 		}
 		if (ActiveDefSpel != -1 && ActiveDamSpel == -1) {
 			NameTxt.text = Names [ActiveDefSpel];
@@ -230,8 +230,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
 			spellsDamActive [4] = false;
-			NameTxt.text = Names [5];
-			DiscTxt.text = Discr [5];
+			NameTxt.text = Names [10];
+			DiscTxt.text = Discr [10];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -252,8 +252,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [2] = false;
 			spellsDamActive [3] = false;
 			spellsDamActive [4] = false;
-			NameTxt.text = Names [6];
-			DiscTxt.text = Discr [6];
+			NameTxt.text = Names [11];
+			DiscTxt.text = Discr [11];
 		}
 		else ActiveDamSpel = -1;
     }
@@ -274,8 +274,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [3] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [7];
-			DiscTxt.text = Discr [7];
+			NameTxt.text = Names [12];
+			DiscTxt.text = Discr [12];
 		}
 		else ActiveDamSpel = -1;
 	}
@@ -290,8 +290,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [2] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [8];
-			DiscTxt.text = Discr [8];
+			NameTxt.text = Names [13];
+			DiscTxt.text = Discr [13];
 		}
 		else ActiveDamSpel = -1;
 	}
@@ -305,8 +305,8 @@ public class ChooseSPScript : MonoBehaviour {
 			spellsDamActive [2] = false;
 			spellsDamActive [1] = false;
 			spellsDamActive [0] = false;
-			NameTxt.text = Names [9];
-			DiscTxt.text = Discr [9];
+			NameTxt.text = Names [14];
+			DiscTxt.text = Discr [14];
 		}
 		else ActiveDamSpel = -1;
 	}

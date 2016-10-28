@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SuperPunch : DamSpellParent {
 
 //	public static bool IsSuperPunchActive = false; 
-	public GameObject superPunchIm;
-	public GameObject superPunchIm1;
+[SerializeField]
+	GameObject superPunchIm;
+    [SerializeField]
+    GameObject superPunchIm1;
 	//private Animator animator;
 
 	void Start() {
 		//COUNT
-		damCount [0] = 3;
-		damCount [1] = 5;
-		damCount [2] = 6;
+		damCount [0] = 5;
+		damCount [1] = 7;
+		damCount [2] = 9;
 
 		//RESTORE TIME
 		damRestoreTime[0] = 1.2f;

@@ -10,16 +10,26 @@ public class PauseScript : MonoBehaviour {
 		chooseLvl = GameObject.Find("Back").GetComponent<Image>();
 	}
 
-	public void Pause () {
+	public static void Pause () {
 		isPause = !isPause;
-		if (isPause) {
-			Time.timeScale = 1f; 
-			chooseLvl.enabled = false;
-			} else {
-			Time.timeScale = 0f; 
-			chooseLvl.enabled = true;
-
-		}
-
-	}
+        if (isPause)
+        {
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
+    }
+    void Update()
+    {
+        if (isPause)
+        {
+            chooseLvl.enabled = false;
+        }
+        else
+        {
+            chooseLvl.enabled = true;
+        }
+    }
 }

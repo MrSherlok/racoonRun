@@ -7,6 +7,7 @@ public class SpellDrag : MonoBehaviour {
 	bool isMouseDown;
 
 	public string animationName;
+    [SerializeField]
 	Animator playerAnimator;
 	int i = 0;
 
@@ -23,7 +24,7 @@ public class SpellDrag : MonoBehaviour {
 
 	void Start() {
 		averY = maxY / 2;
-		playerAnimator = GameObject.Find ("Player1").GetComponent<Animator> ();
+		//playerAnimator = GameObject.Find ("Player1").GetComponent<Animator> ();
 	}
 
 

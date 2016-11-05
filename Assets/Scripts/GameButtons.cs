@@ -1,8 +1,23 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameButtons : MonoBehaviour {
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!PauseScript.isPause)
+            {
+                PauseScript.isPause = !PauseScript.isPause;
+            } else
+            {
+                BackFromLVLToMap();
+            }
+        }
+    }
+
 
 	public void Reload ( int nextScene) {		
 		PlayerPrefs.SetInt ("Gold", GoldScript.Gold);

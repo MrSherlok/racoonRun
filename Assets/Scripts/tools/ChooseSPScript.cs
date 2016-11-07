@@ -87,7 +87,7 @@ public class ChooseSPScript : MonoBehaviour {
 
 
 		if (ActiveDefSpel == j) {
-			spellsDefImage [ActiveDefSpel].color = Color.red;
+			spellsDefImage [ActiveDefSpel].color = Color.green;
 			spellsDefItemsImage [ActiveDefSpel].SetActive (true);
 		} else {
 			spellsDefImage[j].color = Color.white;
@@ -98,7 +98,7 @@ public class ChooseSPScript : MonoBehaviour {
 
 		if (ActiveDamSpel ==  i)
 		{
-			spellsDamImage [ActiveDamSpel].color = Color.red;
+			spellsDamImage [ActiveDamSpel].color = Color.green;
 			spellsDamItemsImage [ActiveDamSpel].SetActive (true);
 		}
 		else {

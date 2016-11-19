@@ -7,8 +7,12 @@ public class SuperJump : DefSpellParent {
 	float ForceSuperJump = 30f;
 	bool cloudTuch = false;
 	Rigidbody2D playerRigidbody;
+    [SerializeField]
+    GameObject doubleJumpImage;
+    [SerializeField]
+    GameObject doubleJumpImage1;
 
-	void Start() {
+    void Start() {
 
 		//COUNT
 		defCount [0] = 2f;
@@ -36,7 +40,11 @@ public class SuperJump : DefSpellParent {
 
 		CountCorection ();
 
-		playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D> ();
+        doubleJumpImage.SetActive(true);
+        doubleJumpImage1.SetActive(true);
+
+
+        playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D> ();
 		superJumpEnabled = false;
 	}
 
@@ -49,6 +57,7 @@ public class SuperJump : DefSpellParent {
 			timeTo = 0;
 		if (timeTo >= activeTime && count < restoreSpeed) {
 			timeTo = 0f;
+            //ANIMATION OF JUMP
 			count++;
 			CountIndication ();
 		}

@@ -90,6 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimAndPause.cs" />
     <Compile Include="Assets\AnimatedBG\ScrollingUVs_Layers.cs" />
     <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\ChangeLanguage.cs" />

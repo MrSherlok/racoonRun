@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class PauseScript : MonoBehaviour {
@@ -10,25 +9,16 @@ public class PauseScript : MonoBehaviour {
 		chooseLvl = GameObject.Find("Back").GetComponent<Image>();
 	}
 
-	public static void Pause () {
+	public void Pause () {
 		isPause = !isPause;
         if (isPause)
         {
             Time.timeScale = 1f;
-        }
-        else
-        {
-            Time.timeScale = 0f;
-        }
-    }
-    void Update()
-    {
-        if (isPause)
-        {
             chooseLvl.enabled = false;
         }
         else
         {
+            Time.timeScale = 0f;
             chooseLvl.enabled = true;
         }
     }

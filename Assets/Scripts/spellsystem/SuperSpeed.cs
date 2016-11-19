@@ -6,10 +6,11 @@ public class SuperSpeed : DefSpellParent {
 	private ScrollingScript playerSpeed;
 	float SpeedSuper = 40f;
 	private bool _isRunning = false;
-//	public static bool IsRunning = false;
+    public GameObject SpeedHat;
+    //	public static bool IsRunning = false;
 
 
-	void Start() {
+    void Start() {
 
 		//COUNT
 		defCount [0] = 1.5f;
@@ -44,14 +45,16 @@ public class SuperSpeed : DefSpellParent {
 
 		CountCorection ();
 
+        SpeedHat.SetActive(true);
 
-		playerSpeed = GameObject.Find("Earth").GetComponent<ScrollingScript>();
+        playerSpeed = GameObject.Find("Earth").GetComponent<ScrollingScript>();
 		playerSpeed.direction.x = -1f;
 	}
 
 	void Update() {
 		CountIndication ();
 		if (_isRunning && count >= 0) {
+            //HERE HE RUNING
 			onCooldown = false;
 			HealthScript.Invulnerability = true;
 			count -= Time.deltaTime;

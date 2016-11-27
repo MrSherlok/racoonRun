@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
 	public void IGetDamage(){
 		
 			playerAnimator.SetTrigger ("GetDamage");	
+		StartCoroutine ("WaitForAnimationEnd",playerAnimator);
 	}
 	public void DieEnot(int sposobSmerti){
 		if (sposobSmerti == 1)
@@ -74,4 +75,22 @@ public class Player : MonoBehaviour
 	public void BearFatality(){
 		playerAnimator.SetTrigger ("IsDead3");
 	}
+	private IEnumerator WaitForAnimationEnd(Animator anim) 
+	{   
+		Debug.Log ("--------Start");
+		if (Time.timeScale >= 1f) {
+			Time.timeScale = 0.1f;
+			Time.fixedDeltaTime = Time.timeScale * 0.04f;
+			Debug.Log ("Time Scale : "+Time.timeScale);
+		}
+
+
+		yield return new WaitForSeconds (0.2f); 
+
+
+
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = Time.timeScale * 0.02f;
+		Debug.Log ("--------Finish");
+	} 
 }

@@ -16,6 +16,8 @@ public class AnimAndPause : MonoBehaviour {
 	{   
 		if (Time.timeScale >= 1f) {
 			Time.timeScale = 0.1f;
+			Time.fixedDeltaTime = Time.timeScale * 0.04f;
+
 		}
 		
 		do 
@@ -25,6 +27,7 @@ public class AnimAndPause : MonoBehaviour {
 		} while (anim.gameObject.activeInHierarchy&& anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6f); 
 
 		Time.timeScale = 1f;
+		Time.fixedDeltaTime = Time.timeScale * 0.02f;
 		Debug.Log ("AnimWasEnd");
 		} 
 }

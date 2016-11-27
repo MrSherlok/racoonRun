@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 
 public class MapDragging : MonoBehaviour {
-
+	private Animator cameraAnimator;
     //for dragging point
     bool isDragging;
     bool isMouseDown;
@@ -27,7 +27,8 @@ public class MapDragging : MonoBehaviour {
     [SerializeField]
     bool isComixScene = false;
     void Start()
-    {
+    {	
+		cameraAnimator = GameObject.Find ("Main Camera").GetComponent<Animator>();
         clickSound = GameObject.Find("SoundBox").GetComponent<AudioSource>();
     }
 
@@ -130,34 +131,30 @@ public class MapDragging : MonoBehaviour {
     }
 
     void GoToChoseSP()
-    {
+    {	
+		
         PlayerPrefs.SetString("ChosingLevel", gameObject.name);
         if (itsTutorialLevel)
-        {
-            //Invoke("GoToChoseSpels", 0.1f);
-            SceneManager.LoadScene("LoadScene");
+        {	
+			cameraAnimator.SetTrigger("NextScene");
+           Invoke("GoToLoadScene", 1.2f);
+            
         }
         else
-        {
-            //Invoke("GoToChoseSpels", 0.1f);
-            SceneManager.LoadScene("chooseSP");
+        {	
+			cameraAnimator.SetTrigger("NextScene");
+            Invoke("GoToChoseSpels", 1.2f);
+            
         }
         clickSound.Play();
     }
-    //void GoToChoseSpels()
-    //{
-    //    if (itsTutorialLevel)
-    //    {
-    //        SceneManager.LoadScene("LoadScene");
-    //    }
-    //    else
-    //    {
-    //        SceneManager.LoadScene("chooseSP");
-    //    }
-    //}
-    //void GoToComixScene()
-    //{
-    //    SceneManager.LoadScene(PlayerPrefs.GetString("ChosingLevel") + "Comix");
-    //}
+    void GoToChoseSpels()
+	{
+		SceneManager.LoadScene("chooseSP");
+	}
+	void GoToLoadScene()
+	{
+		SceneManager.LoadScene("LoadScene");
+	}
 
 }

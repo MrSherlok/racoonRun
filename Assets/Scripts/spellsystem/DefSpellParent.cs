@@ -19,13 +19,18 @@ abstract public class DefSpellParent : MonoBehaviour {
 	protected float count;
 	protected bool onCooldown = true;
 	protected float restoreSpeed;
-
+	protected Animator animator;
 
 	abstract public void OnClickDef (bool isPressed);
 	protected void OnEnable(){
 		
 		restoreImage = GameObject.Find("Energy").GetComponent<Image>();
 		restoreImage.fillAmount = 1f;
+
+	}
+	void Awake(){
+		animator = GameObject.Find("Player1").GetComponent<Animator> ();
+
 
 	}
 		

@@ -4,23 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class LotteryScript : MonoBehaviour {
     GameObject circle;
-    Animator circleAnimator;
+    public Animator circleAnimator;
     float t;
     bool rooll = false;
     bool roollStop = false;
     int rez = 0;
     public Text txt;
     public Image Button;
-    
+	public GameObject finSceneGO;
 
     void Start () {
         circle = GameObject.Find("disk");
-        circleAnimator = circle.GetComponent<Animator>();
+       // circleAnimator = circle.GetComponent<Animator>();
         t = 0;
     }
 	
     public void Roll()
-    {
+    {	
+		circleAnimator.SetBool("ImPlay",true);
         Button.enabled = false;
         roollStop = false;
         rooll = true;
@@ -38,6 +39,7 @@ public class LotteryScript : MonoBehaviour {
         {
             t = 0.5f;
             circle.GetComponent<RotateScript>().speed += t;
+
         }
         if (roollStop == true && circle.GetComponent<RotateScript>().speed > 0)
         {
@@ -90,7 +92,8 @@ public class LotteryScript : MonoBehaviour {
         GoldScript.Gold += CoinCollect.coins;
         PlayerPrefs.SetInt("Gold", GoldScript.Gold);
         CoinCollect.coins = 0;
-        Invoke("BackToMap", 2.0f);
+        Invoke("BackToMap", 5.0f);
+		finSceneGO.SetActive(true);
     }
 
 

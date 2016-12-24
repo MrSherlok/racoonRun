@@ -57,8 +57,7 @@ public class SuperPunch : DamSpellParent {
 			superPunchIm1.GetComponent<Renderer> ().enabled = true;
 			superPunchIm.GetComponent<Collider2D> ().enabled = true;
 			HealthScript.Invulnerability = true;
-			animator.SetBool ("superPunch", true);
-			animator.SetBool ("Run", false);
+			animator.SetTrigger("superPunch");
 			Invoke ("StopPunch", 0.25f);
 		}
 	}
@@ -69,9 +68,7 @@ public class SuperPunch : DamSpellParent {
 		superPunchIm1.GetComponent<Renderer> ().enabled = false;
 		superPunchIm.GetComponent<Collider2D>().enabled = false;
 		HealthScript.Invulnerability = false;
-		animator.SetBool("superPunch", false);
-		animator.SetBool("Run", true);
-	}
+			}
 
 
 }

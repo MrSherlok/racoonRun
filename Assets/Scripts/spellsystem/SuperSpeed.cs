@@ -55,6 +55,7 @@ public class SuperSpeed : DefSpellParent {
 		CountIndication ();
 		if (_isRunning && count >= 0) {
             //HERE HE RUNING
+			animator.SetTrigger("SuperSpeed");
 			onCooldown = false;
 			HealthScript.Invulnerability = true;
 			count -= Time.deltaTime;

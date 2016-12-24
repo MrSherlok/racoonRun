@@ -204,6 +204,7 @@
     <Compile Include="Assets\Scripts\Upgrades\UpgradesButtons.cs" />
     <Compile Include="Assets\Scripts\WeaponScript.cs" />
     <Compile Include="Assets\Scripts\lottery\ChoseYourColor.cs" />
+    <Compile Include="Assets\Scripts\lottery\LotteryScript.cs" />
     <Compile Include="Assets\Scripts\lottery\RotateCylinder.cs" />
     <Compile Include="Assets\Scripts\newSystem\CloudJumpScript.cs" />
     <Compile Include="Assets\Scripts\newSystem\DellAll.cs" />
